@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Enemy : MonoBehaviour {
+public class Player : MonoBehaviour {
 
     private int health = 100;
     private bool alive = true;
@@ -21,7 +21,11 @@ public class Enemy : MonoBehaviour {
         if (health <= 0)
         {
             alive = false;
-            this.gameObject.SetActive(false);
         }
 	}
+
+    private void OnTriggerAnswer(Collider2D patate)
+    {
+
+    }
 }
