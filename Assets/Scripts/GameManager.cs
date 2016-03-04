@@ -33,13 +33,10 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		Areas = new List<int> ();
 		// Par défaut pour le moment, flafla
-		difficulte = Difficulty.Easy;
 		olderSex = Gender.Boy;
 		youngerSex = Gender.Boy;
-		choiceDifficulty();
 		youngBrother = GetComponentInChildren<ControllerYoung>();
 		oldBrother = GetComponentInChildren<Controller>();
-		InitializeMap ();
 	}
 	
 	// Update is called once per frame
@@ -72,23 +69,21 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	void InitializeMap() {
+	public void InitializeMap() {
+		choiceDifficulty ();
 		for (int i = 1; i <= 16; i++) {Areas.Add (i);}
 		placeAnswers ();
 	}
 
 	public void setEasy() {
 		difficulte = Difficulty.Easy;
-		choiceDifficulty();
 	}
 
 	public void setMedium() {
 		difficulte = Difficulty.Medium;
-		choiceDifficulty();
 	}
 
 	public void setHard() {
 		difficulte = Difficulty.Hard;
-		choiceDifficulty();
 	}
 }
