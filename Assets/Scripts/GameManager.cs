@@ -18,10 +18,9 @@ public class GameManager : MonoBehaviour {
 	private int nbAnswersMax;
 	private int nbEnnemiesMax;
 
-	private int nbAnswersCollected;
-
-	//SchoolMap map;
-
+	private int playerAnswerCollected = 0;
+	private MapEditor mapScript;
+	private List<Enemy> enemies;
 	private List<int> Areas;
 
 	Controller oldBrother;
@@ -70,6 +69,8 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void InitializeMap() {
+		// changer de scene
+		// load la map
 		choiceDifficulty ();
 		for (int i = 1; i <= 16; i++) {Areas.Add (i);}
 		placeAnswers ();
