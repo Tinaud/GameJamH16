@@ -3,20 +3,25 @@ using System.Collections;
 
 public class Professor : MonoBehaviour
 {
-    private float moveSpeed;
-    private GameObject youngBrother;
+    private float distance,
+                  moveSpeed;
+    private GameObject oldBrother;
     private Vector2 direction;
 
     void Start()
     {
-        youngBrother = GameObject.Find("Brothers").GetComponentInChildren<Controller>().gameObject;
-        moveSpeed = 4.5f;
+        oldBrother = GameObject.Find("Brothers").GetComponentInChildren<Controller>().gameObject;
+        moveSpeed = 3f;
     }
 
     void Update()
     {
-        direction = normalize(youngBrother.transform.position.x - this.transform.position.x, youngBrother.transform.position.y - this.transform.position.y);
-        transform.Translate(direction * moveSpeed * Time.deltaTime);
+        distance = getDistance();
+        if(distance < 3 && distance > 1)
+        {
+            direction = normalize(oldBrother.transform.position.x - this.transform.position.x, oldBrother.transform.position.y - this.transform.position.y);
+            transform.Translate(direction * moveSpeed * Time.deltaTime);
+        }
     }
 
     Vector2 normalize(float x, float y)
@@ -28,5 +33,10 @@ public class Professor : MonoBehaviour
         temp.y = y / length;
 
         return temp;
+    }
+
+    float getDistance()
+    {
+        return Mathf.Sqrt(Mathf.Abs(oldBrother.transform.position.x - this.transform.position.x) + Mathf.Abs(oldBrother.transform.position.y - this.transform.position.y));
     }
 }
