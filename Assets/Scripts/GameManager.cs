@@ -5,22 +5,25 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour {
 
 	// Condition de Start
-	private enum Difficulty {Easy, Medium, Hard} ;
-	Difficulty difficulte; 
+	public enum Difficulty {Easy, Medium, Hard} ;
+	Difficulty difficulte;
+	public Difficulty Difficulte {
+		get {
+			return difficulte;
+		}
+	}
 
-	private enum Gender {Boy, Girl};
+ 
+
+	public enum Gender {Boy, Girl};
 	Gender olderSex, youngerSex;
-
-	private enum Rooms {Corridor=0, ToiletsM=7, ToiletsW=8, DirectorOffice=9, ProfRoom=10, Library=11, Locker=12, Gym=13, Courtyard=14, Cafeteria=15, Kitchen=16};
-
-	private enum Classes {History=1, Geography=2, French=3, Maths=4, English=5, Music=6};
 
 	private int nbAnswersMax;
 	private int nbEnnemiesMax;
 
 	private int playerAnswerCollected = 0;
 	private MapEditor mapScript;
-	private List<Enemy> enemies;
+	//private List<Enemy> enemies;
 	private List<int> Areas;
 
 	Controller oldBrother;
@@ -29,8 +32,11 @@ public class GameManager : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		Areas = new List<int> ();
+		// enemies = new List<Enemy>();
+		mapScript = GetComponent<MapEditor>();
+
 		// Par défaut pour le moment, flafla
 		olderSex = Gender.Boy;
 		youngerSex = Gender.Boy;
@@ -62,7 +68,7 @@ public class GameManager : MonoBehaviour {
 	void placeAnswers() {
 		System.Random rnd = new System.Random();
 		for (int i = 0; i < nbAnswersMax; i++) {
-			int r = rnd.Next (Areas.Count);
+			int r = rnd.Next (1, Areas.Count);
 			Debug.Log ("Area " + r + " get an answer !");
 			Areas.RemoveAt(r);
 		}
