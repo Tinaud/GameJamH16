@@ -8,12 +8,11 @@ public class Controller : MonoBehaviour
 	void Start() 
     {
         moveSpeed = 5f;
-
 	}
 
 	void Update() 
     {
         transform.Translate(Vector2.right * moveSpeed * Input.GetAxis("Horizontal") * Time.deltaTime);
-        transform.Translate(Vector3.down * moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime); 
+        transform.Translate(Vector3.down * moveSpeed * Input.GetAxis("Vertical") * Time.deltaTime);    
 	}
 }
