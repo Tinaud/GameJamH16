@@ -79,13 +79,16 @@ public class GameManager : MonoBehaviour {
 
 	public void setEasy() {
 		difficulte = Difficulty.Easy;
+		choiceDifficulty();
 	}
 
 	public void setMedium() {
 		difficulte = Difficulty.Medium;
+		choiceDifficulty();
 	}
 
 	public void setHard() {
 		difficulte = Difficulty.Hard;
+		choiceDifficulty();
 	}
 }
