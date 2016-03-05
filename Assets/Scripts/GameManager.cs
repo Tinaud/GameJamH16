@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 
 	private int nbEnnemiesMax;
 
-	public int AnswerCollected = 0;
+	public int NoteCollected = 0;
 	private MapEditor mapScript;
 	private List<Enemy> enemies;
 

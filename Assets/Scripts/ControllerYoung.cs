@@ -110,8 +110,16 @@ public class ControllerYoung : MonoBehaviour
 
 		} else if (patate.tag == "Zone") {
 
-		} else if (patate.tag == "Answer") {
-
+		} else if (patate.tag == "Note") {
+			Debug.Log ("Note");
+			Player player = GameObject.Find("Brothers").GetComponent<Player>();
+			player.Note++; 
+			Destroy (patate.gameObject);
+		} else if (patate.tag == "Apple") {
+			Debug.Log ("Pomme");
+			Player player = GameObject.Find("Brothers").GetComponent<Player>();
+			player.Health += 10; 
+			Destroy (patate.gameObject);
 		}
 	}
 }

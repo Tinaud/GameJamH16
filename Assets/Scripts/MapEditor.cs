@@ -4,19 +4,19 @@ using System.Collections.Generic;
 
 public class MapEditor : MonoBehaviour {
 
-	int nbAnswerToPlace;
-    private Room roomAnswer;
+	int nbNoteToPlace;
+    private Room roomNote;
     private List<Room> roomList;
     private int Diff;
     private int difficulte;
-    public GameObject Answer;
+    public GameObject Note;
 
-	public int NbAnswerToPlace {
+	public int NbNoteToPlace {
 		get {
-			return nbAnswerToPlace;
+			return nbNoteToPlace;
 		}
 		set {
-			nbAnswerToPlace = value;
+			nbNoteToPlace = value;
 		}
 	}
 
@@ -29,17 +29,17 @@ public class MapEditor : MonoBehaviour {
 
 	}
 
-	void placeAnswer() {
+	void placeNote() {
 
 	}
 
 	void InitializeMap() {
-		placeFirstAnswer(roomAnswer);
+		placeFirstNote(roomNote);
 	}
 		
-	void placeFirstAnswer(Room patate) {
+	void placeFirstNote(Room patate) {
 
-        GameObject newAnswer = (GameObject)Instantiate(Answer, new Vector3(0, 0, 0f), Quaternion.identity); // changer la position pour la position de la zone
+        GameObject newNote = (GameObject)Instantiate(Note, new Vector3(0, 0, 0f), Quaternion.identity); // changer la position pour la position de la zone
 
 	}
 

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Answer : MonoBehaviour{
+public class Note : MonoBehaviour{
 
 	private int index;
 
@@ -22,7 +22,7 @@ public class Answer : MonoBehaviour{
 		}
 	}
 
-	void SetAnswerText() {
+	void SetNoteText() {
 		switch (index) {
 		case 1: 
 			content = "A";

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/Note.cs.meta
+guid: 18831efd72362a642be0c9269affe9af
+timeCreated: 1457150413
+=======
+guid: 652c5976a050fe243a53c493c33c495d
+timeCreated: 1457153799
+>>>>>>> fb3a070ef064c5e166ad926e2e3278cbf365fe1c:Assets/Scripts/Note.cs.meta
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

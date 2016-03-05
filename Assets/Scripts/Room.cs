@@ -4,13 +4,13 @@ using System.Collections;
 public class Room : MonoBehaviour {
 
     private bool isVisible = false;
-    private bool hasAnswer = false;
+    private bool hasNote = false;
     private int sizeX = 0;
     private int sizeY = 0;
 
-    public void setHasAnswer(bool patate)
+    public void setHasNote(bool patate)
     {
-        hasAnswer = patate;
+        hasNote = patate;
     }
 
 

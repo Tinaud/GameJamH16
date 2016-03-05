@@ -23,8 +23,7 @@ public class HUD : MonoBehaviour {
 	// Use this for initialization
     void Start() {
         noteT.text = "" + notesTotal;
-		sister = GameObject.Find ("OldSister");
-		player = sister.GetComponent<Player> ();
+		player = GameObject.Find ("Brothers").GetComponent<Player> ();
 		time = GetComponent<Timer> ();
 	}
 	
@@ -33,7 +32,7 @@ public class HUD : MonoBehaviour {
 		hour = time.Hours;
 		min = time.Minutes;
 		health = player.Health;
-		notes = player.Answer;
+		notes = player.Note;
         healthSlider.value = health;
         note.text = "" + notes;
         if (hour < 10)
