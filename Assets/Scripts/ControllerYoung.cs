@@ -106,6 +106,7 @@ public class ControllerYoung : MonoBehaviour
 		} else if (patate.tag == "Note") {
 			Debug.Log ("Note");
 			player.Note++; 
+			patate.GetComponent<AudioSource> ().Play();
 			Destroy (patate.gameObject);
 		} else if (patate.tag == "Apple") {
 			Debug.Log ("Pomme");
