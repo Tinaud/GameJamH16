@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 	private int level = 1;
 	private GameObject levelImage;
 	private Text levelText;
+	Timer timer;
 
 	public enum Gender {Boy, Girl};
 	Gender olderSex, youngerSex;
@@ -32,10 +33,9 @@ public class GameManager : MonoBehaviour {
 
 		DontDestroyOnLoad(gameObject);
 
+		timer = GetComponent<Timer> ();
 		enemies = new List<Enemy>();
 		mapScript = GetComponent<MapEditor>();
-
-		InitGame ();
 
 		// Par défaut pour le moment, flafla
 		olderSex = Gender.Boy;
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour {
 		player = GetComponentInChildren<Player> ();
 	}
 
-	void InitGame() {
+	public void InitGame() {
 		levelImage = GameObject.Find ("LevelImage");
 		levelText = GameObject.Find ("LevelText").GetComponent<Text> ();
 
@@ -57,12 +57,16 @@ public class GameManager : MonoBehaviour {
 	void HideLevelImage()
 	{
 		levelImage.SetActive(false);
+		timer.StartTimer ();
 	}
 
 
 	// Update is called once per frame
 	void Update () {
-		if (!player.Alive)
+		if (timer.Hours == 16)
+			timer.StopTimer ();
+
+		if (!player.Alive || (!timer.enabled && !player.IsInExamRoom))
 			GameOver ();
 		
 	}
