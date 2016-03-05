@@ -39,7 +39,7 @@ public class Timer : MonoBehaviour
 	        timer = timer + 2*Time.deltaTime;
 	        hours = (int)timer / 60;
 	        minutes = (int) timer % 60;
-	        Debug.Log(hours + ":" + minutes);
+	        //Debug.Log(hours + ":" + minutes);
 		}
     }
 }
