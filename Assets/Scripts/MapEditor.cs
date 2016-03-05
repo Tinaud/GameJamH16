@@ -4,60 +4,61 @@ using System.Collections.Generic;
 
 public class MapEditor : MonoBehaviour {
 
-	Sprite mapSprite;
+	private SpriteRenderer sr;
+	public Sprite mapSprite;
+	GameObject zones;
+	GameObject walls;
 
+	int noteToPlace;
+	private List<Room> roomList;
 
-	int nbNoteToPlace;
-    private Room roomNote;
-    private List<Room> roomList;
-    private int Diff;
-    private int difficulte;
-    public GameObject Note;
+	void placeNote(Room patateRoom) {
+		Vector2 randomPos = new Vector2 ();
 
-	public int NbNoteToPlace {
-		get {
-			return nbNoteToPlace;
-		}
-		set {
-			nbNoteToPlace = value;
-		}
+		randomPos.x = Random.Range ((patateRoom.transform.position.x - patateRoom.gameObject.GetComponent<BoxCollider2D> ().size.x / 2), 
+			(patateRoom.transform.position.x + patateRoom.gameObject.GetComponent<BoxCollider2D> ().size.x / 2));
+
+		randomPos.y = Random.Range ((patateRoom.transform.position.y - patateRoom.gameObject.GetComponent<BoxCollider2D> ().size.y / 2), 
+			(patateRoom.transform.position.y + patateRoom.gameObject.GetComponent<BoxCollider2D> ().size.y / 2));
+
+		GameObject note = Instantiate (Resources.Load ("Note", typeof(GameObject)), randomPos, Quaternion.identity) as GameObject;
+		noteToPlace--;
+		Debug.Log ("note in " + patateRoom.transform.name);
 	}
 
-    // Use this for initialization
-    void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
+	public void InitializeMap() {
+		sr = GetComponent<SpriteRenderer> ();
+		sr.sprite = mapSprite;
+		zones = Instantiate (Resources.Load ("Zones", typeof(GameObject))) as GameObject;
+		walls = Instantiate (Resources.Load ("Walls", typeof(GameObject))) as GameObject;
 
-	}
-
-	void placeNote() {
-
-	}
-
-	void InitializeMap() {
-		
-		placeFirstNote(roomNote);
+		roomList = new List<Room>(zones.GetComponentsInChildren<Room> ());
+		placeNote (getRandomRoom());
 	}
 		
-	void placeFirstNote(Room patate) {
+	Room getRandomRoom() {
+		System.Random rnd = new System.Random ();
+		int patate = rnd.Next (0, roomList.Count);
 
+		Room randomRoom = roomList [patate];
+		roomList.RemoveAt (patate);
+
+		return randomRoom;
 	}
 
     public void setEasy()
     {
-        difficulte = 6;
+		noteToPlace = 6;
     }
 
     public void setMedium()
     {
-        difficulte = 9;
+		noteToPlace = 9;
     }
 
     public void setHard()
     {
-        difficulte = 12;
+		noteToPlace = 12;
     }
 }
 

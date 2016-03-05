@@ -81,10 +81,9 @@ public class Controller : MonoBehaviour
 
 	private void OnTriggerEnter2D (Collider2D patate)
 	{
-		if (patate.tag == "Wall") {
-
-		} else if (patate.tag == "Zone") {
-			
+		if (patate.tag == "Zone") {
+			Debug.Log ("Entering " + patate.name);
+			patate.GetComponent<Room> ().ControllersInside++;
 		} else if (patate.tag == "Apple") {
 			Debug.Log ("Pomme");
 			Player player = GameObject.Find("Brothers").GetComponent<Player>();
@@ -93,9 +92,19 @@ public class Controller : MonoBehaviour
 		}
 	}
 
+
+	private void OnTriggerExit2D (Collider2D patate)
+	{
+		if (patate.tag == "Zone") {
+			Debug.Log ("Exiting " + patate.name);
+			patate.GetComponent<Room> ().ControllersInside--;
+		}
+	}
+
     public void attack(GameObject enemy)
     {
         Enemy hittedGuy = GetComponent<Enemy>();
         Destroy(enemy);
     }
+
 }

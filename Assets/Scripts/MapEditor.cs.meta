@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: 86a7890382b7d434c9562d235461d003
-timeCreated: 1457126620
+timeCreated: 1457180696
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - mapSprite: {fileID: 21300000, guid: ca222ab319d748f48ba45239cb3fff4d, type: 3}
+  - Note: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
