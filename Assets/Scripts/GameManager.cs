@@ -19,8 +19,9 @@ public class GameManager : MonoBehaviour {
 	Gender olderSex, youngerSex;
 
 	private int nbEnnemiesMax;
+    private int nbNotesMax;
 
-	public int NoteCollected = 0;
+    public int NoteCollected = 0;
 	private MapEditor mapScript;
 	private List<Enemy> enemies;
 
@@ -53,6 +54,7 @@ public class GameManager : MonoBehaviour {
 		levelText.text = "Exam " + level;
 		levelImage.SetActive (true);
 
+        nbNotesMax = mapScript.NoteToPlace;
 		Invoke("HideLevelImage", levelStartDelay);
 		Debug.Log ("Level 1 Start !!!");
 	}
@@ -73,11 +75,23 @@ public class GameManager : MonoBehaviour {
 
 		if (!player.Alive || (!timer.enabled && !player.IsInExamRoom))
 			GameOver ();
+
+        if(timer.Hours == 14 && timer.Minutes == 0)
+        {
+            eventManager.applyEventEffect(2, ref enemies);
+        }
 		
 	}
 
 	public bool AnswerLostInToilets() {
-		return true;
+        Room toilet = GameObject.Find("ZoneToiletsF").GetComponent<Room>();
+        if (toilet.HasNote)
+        {
+            nbNotesMax--;
+            mapScript.NoteToPlace--;
+            return true;
+        }
+		return false;
 	}
 
 	public void GameOver() {

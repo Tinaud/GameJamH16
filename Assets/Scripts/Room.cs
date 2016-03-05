@@ -33,7 +33,19 @@ public class Room : MonoBehaviour {
     private int sizeX = 0;
     private int sizeY = 0;
 
-	void Start() {
+    public bool HasNote
+    {
+        get
+        {
+            return hasNote;
+        }
+        set
+        {
+            hasNote = value;
+        }
+    }
+
+    void Start() {
 		sr = GetComponent<SpriteRenderer> ();
 		boxCollider = GetComponent<BoxCollider2D> ();
 		srColor = sr.color;
