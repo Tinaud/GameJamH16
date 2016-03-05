@@ -8,7 +8,6 @@ public class Player : MonoBehaviour {
 	ControllerYoung youngBrother;
 
 	private bool isInExamRoom = false;
-
 	public bool IsInExamRoom {
 		get {
 			return isInExamRoom;
@@ -19,8 +18,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public int damagePower = 2;
-	private float health = 80;
-
+	private float health = 100;
 	public float Health {
 		get {
 			return health;
@@ -31,7 +29,6 @@ public class Player : MonoBehaviour {
 	}
 
 	private bool alive = true;
-
 	public bool Alive {
 		get {
 			return alive;
@@ -39,9 +36,6 @@ public class Player : MonoBehaviour {
 	}
 
 	private int note;		// Nombre de reponses collectees
-
-
-
 	public int Note {
 		get {
 			return note;

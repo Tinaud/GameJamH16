@@ -15,11 +15,17 @@ public class GameManager : MonoBehaviour {
 	private Text levelText;
 	Timer timer;
 
-	public enum Gender {Boy, Girl};
-	Gender olderSex, youngerSex;
+	//public enum Gender {Boy, Girl};
+	//Gender olderSex, youngerSex;
 
 	private int nbEnnemiesMax;
-    private int nbNotesMax;
+	private int nbNotesMax;
+
+	public int NbNotesMax {
+		get {
+			return nbNotesMax;
+		}
+	}
 
     public int NoteCollected = 0;
 	private MapEditor mapScript;
@@ -42,8 +48,6 @@ public class GameManager : MonoBehaviour {
 		mapScript = GameObject.Find("Map").GetComponent<MapEditor>();
 
 		// Par défaut pour le moment, flafla
-		olderSex = Gender.Boy;
-		youngerSex = Gender.Boy;
 		player = GetComponentInParent<ControllerYoung> ().GetComponentInParent<Player>();
 	}
 
@@ -76,15 +80,18 @@ public class GameManager : MonoBehaviour {
 		if (!player.Alive || (!timer.enabled && !player.IsInExamRoom))
 			GameOver ();
 
-        if(timer.Hours == 14 && timer.Minutes == 0)
+		if (player.Note == 6)
+			GameWin ();
+
+       /* if(timer.Hours == 14 && timer.Minutes == 0)
         {
             eventManager.applyEventEffect(2, ref enemies);
-        }
+        }*/
 		
 	}
 
 	public bool AnswerLostInToilets() {
-        Room toilet = GameObject.Find("ZoneToiletsF").GetComponent<Room>();
+		Room toilet = GameObject.Find("ZoneToiletsF").GetComponent<Room>();
         if (toilet.HasNote)
         {
             nbNotesMax--;
@@ -103,6 +110,16 @@ public class GameManager : MonoBehaviour {
 
 		enabled = false;
 
+	}
+
+	public void GameWin() {
+		//Set levelText to display number of levels passed and game over message
+		levelText.text = "You success your Exam " + level + " !!!!";
+
+		//Enable black background image gameObject.
+		levelImage.SetActive (true);
+
+		enabled = false;
 	}
 
 /*	IEnumerator eventLoop() {
