@@ -1,51 +1,39 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Timer : MonoBehaviour {
+public class Timer : MonoBehaviour
+{
+    public static float timer = 480;
+    public bool timeStarted = false;
+	int hours, minutes;
 
-    public Rect timerRect;
-    private float startTime;
-    private string currentTime;
-    private int seconds, minutes, hours;
-
-	bool activate = false;
-
-	public bool Activate {
+	public int Hours {
 		get {
-			return activate;
-		}
-		set {
-			activate = value;
+			return hours;
 		}
 	}
 
-	void Awake () {
-        hours = 8;
-		minutes = 0;
-		seconds = 0;
-    }
-
+    void Start()
+	{
+		
+	}
+		
 	public void StartTimer() {
-		activate = true;
+		timeStarted = true;
 	}
-	
-	void Update () {
-		if (activate) {
-			if (hours == 16) {
-				enabled = false;
-			}
 
-			seconds += 40;
-			if (seconds >= 59) {
-				minutes++;
-				seconds = 0;
-			}
-			if (minutes == 59) {
-				hours++;
-				minutes = 0;
-			}
-			currentTime = string.Format ("{0:##}:{1:##}", hours, minutes);
-			Debug.Log (currentTime);
+	public void StopTimer() {
+		timeStarted = false;
+		enabled = false;
+	}
+
+    void Update()
+    {
+		if (timeStarted) {
+	        timer = timer + 2*Time.deltaTime;
+	        hours = (int)timer / 60;
+	        minutes = (int) timer % 60;
+	        Debug.Log(hours + ":" + minutes);
 		}
     }
 }

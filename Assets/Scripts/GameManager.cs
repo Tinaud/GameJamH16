@@ -63,6 +63,9 @@ public class GameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if (timer.Hours == 16)
+			timer.StopTimer ();
+
 		if (!player.Alive || (!timer.enabled && !player.IsInExamRoom))
 			GameOver ();
 		
