@@ -11,8 +11,16 @@ public class ControllerYoung : MonoBehaviour
     private int temp;
     private LineRenderer lr;
 
+	private Animator animator;
+	private BoxCollider2D boxCollider;
+	private Rigidbody2D rb2D;
+
     void Start()
     {
+		animator = GetComponent<Animator>();
+		boxCollider = GetComponent <BoxCollider2D> ();
+		rb2D = GetComponent <Rigidbody2D> ();
+
         oldBrother = GameObject.Find("Brothers").GetComponentInChildren<Controller>().gameObject; //TEMP!!
         moveSpeed = 4f;
         temp = 0;
@@ -75,4 +83,15 @@ public class ControllerYoung : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
     }
+
+	private void OnTriggerEnter2D (Collider2D patate)
+	{
+		if (patate.tag == "Wall") {
+
+		} else if (patate.tag == "Zone") {
+
+		} else if (patate.tag == "Answer") {
+
+		}
+	}
 }
