@@ -82,7 +82,7 @@ public class ControllerYoung : MonoBehaviour
             else
                 lineWidth -= 0.02f;
             temp++;
-            Debug.Log(distance);
+           // Debug.Log(distance);
             if (distance > 0 && distance < 3)
                 lineColor.a = 0;
             else if (distance > 3 && distance < 4)
