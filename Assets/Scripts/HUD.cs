@@ -17,17 +17,21 @@ public class HUD : MonoBehaviour {
     public Slider healthSlider;
 	GameObject sister;
 	Player player;
+	Timer time;
 
 
 	// Use this for initialization
     void Start() {
         noteT.text = "" + notesTotal;
-		sister = GameObject.FindGameObjectWithTag ("OldSister");
+		sister = GameObject.Find ("OldSister");
 		player = sister.GetComponent<Player> ();
+		time = GetComponent<Timer> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		hour = time.Hours;
+		min = time.Minutes;
 		health = player.Health;
 		notes = player.Answer;
         healthSlider.value = health;
