@@ -1,0 +1,1935 @@
+fileFormatVersion: 2
+guid: 040d22b996784a445b5eed235b60bd2a
+timeCreated: 1457209871
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SpriteSheetCompleteAnimations_0
+    21300002: SpriteSheetCompleteAnimations_1
+    21300004: SpriteSheetCompleteAnimations_2
+    21300006: SpriteSheetCompleteAnimations_3
+    21300008: SpriteSheetCompleteAnimations_4
+    21300010: SpriteSheetCompleteAnimations_5
+    21300012: SpriteSheetCompleteAnimations_6
+    21300014: SpriteSheetCompleteAnimations_7
+    21300016: SpriteSheetCompleteAnimations_8
+    21300018: SpriteSheetCompleteAnimations_9
+    21300020: SpriteSheetCompleteAnimations_10
+    21300022: SpriteSheetCompleteAnimations_11
+    21300024: SpriteSheetCompleteAnimations_12
+    21300026: SpriteSheetCompleteAnimations_13
+    21300028: SpriteSheetCompleteAnimations_14
+    21300030: SpriteSheetCompleteAnimations_15
+    21300032: SpriteSheetCompleteAnimations_16
+    21300034: SpriteSheetCompleteAnimations_17
+    21300036: SpriteSheetCompleteAnimations_18
+    21300038: SpriteSheetCompleteAnimations_19
+    21300040: SpriteSheetCompleteAnimations_20
+    21300042: SpriteSheetCompleteAnimations_21
+    21300044: SpriteSheetCompleteAnimations_22
+    21300046: SpriteSheetCompleteAnimations_23
+    21300048: SpriteSheetCompleteAnimations_24
+    21300050: SpriteSheetCompleteAnimations_25
+    21300052: SpriteSheetCompleteAnimations_26
+    21300054: SpriteSheetCompleteAnimations_27
+    21300056: SpriteSheetCompleteAnimations_28
+    21300058: SpriteSheetCompleteAnimations_29
+    21300060: SpriteSheetCompleteAnimations_30
+    21300062: SpriteSheetCompleteAnimations_31
+    21300064: SpriteSheetCompleteAnimations_32
+    21300066: SpriteSheetCompleteAnimations_33
+    21300068: SpriteSheetCompleteAnimations_34
+    21300070: SpriteSheetCompleteAnimations_35
+    21300072: SpriteSheetCompleteAnimations_36
+    21300074: SpriteSheetCompleteAnimations_37
+    21300076: SpriteSheetCompleteAnimations_38
+    21300078: SpriteSheetCompleteAnimations_39
+    21300080: SpriteSheetCompleteAnimations_40
+    21300082: SpriteSheetCompleteAnimations_41
+    21300084: SpriteSheetCompleteAnimations_42
+    21300086: SpriteSheetCompleteAnimations_43
+    21300088: SpriteSheetCompleteAnimations_44
+    21300090: SpriteSheetCompleteAnimations_45
+    21300092: SpriteSheetCompleteAnimations_46
+    21300094: SpriteSheetCompleteAnimations_47
+    21300096: SpriteSheetCompleteAnimations_48
+    21300098: SpriteSheetCompleteAnimations_49
+    21300100: SpriteSheetCompleteAnimations_50
+    21300102: SpriteSheetCompleteAnimations_51
+    21300104: SpriteSheetCompleteAnimations_52
+    21300106: SpriteSheetCompleteAnimations_53
+    21300108: SpriteSheetCompleteAnimations_54
+    21300110: SpriteSheetCompleteAnimations_55
+    21300112: SpriteSheetCompleteAnimations_56
+    21300114: SpriteSheetCompleteAnimations_57
+    21300116: SpriteSheetCompleteAnimations_58
+    21300118: SpriteSheetCompleteAnimations_59
+    21300120: SpriteSheetCompleteAnimations_60
+    21300122: SpriteSheetCompleteAnimations_61
+    21300124: SpriteSheetCompleteAnimations_62
+    21300126: SpriteSheetCompleteAnimations_63
+    21300128: SpriteSheetCompleteAnimations_64
+    21300130: SpriteSheetCompleteAnimations_65
+    21300132: SpriteSheetCompleteAnimations_66
+    21300134: SpriteSheetCompleteAnimations_67
+    21300136: SpriteSheetCompleteAnimations_68
+    21300138: SpriteSheetCompleteAnimations_69
+    21300140: SpriteSheetCompleteAnimations_70
+    21300142: SpriteSheetCompleteAnimations_71
+    21300144: SpriteSheetCompleteAnimations_72
+    21300146: SpriteSheetCompleteAnimations_73
+    21300148: SpriteSheetCompleteAnimations_74
+    21300150: SpriteSheetCompleteAnimations_75
+    21300152: SpriteSheetCompleteAnimations_76
+    21300154: SpriteSheetCompleteAnimations_77
+    21300156: SpriteSheetCompleteAnimations_78
+    21300158: SpriteSheetCompleteAnimations_79
+    21300160: SpriteSheetCompleteAnimations_80
+    21300162: SpriteSheetCompleteAnimations_81
+    21300164: SpriteSheetCompleteAnimations_82
+    21300166: SpriteSheetCompleteAnimations_83
+    21300168: SpriteSheetCompleteAnimations_84
+    21300170: SpriteSheetCompleteAnimations_85
+    21300172: SpriteSheetCompleteAnimations_86
+    21300174: SpriteSheetCompleteAnimations_87
+    21300176: SpriteSheetCompleteAnimations_88
+    21300178: SpriteSheetCompleteAnimations_89
+    21300180: SpriteSheetCompleteAnimations_90
+    21300182: SpriteSheetCompleteAnimations_91
+    21300184: SpriteSheetCompleteAnimations_92
+    21300186: SpriteSheetCompleteAnimations_93
+    21300188: SpriteSheetCompleteAnimations_94
+    21300190: SpriteSheetCompleteAnimations_95
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: SpriteSheetCompleteAnimations_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -14, y: 11}
+        - {x: -14, y: -14}
+        - {x: -12, y: -16}
+        - {x: 9, y: -16}
+        - {x: 14, y: -14}
+        - {x: 14, y: 8}
+        - {x: 12, y: 16}
+    - name: SpriteSheetCompleteAnimations_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -14, y: 11}
+        - {x: -14, y: -14}
+        - {x: -12, y: -16}
+        - {x: 9, y: -16}
+        - {x: 14, y: -14}
+        - {x: 14, y: 8}
+        - {x: 12, y: 16}
+    - name: SpriteSheetCompleteAnimations_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -14, y: 11}
+        - {x: -14, y: -14}
+        - {x: -12, y: -16}
+        - {x: 9, y: -16}
+        - {x: 14, y: -14}
+        - {x: 14, y: 8}
+        - {x: 12, y: 16}
+    - name: SpriteSheetCompleteAnimations_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 16}
+        - {x: -7, y: 16}
+        - {x: -13, y: 9}
+        - {x: -13, y: -2}
+        - {x: -10, y: -16}
+        - {x: 7, y: -16}
+        - {x: 9, y: -12}
+        - {x: 11, y: 1}
+        - {x: 11, y: 11}
+    - name: SpriteSheetCompleteAnimations_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 16}
+        - {x: -7, y: 16}
+        - {x: -13, y: 9}
+        - {x: -13, y: -2}
+        - {x: -10, y: -16}
+        - {x: 7, y: -16}
+        - {x: 9, y: -12}
+        - {x: 11, y: 1}
+        - {x: 11, y: 11}
+    - name: SpriteSheetCompleteAnimations_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 16}
+        - {x: -8, y: 16}
+        - {x: -13, y: 10}
+        - {x: -13, y: -2}
+        - {x: -8, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: -11}
+        - {x: 11, y: 3}
+        - {x: 11, y: 11}
+    - name: SpriteSheetCompleteAnimations_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -12, y: 11}
+        - {x: -12, y: 2}
+        - {x: -9, y: -16}
+        - {x: 8, y: -16}
+        - {x: 12, y: -10}
+        - {x: 12, y: 11}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -12, y: -16}
+        - {x: 5, y: -16}
+        - {x: 9, y: -15}
+        - {x: 12, y: -10}
+        - {x: 12, y: 11}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -12, y: -16}
+        - {x: 5, y: -16}
+        - {x: 9, y: -15}
+        - {x: 12, y: -10}
+        - {x: 12, y: 11}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 16}
+        - {x: -8, y: 16}
+        - {x: -14, y: 8}
+        - {x: -14, y: -16}
+        - {x: 13, y: -16}
+        - {x: 14, y: -12}
+        - {x: 14, y: 6}
+        - {x: 12, y: 14}
+    - name: SpriteSheetCompleteAnimations_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 16}
+        - {x: -8, y: 16}
+        - {x: -14, y: 8}
+        - {x: -14, y: -16}
+        - {x: 13, y: -16}
+        - {x: 14, y: -12}
+        - {x: 14, y: 6}
+        - {x: 12, y: 14}
+    - name: SpriteSheetCompleteAnimations_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 16}
+        - {x: -8, y: 16}
+        - {x: -14, y: 8}
+        - {x: -14, y: -16}
+        - {x: 13, y: -16}
+        - {x: 14, y: -12}
+        - {x: 14, y: 6}
+        - {x: 12, y: 14}
+    - name: SpriteSheetCompleteAnimations_12
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -14, y: 11}
+        - {x: -14, y: -14}
+        - {x: -12, y: -16}
+        - {x: 9, y: -16}
+        - {x: 14, y: -14}
+        - {x: 14, y: 8}
+        - {x: 12, y: 16}
+    - name: SpriteSheetCompleteAnimations_13
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -14, y: 11}
+        - {x: -14, y: -14}
+        - {x: -12, y: -16}
+        - {x: 9, y: -16}
+        - {x: 14, y: -14}
+        - {x: 14, y: 8}
+        - {x: 12, y: 16}
+    - name: SpriteSheetCompleteAnimations_14
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -14, y: 11}
+        - {x: -14, y: -14}
+        - {x: -12, y: -16}
+        - {x: 9, y: -16}
+        - {x: 14, y: -14}
+        - {x: 14, y: 8}
+        - {x: 12, y: 16}
+    - name: SpriteSheetCompleteAnimations_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 16}
+        - {x: -6, y: 16}
+        - {x: -12, y: 12}
+        - {x: -12, y: -8}
+        - {x: -9, y: -16}
+        - {x: 8, y: -16}
+        - {x: 10, y: -12}
+        - {x: 12, y: -4}
+        - {x: 12, y: 13}
+    - name: SpriteSheetCompleteAnimations_16
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 16}
+        - {x: -6, y: 16}
+        - {x: -12, y: 12}
+        - {x: -12, y: -8}
+        - {x: -9, y: -16}
+        - {x: 8, y: -16}
+        - {x: 10, y: -12}
+        - {x: 12, y: -4}
+        - {x: 12, y: 13}
+    - name: SpriteSheetCompleteAnimations_17
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 16}
+        - {x: -10, y: 16}
+        - {x: -12, y: 13}
+        - {x: -12, y: -12}
+        - {x: -7, y: -16}
+        - {x: 6, y: -16}
+        - {x: 9, y: -11}
+        - {x: 12, y: -1}
+        - {x: 12, y: 13}
+    - name: SpriteSheetCompleteAnimations_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -12, y: 11}
+        - {x: -12, y: 2}
+        - {x: -9, y: -16}
+        - {x: 8, y: -16}
+        - {x: 12, y: -10}
+        - {x: 12, y: 11}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_19
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -12, y: -16}
+        - {x: 5, y: -16}
+        - {x: 9, y: -15}
+        - {x: 12, y: -10}
+        - {x: 12, y: 11}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -12, y: -16}
+        - {x: 5, y: -16}
+        - {x: 9, y: -15}
+        - {x: 12, y: -10}
+        - {x: 12, y: 11}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_21
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 16}
+        - {x: -8, y: 16}
+        - {x: -14, y: 8}
+        - {x: -14, y: -16}
+        - {x: 13, y: -16}
+        - {x: 14, y: -12}
+        - {x: 14, y: 6}
+        - {x: 12, y: 14}
+    - name: SpriteSheetCompleteAnimations_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 16}
+        - {x: -8, y: 16}
+        - {x: -14, y: 8}
+        - {x: -14, y: -16}
+        - {x: 13, y: -16}
+        - {x: 14, y: -12}
+        - {x: 14, y: 6}
+        - {x: 12, y: 14}
+    - name: SpriteSheetCompleteAnimations_23
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 16}
+        - {x: -8, y: 16}
+        - {x: -14, y: 8}
+        - {x: -14, y: -16}
+        - {x: 13, y: -16}
+        - {x: 14, y: -12}
+        - {x: 14, y: 6}
+        - {x: 12, y: 14}
+    - name: SpriteSheetCompleteAnimations_24
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -14, y: 11}
+        - {x: -14, y: -14}
+        - {x: -12, y: -16}
+        - {x: 9, y: -16}
+        - {x: 14, y: -14}
+        - {x: 14, y: 8}
+        - {x: 12, y: 16}
+    - name: SpriteSheetCompleteAnimations_25
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -14, y: 11}
+        - {x: -14, y: -14}
+        - {x: -12, y: -16}
+        - {x: 9, y: -16}
+        - {x: 14, y: -14}
+        - {x: 14, y: 8}
+        - {x: 12, y: 16}
+    - name: SpriteSheetCompleteAnimations_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -14, y: 11}
+        - {x: -14, y: -14}
+        - {x: -12, y: -16}
+        - {x: 9, y: -16}
+        - {x: 14, y: -14}
+        - {x: 14, y: 8}
+        - {x: 12, y: 16}
+    - name: SpriteSheetCompleteAnimations_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -12, y: -16}
+        - {x: 10, y: -16}
+        - {x: 12, y: -10}
+        - {x: 12, y: 15}
+        - {x: 11, y: 16}
+    - name: SpriteSheetCompleteAnimations_28
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -12, y: -16}
+        - {x: 10, y: -16}
+        - {x: 12, y: -10}
+        - {x: 12, y: 15}
+        - {x: 11, y: 16}
+    - name: SpriteSheetCompleteAnimations_29
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 16}
+        - {x: -10, y: 16}
+        - {x: -12, y: 13}
+        - {x: -12, y: -12}
+        - {x: -7, y: -16}
+        - {x: 6, y: -16}
+        - {x: 9, y: -11}
+        - {x: 12, y: -1}
+        - {x: 12, y: 13}
+    - name: SpriteSheetCompleteAnimations_30
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 16}
+        - {x: -13, y: 11}
+        - {x: -13, y: 2}
+        - {x: -10, y: -16}
+        - {x: 7, y: -16}
+        - {x: 11, y: -10}
+        - {x: 11, y: 11}
+        - {x: 8, y: 16}
+    - name: SpriteSheetCompleteAnimations_31
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 16}
+        - {x: -12, y: 13}
+        - {x: -12, y: -10}
+        - {x: -9, y: -16}
+        - {x: 11, y: -16}
+        - {x: 12, y: -8}
+        - {x: 12, y: 13}
+        - {x: 7, y: 16}
+    - name: SpriteSheetCompleteAnimations_32
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 16}
+        - {x: -12, y: 13}
+        - {x: -12, y: -10}
+        - {x: -9, y: -16}
+        - {x: 11, y: -16}
+        - {x: 12, y: -8}
+        - {x: 12, y: 13}
+        - {x: 7, y: 16}
+    - name: SpriteSheetCompleteAnimations_33
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 16}
+        - {x: -8, y: 16}
+        - {x: -14, y: 8}
+        - {x: -14, y: -16}
+        - {x: 13, y: -16}
+        - {x: 14, y: -12}
+        - {x: 14, y: 6}
+        - {x: 12, y: 14}
+    - name: SpriteSheetCompleteAnimations_34
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 16}
+        - {x: -8, y: 16}
+        - {x: -14, y: 8}
+        - {x: -14, y: -16}
+        - {x: 13, y: -16}
+        - {x: 14, y: -12}
+        - {x: 14, y: 6}
+        - {x: 12, y: 14}
+    - name: SpriteSheetCompleteAnimations_35
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 16}
+        - {x: -8, y: 16}
+        - {x: -14, y: 8}
+        - {x: -14, y: -16}
+        - {x: 13, y: -16}
+        - {x: 14, y: -12}
+        - {x: 14, y: 6}
+        - {x: 12, y: 14}
+    - name: SpriteSheetCompleteAnimations_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 16}
+        - {x: -12, y: 9}
+        - {x: -12, y: -13}
+        - {x: -7, y: -14}
+        - {x: 10, y: -14}
+        - {x: 12, y: -12}
+        - {x: 12, y: 1}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_37
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 16}
+        - {x: -12, y: 9}
+        - {x: -12, y: -13}
+        - {x: -7, y: -14}
+        - {x: 10, y: -14}
+        - {x: 12, y: -12}
+        - {x: 12, y: 1}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_38
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 16}
+        - {x: -12, y: 9}
+        - {x: -12, y: -13}
+        - {x: -7, y: -14}
+        - {x: 10, y: -14}
+        - {x: 12, y: -12}
+        - {x: 12, y: 1}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_39
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 16}
+        - {x: -6, y: 16}
+        - {x: -12, y: 11}
+        - {x: -13, y: 10}
+        - {x: -13, y: -10}
+        - {x: -6, y: -14}
+        - {x: 11, y: -14}
+        - {x: 11, y: 15}
+    - name: SpriteSheetCompleteAnimations_40
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 16}
+        - {x: -5, y: 16}
+        - {x: -11, y: 11}
+        - {x: -12, y: 10}
+        - {x: -12, y: -10}
+        - {x: -5, y: -14}
+        - {x: 12, y: -14}
+        - {x: 12, y: 15}
+    - name: SpriteSheetCompleteAnimations_41
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 3, y: 16}
+        - {x: -4, y: 16}
+        - {x: -11, y: 11}
+        - {x: -12, y: 6}
+        - {x: -12, y: -4}
+        - {x: -5, y: -14}
+        - {x: 10, y: -14}
+        - {x: 12, y: -3}
+        - {x: 12, y: 11}
+        - {x: 11, y: 14}
+    - name: SpriteSheetCompleteAnimations_42
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 15}
+        - {x: -12, y: 13}
+        - {x: -12, y: -6}
+        - {x: -9, y: -15}
+        - {x: 4, y: -15}
+        - {x: 12, y: -6}
+        - {x: 12, y: 12}
+        - {x: 5, y: 15}
+    - name: SpriteSheetCompleteAnimations_43
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 15}
+        - {x: -12, y: 12}
+        - {x: -12, y: -13}
+        - {x: -8, y: -15}
+        - {x: 4, y: -15}
+        - {x: 12, y: -6}
+        - {x: 12, y: 12}
+        - {x: 5, y: 15}
+    - name: SpriteSheetCompleteAnimations_44
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 15}
+        - {x: -11, y: 12}
+        - {x: -11, y: -13}
+        - {x: -7, y: -15}
+        - {x: 5, y: -15}
+        - {x: 13, y: -6}
+        - {x: 13, y: 12}
+        - {x: 6, y: 15}
+    - name: SpriteSheetCompleteAnimations_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 4, y: 15}
+        - {x: -7, y: 15}
+        - {x: -11, y: 14}
+        - {x: -13, y: 1}
+        - {x: -13, y: -11}
+        - {x: -10, y: -15}
+        - {x: 8, y: -15}
+        - {x: 11, y: -13}
+        - {x: 11, y: 2}
+        - {x: 9, y: 9}
+    - name: SpriteSheetCompleteAnimations_46
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 5, y: 15}
+        - {x: -3, y: 15}
+        - {x: -10, y: 13}
+        - {x: -12, y: 10}
+        - {x: -12, y: -13}
+        - {x: -11, y: -15}
+        - {x: 9, y: -15}
+        - {x: 12, y: -13}
+        - {x: 12, y: 2}
+        - {x: 10, y: 9}
+    - name: SpriteSheetCompleteAnimations_47
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6, y: 15}
+        - {x: -5, y: 15}
+        - {x: -9, y: 14}
+        - {x: -11, y: 1}
+        - {x: -11, y: -11}
+        - {x: -8, y: -15}
+        - {x: 10, y: -15}
+        - {x: 13, y: -13}
+        - {x: 13, y: 2}
+        - {x: 11, y: 9}
+    - name: SpriteSheetCompleteAnimations_48
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 15}
+        - {x: -14, y: 8}
+        - {x: -14, y: -10}
+        - {x: -10, y: -15}
+        - {x: 7, y: -15}
+        - {x: 11, y: -10}
+        - {x: 11, y: 10}
+        - {x: 4, y: 15}
+    - name: SpriteSheetCompleteAnimations_49
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 15}
+        - {x: -14, y: 8}
+        - {x: -14, y: -10}
+        - {x: -10, y: -15}
+        - {x: 7, y: -15}
+        - {x: 11, y: -10}
+        - {x: 11, y: 10}
+        - {x: 4, y: 15}
+    - name: SpriteSheetCompleteAnimations_50
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 15}
+        - {x: -13, y: 8}
+        - {x: -13, y: -10}
+        - {x: -9, y: -15}
+        - {x: 8, y: -15}
+        - {x: 12, y: -10}
+        - {x: 12, y: 10}
+        - {x: 5, y: 15}
+    - name: SpriteSheetCompleteAnimations_51
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5, y: 15}
+        - {x: -12, y: 11}
+        - {x: -12, y: -5}
+        - {x: -10, y: -11}
+        - {x: -6, y: -15}
+        - {x: 8, y: -15}
+        - {x: 12, y: -7}
+        - {x: 12, y: 9}
+        - {x: 7, y: 15}
+    - name: SpriteSheetCompleteAnimations_52
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 15}
+        - {x: -11, y: 11}
+        - {x: -11, y: -5}
+        - {x: -9, y: -11}
+        - {x: -5, y: -15}
+        - {x: 9, y: -15}
+        - {x: 13, y: -7}
+        - {x: 13, y: 9}
+        - {x: 8, y: 15}
+    - name: SpriteSheetCompleteAnimations_53
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4, y: 15}
+        - {x: -11, y: 11}
+        - {x: -11, y: -13}
+        - {x: -4, y: -15}
+        - {x: 8, y: -15}
+        - {x: 13, y: 0}
+        - {x: 13, y: 9}
+        - {x: 7, y: 15}
+    - name: SpriteSheetCompleteAnimations_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 16}
+        - {x: -11, y: 13}
+        - {x: -13, y: 7}
+        - {x: -13, y: 1}
+        - {x: -6, y: -14}
+        - {x: 7, y: -14}
+        - {x: 11, y: -5}
+        - {x: 11, y: 14}
+        - {x: 5, y: 16}
+    - name: SpriteSheetCompleteAnimations_55
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 16}
+        - {x: -12, y: 14}
+        - {x: -12, y: -5}
+        - {x: -9, y: -14}
+        - {x: 10, y: -14}
+        - {x: 12, y: -7}
+        - {x: 12, y: 15}
+        - {x: 8, y: 16}
+    - name: SpriteSheetCompleteAnimations_56
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -11, y: 9}
+        - {x: -11, y: -4}
+        - {x: -9, y: -9}
+        - {x: -6, y: -14}
+        - {x: 11, y: -14}
+        - {x: 13, y: -7}
+        - {x: 13, y: 15}
+        - {x: 11, y: 16}
+    - name: SpriteSheetCompleteAnimations_57
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 13}
+        - {x: 11, y: 16}
+        - {x: -7, y: 16}
+        - {x: -13, y: 13}
+        - {x: -13, y: -12}
+        - {x: -10, y: -14}
+        - {x: 7, y: -14}
+        - {x: 11, y: -9}
+        - {x: 12, y: -7}
+    - name: SpriteSheetCompleteAnimations_58
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 13}
+        - {x: 11, y: 16}
+        - {x: -7, y: 16}
+        - {x: -13, y: 13}
+        - {x: -13, y: -12}
+        - {x: -10, y: -14}
+        - {x: 7, y: -14}
+        - {x: 11, y: -9}
+        - {x: 12, y: -7}
+    - name: SpriteSheetCompleteAnimations_59
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 12, y: 13}
+        - {x: 11, y: 16}
+        - {x: -7, y: 16}
+        - {x: -13, y: 13}
+        - {x: -13, y: -12}
+        - {x: -10, y: -14}
+        - {x: 7, y: -14}
+        - {x: 11, y: -9}
+        - {x: 12, y: -7}
+    - name: SpriteSheetCompleteAnimations_60
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 16}
+        - {x: -11, y: -15}
+        - {x: -9, y: -16}
+        - {x: 8, y: -16}
+        - {x: 10, y: -15}
+        - {x: 10, y: 16}
+    - name: SpriteSheetCompleteAnimations_61
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 16}
+        - {x: -11, y: -16}
+        - {x: 7, y: -16}
+        - {x: 10, y: -5}
+        - {x: 10, y: 14}
+        - {x: 8, y: 16}
+    - name: SpriteSheetCompleteAnimations_62
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 16}
+        - {x: -10, y: -8}
+        - {x: -9, y: -16}
+        - {x: 9, y: -16}
+        - {x: 11, y: -8}
+        - {x: 11, y: 16}
+    - name: SpriteSheetCompleteAnimations_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 16}
+        - {x: -9, y: -6}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 9, y: -9}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_64
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 16}
+        - {x: -9, y: -14}
+        - {x: -6, y: -16}
+        - {x: 7, y: -16}
+        - {x: 9, y: -1}
+        - {x: 9, y: 15}
+        - {x: 8, y: 16}
+    - name: SpriteSheetCompleteAnimations_65
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 16}
+        - {x: -8, y: 15}
+        - {x: -8, y: -14}
+        - {x: -5, y: -16}
+        - {x: 6, y: -16}
+        - {x: 10, y: -10}
+        - {x: 10, y: 16}
+    - name: SpriteSheetCompleteAnimations_66
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 16}
+        - {x: -10, y: 1}
+        - {x: -7, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 16}
+    - name: SpriteSheetCompleteAnimations_67
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 16}
+        - {x: -9, y: 16}
+        - {x: -9, y: 0}
+        - {x: -7, y: -16}
+        - {x: 6, y: -16}
+        - {x: 8, y: -14}
+        - {x: 9, y: -2}
+        - {x: 9, y: 15}
+    - name: SpriteSheetCompleteAnimations_68
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 16}
+        - {x: -9, y: 1}
+        - {x: -6, y: -16}
+        - {x: 9, y: -16}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_69
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 16}
+        - {x: -11, y: -15}
+        - {x: -9, y: -16}
+        - {x: 8, y: -16}
+        - {x: 10, y: -15}
+        - {x: 10, y: 16}
+    - name: SpriteSheetCompleteAnimations_70
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 16}
+        - {x: -11, y: -15}
+        - {x: -10, y: -16}
+        - {x: 8, y: -16}
+        - {x: 10, y: -15}
+        - {x: 10, y: 16}
+    - name: SpriteSheetCompleteAnimations_71
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 16}
+        - {x: -10, y: 15}
+        - {x: -10, y: -10}
+        - {x: -7, y: -16}
+        - {x: 10, y: -16}
+        - {x: 11, y: -14}
+        - {x: 11, y: 16}
+    - name: SpriteSheetCompleteAnimations_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 16}
+        - {x: -11, y: -15}
+        - {x: -9, y: -16}
+        - {x: 8, y: -16}
+        - {x: 10, y: -15}
+        - {x: 10, y: 16}
+    - name: SpriteSheetCompleteAnimations_73
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -11, y: 15}
+        - {x: -11, y: -12}
+        - {x: -9, y: -16}
+        - {x: 7, y: -16}
+        - {x: 10, y: -5}
+        - {x: 10, y: 14}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_74
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 16}
+        - {x: -11, y: -8}
+        - {x: -10, y: -16}
+        - {x: 8, y: -16}
+        - {x: 10, y: -15}
+        - {x: 10, y: 16}
+    - name: SpriteSheetCompleteAnimations_75
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 16}
+        - {x: -9, y: -6}
+        - {x: -7, y: -16}
+        - {x: 5, y: -16}
+        - {x: 9, y: -9}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_76
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 16}
+        - {x: -9, y: -14}
+        - {x: -6, y: -16}
+        - {x: 6, y: -16}
+        - {x: 9, y: 1}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_77
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -7, y: 16}
+        - {x: -8, y: 15}
+        - {x: -8, y: -14}
+        - {x: -5, y: -16}
+        - {x: 6, y: -16}
+        - {x: 10, y: -10}
+        - {x: 10, y: 16}
+    - name: SpriteSheetCompleteAnimations_78
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 16}
+        - {x: -10, y: 1}
+        - {x: -7, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 16}
+    - name: SpriteSheetCompleteAnimations_79
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 16}
+        - {x: -9, y: 16}
+        - {x: -9, y: -13}
+        - {x: -8, y: -16}
+        - {x: 6, y: -16}
+        - {x: 8, y: -14}
+        - {x: 9, y: -2}
+        - {x: 9, y: 15}
+    - name: SpriteSheetCompleteAnimations_80
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 16}
+        - {x: -9, y: 1}
+        - {x: -6, y: -16}
+        - {x: 9, y: -16}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_81
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 16}
+        - {x: -12, y: -15}
+        - {x: -10, y: -16}
+        - {x: 7, y: -16}
+        - {x: 9, y: -15}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_82
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 16}
+        - {x: -12, y: 15}
+        - {x: -12, y: -12}
+        - {x: -10, y: -16}
+        - {x: 6, y: -16}
+        - {x: 9, y: -5}
+        - {x: 9, y: 14}
+        - {x: 8, y: 16}
+    - name: SpriteSheetCompleteAnimations_83
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 16}
+        - {x: -11, y: -8}
+        - {x: -10, y: -16}
+        - {x: 8, y: -16}
+        - {x: 10, y: -15}
+        - {x: 10, y: 16}
+    - name: SpriteSheetCompleteAnimations_84
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 16}
+        - {x: -11, y: -15}
+        - {x: -9, y: -16}
+        - {x: 8, y: -16}
+        - {x: 10, y: -15}
+        - {x: 10, y: 16}
+    - name: SpriteSheetCompleteAnimations_85
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -11, y: 15}
+        - {x: -11, y: -12}
+        - {x: -9, y: -16}
+        - {x: 7, y: -16}
+        - {x: 10, y: -5}
+        - {x: 10, y: 14}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_86
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 16}
+        - {x: -10, y: -8}
+        - {x: -9, y: -16}
+        - {x: 9, y: -16}
+        - {x: 11, y: -15}
+        - {x: 11, y: 16}
+    - name: SpriteSheetCompleteAnimations_87
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 16}
+        - {x: -9, y: 16}
+        - {x: -9, y: -14}
+        - {x: -6, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: 1}
+        - {x: 9, y: 5}
+        - {x: 9, y: 15}
+    - name: SpriteSheetCompleteAnimations_88
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -9, y: 16}
+        - {x: -9, y: -14}
+        - {x: -6, y: -16}
+        - {x: 6, y: -16}
+        - {x: 9, y: 1}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_89
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: 16}
+        - {x: -9, y: 16}
+        - {x: -9, y: -14}
+        - {x: -6, y: -16}
+        - {x: 5, y: -16}
+        - {x: 8, y: 1}
+        - {x: 9, y: 5}
+        - {x: 9, y: 15}
+    - name: SpriteSheetCompleteAnimations_90
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 16}
+        - {x: -10, y: 1}
+        - {x: -7, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 16}
+    - name: SpriteSheetCompleteAnimations_91
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7, y: 16}
+        - {x: -10, y: 16}
+        - {x: -10, y: -13}
+        - {x: -9, y: -16}
+        - {x: 5, y: -16}
+        - {x: 7, y: -14}
+        - {x: 8, y: -2}
+        - {x: 8, y: 15}
+    - name: SpriteSheetCompleteAnimations_92
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 16}
+        - {x: -10, y: 1}
+        - {x: -7, y: -16}
+        - {x: 8, y: -16}
+        - {x: 8, y: 16}
+    - name: SpriteSheetCompleteAnimations_93
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -11, y: 16}
+        - {x: -11, y: -15}
+        - {x: -9, y: -16}
+        - {x: 8, y: -16}
+        - {x: 10, y: -15}
+        - {x: 10, y: 16}
+    - name: SpriteSheetCompleteAnimations_94
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 16}
+        - {x: -11, y: 15}
+        - {x: -11, y: -12}
+        - {x: -9, y: -16}
+        - {x: 7, y: -16}
+        - {x: 10, y: -5}
+        - {x: 10, y: 14}
+        - {x: 9, y: 16}
+    - name: SpriteSheetCompleteAnimations_95
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -10, y: 16}
+        - {x: -10, y: -8}
+        - {x: -9, y: -16}
+        - {x: 9, y: -16}
+        - {x: 11, y: -15}
+        - {x: 11, y: 16}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
