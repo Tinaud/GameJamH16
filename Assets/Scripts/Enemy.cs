@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
+
+	public GameObject papel;
     public Sprite[] enemy1, enemy2, enemy3, choosenEnemy;
     private int damagePower = 2;
     private int health = 100;
@@ -13,6 +15,9 @@ public class Enemy : MonoBehaviour {
 	private GameObject oldBrother;
 	private Vector2 direction;
     private SpriteRenderer sr;
+	bool playerInRange;
+	float timer;
+	public float timeBetweenAttacks = .1f;
 
 	private Animator animator;
 
@@ -50,7 +55,13 @@ public class Enemy : MonoBehaviour {
 	void Update () {
 
         if (health <= 0)
-        {
+		{
+			int rnd = Random.Range (1, 10);
+			Debug.Log (rnd);
+			if (rnd == 9) {
+				GameObject patate = Instantiate (papel);
+				patate.transform.position = transform.position;
+			}
             alive = false;
             this.gameObject.SetActive(false);
         }
@@ -86,5 +97,20 @@ public class Enemy : MonoBehaviour {
 	// Pour Evenement les profs vont dans la cour
 	public void goTo(int zone) {
 
+	}
+
+	private void OnCollisionStay2D (Collision2D patate)
+	{
+		timer += Time.deltaTime/5;
+		if (patate.gameObject.tag == "Player" && timer >= timeBetweenAttacks) {
+			Attack();
+			timer = 0;
+		} 
+	}
+
+	private void Attack() {
+		Debug.Log ("I c u");
+		Player player = GameObject.Find ("Brothers").GetComponent<Player> ();
+		player.TakeDamage(damagePower);
 	}
 }
