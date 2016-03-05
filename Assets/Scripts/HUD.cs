@@ -5,9 +5,6 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour {
 
     public float healthmax;
-    public float health;
-    public int notes;
-    public int notesTotal;
     public int min;
     public int hour;
     public Text note;
@@ -16,12 +13,13 @@ public class HUD : MonoBehaviour {
     public Text hourT;
     public Slider healthSlider;
 	Player player;
+	GameManager gameManager;
 	Timer time;
 
 
 	// Use this for initialization
     void Start() {
-        noteT.text = "" + notesTotal;
+		gameManager = GetComponent<GameManager> ();
 		player = GetComponentInParent<ControllerYoung> ().GetComponentInParent<Player>();
 		time = GetComponent<Timer> ();
 	}
@@ -30,10 +28,8 @@ public class HUD : MonoBehaviour {
 	void Update () {
 		hour = time.Hours;
 		min = time.Minutes;
-		health = player.Health;
-		notes = player.Note;
-        healthSlider.value = health;
-        note.text = "" + notes;
+		healthSlider.value = player.Health;
+		note.text = "" + player.Note;
         if (hour < 10)
             hourT.text = "0" + hour;
         else
@@ -43,4 +39,21 @@ public class HUD : MonoBehaviour {
         else
             minT.text = "" + min;
 	}
+
+	public void setEasy()
+	{
+		noteT.text = "" + 6;
+	}
+
+	public void setMedium()
+	{
+		noteT.text = "" + 9;
+	}
+
+	public void setHard()
+	{
+		noteT.text = "" + 12;
+	}
+
+
 }

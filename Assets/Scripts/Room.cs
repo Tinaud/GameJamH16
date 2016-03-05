@@ -30,17 +30,11 @@ public class Room : MonoBehaviour {
 	}
 
     private bool hasNote = false;
-    private int sizeX = 0;
-    private int sizeY = 0;
-
-    public bool HasNote
-    {
-        get
-        {
+    public bool HasNote {
+        get {
             return hasNote;
         }
-        set
-        {
+        set {
             hasNote = value;
         }
     }
@@ -66,17 +60,5 @@ public class Room : MonoBehaviour {
     {
         hasNote = patate;
     }
-
-
-    public void setSizeX(int patate)
-    {
-        sizeX = patate;
-    }
-
-    public void setSizeY(int patate)
-    {
-        sizeY = patate;
-    }
-
 
 }

@@ -11,21 +11,19 @@ public class MapEditor : MonoBehaviour {
 
 	int noteToPlace;
 
-    public int NoteToPlace
-    {
-        get
-        {
+    public int NoteToPlace {
+        get {
             return noteToPlace;
         }
-
-        set
-        {
+        set {
             noteToPlace = value;
         }
     }
+
 	private List<Room> roomList;
 
-	void placeNote(Room patateRoom) {
+	public void placeNote(Room patateRoom, int id) {
+
 		Vector2 randomPos = new Vector2 ();
 
 		randomPos.x = Random.Range ((patateRoom.transform.position.x - patateRoom.gameObject.GetComponent<BoxCollider2D> ().size.x / 2), 
@@ -35,23 +33,27 @@ public class MapEditor : MonoBehaviour {
 			(patateRoom.transform.position.y + patateRoom.gameObject.GetComponent<BoxCollider2D> ().size.y / 2));
 
 		GameObject note = Instantiate (Resources.Load ("Note", typeof(GameObject)), randomPos, Quaternion.identity) as GameObject;
-		noteToPlace--;
-		Debug.Log ("note in " + patateRoom.transform.name);
+		note.name = "Note_" + id;
+		note.transform.parent = patateRoom.transform;
+		Debug.Log (note.name + " in " + patateRoom.transform.name);
 	}
 
 	public void InitializeMap() {
 		sr = GetComponent<SpriteRenderer> ();
 		sr.sprite = mapSprite;
 		zones = Instantiate (Resources.Load ("Zones", typeof(GameObject))) as GameObject;
+		zones.transform.parent = transform;
 		walls = Instantiate (Resources.Load ("Walls", typeof(GameObject))) as GameObject;
+		walls.transform.parent = transform;
 
 		roomList = new List<Room>(zones.GetComponentsInChildren<Room> ());
-		placeNote (getRandomRoom());
+		for (int i = 0; i < noteToPlace; i++) {
+			placeNote (getRandomRoom (), i+1);
+		}
 	}
 		
 	Room getRandomRoom() {
-		System.Random rnd = new System.Random ();
-		int patate = rnd.Next (0, roomList.Count);
+		int patate = Random.Range (0, roomList.Count);
 
 		Room randomRoom = roomList [patate];
 		roomList.RemoveAt (patate);
