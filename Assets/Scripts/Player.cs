@@ -2,9 +2,19 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
+	
+	Controller oldBrother;
+	ControllerYoung youngBrother;
 
+	private int damagePower = 2;
     private int health = 100;
     private bool alive = true;
+
+	private int answer; 	// Nombre de reponses collectees
+
+	void Start() {
+		answer = GameManager.instance.AnswerCollected;
+	}
 
     public void characterHurt(int damage)
     {
@@ -16,6 +26,11 @@ public class Player : MonoBehaviour {
         health = patate;
     }
     
+	void Awake() {
+		youngBrother = GetComponentInChildren<ControllerYoung> ();
+		oldBrother = GetComponentInChildren<Controller> ();
+	}
+
 	void Update () {
 
         if (health <= 0)
@@ -24,8 +39,5 @@ public class Player : MonoBehaviour {
         }
 	}
 
-    private void OnTriggerAnswer(Collider2D patate)
-    {
-
-    }
+    
 }
