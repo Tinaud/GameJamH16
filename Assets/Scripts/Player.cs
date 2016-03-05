@@ -14,6 +14,9 @@ public class Player : MonoBehaviour {
 		get {
 			return health;
 		}
+        set {
+            health = value;
+        }
 	}
 
 	private bool alive = true;
