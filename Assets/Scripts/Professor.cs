@@ -7,11 +7,27 @@ public class Professor : MonoBehaviour
                   moveSpeed;
     private GameObject oldBrother;
     private Vector2 direction;
+    private Animator animator;
+    private BoxCollider2D boxCollider;
+    private Rigidbody2D rb2D;
+    Player player;
+    private int playerDmg {
+        get {
+            return playerDmg;
+        }
+        set {
+            playerDmg = value;
+        }
+    }
 
     void Start()
     {
+        animator = GetComponent<Animator>();
+        boxCollider = GetComponent<BoxCollider2D>();
+        rb2D = GetComponent<Rigidbody2D>();
         oldBrother = GameObject.Find("Brothers").GetComponentInChildren<Controller>().gameObject;
         moveSpeed = 3f;
+        playerDmg = 100;
     }
 
     void Update()
@@ -38,5 +54,16 @@ public class Professor : MonoBehaviour
     float getDistance()
     {
         return Mathf.Sqrt(Mathf.Abs(oldBrother.transform.position.x - this.transform.position.x) + Mathf.Abs(oldBrother.transform.position.y - this.transform.position.y));
+    }
+
+    void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Player")
+            hitPlayer();
+    }
+
+    public void hitPlayer()
+    {
+        player.Health -= playerDmg;
     }
 }
