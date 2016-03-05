@@ -1,33 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Timer : MonoBehaviour {
+public class Timer : MonoBehaviour
+{
 
-    public Rect timerRect;
-    private float startTime;
-    private string currentTime;
-    private int seconds, minutes, hours;
+    public static float timer = 480;
+    public static bool timeStarted = false;
+    int hours, minutes;
 
-	void Start () {
-        hours = 8;
+    void Start()
+    {
+
     }
-	
-	void Update () {
 
-        if (hours == 16)
-            return;
-        seconds = seconds + 4;
-        if (seconds >= 59)
-        {
-            minutes++;
-            seconds = 0;
-        }
-        if (minutes == 59)
-        {
-            hours++;
-            minutes = 0;
-        }
-        currentTime = string.Format("{0:##}:{1:##}", hours, minutes);
-        Debug.Log(currentTime);
+    void Update()
+    {
+        timer = timer + 2*Time.deltaTime;
+        hours = (int)timer / 60;
+        minutes = (int) timer % 60;
+        Debug.Log(hours);
+        Debug.Log(minutes);
     }
 }
