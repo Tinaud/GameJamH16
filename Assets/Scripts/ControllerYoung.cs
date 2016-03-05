@@ -100,10 +100,9 @@ public class ControllerYoung : MonoBehaviour
 	private void OnTriggerEnter2D (Collider2D patate)
 	{
 		Player player = GetComponentInParent<Player>();
-		if (patate.tag == "Wall") {
-
-		} else if (patate.tag == "Zone") {
-
+		if (patate.tag == "Zone") {
+			Debug.Log ("Entering " + patate.name);
+			patate.GetComponent<Room> ().ControllersInside++;
 		} else if (patate.tag == "Note") {
 			Debug.Log ("Note");
 			player.Note++; 
@@ -114,4 +113,13 @@ public class ControllerYoung : MonoBehaviour
 			Destroy (patate.gameObject);
 		}
 	}
+
+	private void OnTriggerExit2D (Collider2D patate)
+	{
+		if (patate.tag == "Zone") {
+			Debug.Log ("Exiting " + patate.name);
+			patate.GetComponent<Room> ().ControllersInside--;
+		}
+	}
+		
 }

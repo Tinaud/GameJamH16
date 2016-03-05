@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour {
 		timer = GetComponent<Timer> ();
 		eventManager = GetComponent<Events> ();
 		enemies = new List<Enemy>();
-		mapScript = GetComponent<MapEditor>();
+		mapScript = GameObject.Find("Map").GetComponent<MapEditor>();
 
 		// Par défaut pour le moment, flafla
 		olderSex = Gender.Boy;
@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour {
 	{
 		levelImage.SetActive(false);
 		timer.StartTimer ();
+		mapScript.InitializeMap ();
 		//StartCoroutine(eventLoop());
 	}
 
