@@ -91,11 +91,11 @@ public class ControllerYoung : MonoBehaviour
 
 	private void OnTriggerEnter2D (Collider2D patate)
 	{
-		if (patate.tag = "Wall") {
+		if (patate.tag == "Wall") {
 
-		} else if (patate.tag = "Zone") {
+		} else if (patate.tag == "Zone") {
 
-		} else if (patate.tag = "Answer") {
+		} else if (patate.tag == "Answer") {
 
 		}
 	}
