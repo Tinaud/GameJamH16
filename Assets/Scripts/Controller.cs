@@ -10,6 +10,7 @@ public class Controller : MonoBehaviour
 
 	private Animator animator;
 	private BoxCollider2D boxCollider;
+    private GameObject youngBrother;
 	private Rigidbody2D rb2D;
     private SpriteRenderer sr;
 
@@ -17,13 +18,14 @@ public class Controller : MonoBehaviour
     {
 		animator = GetComponent<Animator>();
 		boxCollider = GetComponent <BoxCollider2D> ();
+        youngBrother = GameObject.Find("Brothers").GetComponentInChildren<ControllerYoung>().gameObject;
 		rb2D = GetComponent <Rigidbody2D> ();
         sr = GetComponent<SpriteRenderer>();
 
         moveSpeed = 5f;
 	}
 
-	void Update() 
+    void Update()
     {
         movementH = Input.GetAxis("Horizontal");
         movementV = Input.GetAxis("Vertical");
@@ -42,7 +44,12 @@ public class Controller : MonoBehaviour
                 sr.sprite = sister[0];
             else
                 sr.sprite = sister[1];
-	}
+    }
+
+    float getDistance()
+    {
+        return Mathf.Sqrt(Mathf.Abs(youngBrother.transform.position.x - this.transform.position.x) + Mathf.Abs(youngBrother.transform.position.y - this.transform.position.y));
+    }
 
 	private void OnTriggerEnter2D (Collider2D patate)
 	{
