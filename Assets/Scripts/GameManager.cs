@@ -5,7 +5,9 @@ using System.Collections.Generic;
 
 
 public class GameManager : MonoBehaviour {
-	
+
+	private Events eventManager;
+
 	public static GameManager instance = null;	
 	public float levelStartDelay = 2f;
 	private int level = 1;
@@ -34,13 +36,14 @@ public class GameManager : MonoBehaviour {
 		DontDestroyOnLoad(gameObject);
 
 		timer = GetComponent<Timer> ();
+		eventManager = GetComponent<Events> ();
 		enemies = new List<Enemy>();
 		mapScript = GetComponent<MapEditor>();
 
 		// Par défaut pour le moment, flafla
 		olderSex = Gender.Boy;
 		youngerSex = Gender.Boy;
-		player = GetComponentInChildren<Player> ();
+		player = GetComponentInParent<ControllerYoung> ().GetComponentInParent<Player>();
 	}
 
 	public void InitGame() {
@@ -58,6 +61,7 @@ public class GameManager : MonoBehaviour {
 	{
 		levelImage.SetActive(false);
 		timer.StartTimer ();
+		//StartCoroutine(eventLoop());
 	}
 
 
@@ -71,6 +75,10 @@ public class GameManager : MonoBehaviour {
 		
 	}
 
+	public bool AnswerLostInToilets() {
+		return true;
+	}
+
 	public void GameOver() {
 		//Set levelText to display number of levels passed and game over message
 		levelText.text = "You failed your Exam " + level + " !!!!";
@@ -81,4 +89,16 @@ public class GameManager : MonoBehaviour {
 		enabled = false;
 
 	}
+
+/*	IEnumerator eventLoop() {
+		while (timer.enabled) {
+			if ((timer.Hours == 10 && timer.Minutes == 0) || (timer.Hours == 12 && timer.Minutes == 0) || (timer.Hours == 14 && timer.Minutes == 0)) {
+				yield return new WaitUntil (() => Input.GetKeyDown (KeyCode.A));
+				int eventNumber = eventManager.getEvent ();
+
+				eventManager.restoreEvents ();
+				eventManager.applyEventEffect (eventNumber, ref enemies);
+			}
+		}
+	}*/
 }

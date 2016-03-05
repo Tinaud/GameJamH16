@@ -1,4 +1,8 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 9a617de7306d5b247a3444f52f38ebaa
+timeCreated: 1457149944
+=======
 <<<<<<< HEAD:Assets/Scripts/Note.cs.meta
 guid: 18831efd72362a642be0c9269affe9af
 timeCreated: 1457150413
@@ -6,6 +10,7 @@ timeCreated: 1457150413
 guid: 652c5976a050fe243a53c493c33c495d
 timeCreated: 1457153799
 >>>>>>> fb3a070ef064c5e166ad926e2e3278cbf365fe1c:Assets/Scripts/Note.cs.meta
+>>>>>>> 540e788b8da8381c459eee173cbdfd5707ae2dbf
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
