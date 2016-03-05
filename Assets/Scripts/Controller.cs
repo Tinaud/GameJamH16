@@ -85,6 +85,11 @@ public class Controller : MonoBehaviour
 
 		} else if (patate.tag == "Zone") {
 			
+		} else if (patate.tag == "Apple") {
+			Debug.Log ("Pomme");
+			Player player = GameObject.Find("Brothers").GetComponent<Player>();
+			player.Health += 10; 
+			Destroy (patate.gameObject);
 		}
 	}
 

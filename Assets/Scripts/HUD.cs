@@ -15,7 +15,6 @@ public class HUD : MonoBehaviour {
     public Text minT;
     public Text hourT;
     public Slider healthSlider;
-	GameObject sister;
 	Player player;
 	Timer time;
 
@@ -23,7 +22,7 @@ public class HUD : MonoBehaviour {
 	// Use this for initialization
     void Start() {
         noteT.text = "" + notesTotal;
-		player = GameObject.Find ("Brothers").GetComponent<Player> ();
+		player = GetComponentInParent<ControllerYoung> ().GetComponentInParent<Player>();
 		time = GetComponent<Timer> ();
 	}
 	

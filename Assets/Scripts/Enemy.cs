@@ -82,4 +82,9 @@ public class Enemy : MonoBehaviour {
 	{
 		return Mathf.Sqrt(Mathf.Abs(oldBrother.transform.position.x - this.transform.position.x) + Mathf.Abs(oldBrother.transform.position.y - this.transform.position.y));
 	}
+
+	// Pour Evenement les profs vont dans la cour
+	public void goTo(int zone) {
+
+	}
 }

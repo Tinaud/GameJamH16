@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class MapEditor : MonoBehaviour {
 
+	Sprite mapSprite;
+
+
 	int nbNoteToPlace;
     private Room roomNote;
     private List<Room> roomList;
@@ -34,12 +37,11 @@ public class MapEditor : MonoBehaviour {
 	}
 
 	void InitializeMap() {
+		
 		placeFirstNote(roomNote);
 	}
 		
 	void placeFirstNote(Room patate) {
-
-        GameObject newNote = (GameObject)Instantiate(Note, new Vector3(0, 0, 0f), Quaternion.identity); // changer la position pour la position de la zone
 
 	}
 
