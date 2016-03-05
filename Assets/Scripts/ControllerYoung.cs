@@ -30,7 +30,7 @@ public class ControllerYoung : MonoBehaviour
         moveSpeed = 4f;
         temp = 0;
         lr = GetComponent<LineRenderer>();
-        lineColor.a = 150;
+        lineColor.a = 0;
         lineColor.b = 0;
         lineWidth = 0.2f;
         StartCoroutine(testLine());
@@ -82,20 +82,13 @@ public class ControllerYoung : MonoBehaviour
             else
                 lineWidth -= 0.02f;
             temp++;
-            if (distance > 0 && distance < 2)
-            {
-                lineColor.r = (byte)(250 - (distance * 125));
-                lineColor.g = (byte)(distance * 125);
-            }
-                
-            else if (distance > 2 && distance < 4)
-            {
-                lineColor.r = (byte)((distance - 2) * 125);
-                lineColor.g = (byte)(250 - ((distance - 2) * 125));
-            }
-                
-            else
-                lineColor.r = 255;
+            Debug.Log(distance);
+            if (distance > 0 && distance < 3)
+                lineColor.a = 0;
+            else if (distance > 3 && distance < 4)
+                lineColor.a = (byte)((distance - 3) * 230);
+            
+            lineColor.r = 255;
 
             lr.SetWidth(lineWidth, lineWidth);
 
