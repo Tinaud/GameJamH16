@@ -10,6 +10,19 @@ public class MapEditor : MonoBehaviour {
 	GameObject walls;
 
 	int noteToPlace;
+
+    public int NoteToPlace
+    {
+        get
+        {
+            return noteToPlace;
+        }
+
+        set
+        {
+            noteToPlace = value;
+        }
+    }
 	private List<Room> roomList;
 
 	void placeNote(Room patateRoom) {
