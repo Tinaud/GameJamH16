@@ -1,13 +1,14 @@
 fileFormatVersion: 2
-guid: db316f890ad97d3499a65b36c67a5fec
-timeCreated: 1457132560
+guid: 92b197b673a74a1498fa218e6bbd5128
+timeCreated: 1457154021
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: fille1_0
-    21300002: fille1_1
-    21300004: fille1_2
-    21300006: fille1_3
+    21300000: JoystickSpriteSheet_0
+    21300002: JoystickSpriteSheet_1
+    21300004: JoystickSpriteSheet_2
+    21300006: JoystickSpriteSheet_3
+    21300008: JoystickSpriteSheet_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -54,7 +55,64 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: fille1_0
+    - name: JoystickSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 16}
+        - {x: -13, y: 16}
+        - {x: -16, y: 14}
+        - {x: -16, y: -13}
+        - {x: -11, y: -16}
+        - {x: 13, y: -16}
+        - {x: 16, y: -11}
+        - {x: 16, y: 13}
+    - name: JoystickSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 16}
+        - {x: -13, y: 16}
+        - {x: -16, y: 14}
+        - {x: -16, y: -13}
+        - {x: -11, y: -16}
+        - {x: 13, y: -16}
+        - {x: 16, y: -11}
+        - {x: 16, y: 13}
+    - name: JoystickSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 16}
+        - {x: -13, y: 16}
+        - {x: -16, y: 14}
+        - {x: -16, y: -13}
+        - {x: -11, y: -16}
+        - {x: 13, y: -16}
+        - {x: 16, y: -11}
+        - {x: 16, y: 13}
+    - name: JoystickSpriteSheet_3
       rect:
         serializedVersion: 2
         x: 0
@@ -62,18 +120,18 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -9, y: 15}
-        - {x: -12, y: 8}
-        - {x: -12, y: -14}
-        - {x: -7, y: -15}
-        - {x: 10, y: -15}
-        - {x: 12, y: -13}
-        - {x: 12, y: 0}
-        - {x: 9, y: 15}
-    - name: fille1_1
+      - - {x: 14, y: 16}
+        - {x: -13, y: 16}
+        - {x: -16, y: 14}
+        - {x: -16, y: -13}
+        - {x: -11, y: -16}
+        - {x: 13, y: -16}
+        - {x: 16, y: -11}
+        - {x: 16, y: 13}
+    - name: JoystickSpriteSheet_4
       rect:
         serializedVersion: 2
         x: 32
@@ -84,55 +142,14 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 5, y: 15}
-        - {x: -3, y: 15}
-        - {x: -10, y: 13}
-        - {x: -12, y: 10}
-        - {x: -12, y: -13}
-        - {x: -11, y: -15}
-        - {x: 9, y: -15}
-        - {x: 12, y: -13}
-        - {x: 12, y: 2}
-        - {x: 10, y: 9}
-    - name: fille1_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -9, y: 15}
-        - {x: -12, y: 13}
-        - {x: -12, y: -6}
-        - {x: -9, y: -15}
-        - {x: 4, y: -15}
-        - {x: 12, y: -6}
-        - {x: 12, y: 12}
-        - {x: 5, y: 15}
-    - name: fille1_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: 7, y: 15}
-        - {x: -7, y: 15}
-        - {x: -12, y: 10}
-        - {x: -12, y: -4}
-        - {x: -6, y: -15}
-        - {x: 8, y: -15}
-        - {x: 12, y: -6}
-        - {x: 12, y: 12}
-        - {x: 11, y: 14}
+      - - {x: 14, y: 16}
+        - {x: -13, y: 16}
+        - {x: -16, y: 14}
+        - {x: -16, y: -13}
+        - {x: -11, y: -16}
+        - {x: 13, y: -16}
+        - {x: 16, y: -11}
+        - {x: 16, y: 13}
     outline: []
   spritePackingTag: 
   userData: 

@@ -1,13 +1,12 @@
 fileFormatVersion: 2
-guid: e5f438cde7017684eacc1b9da673f633
-timeCreated: 1457132505
+guid: 8075db6e95d848840aebf9a8f26e2d37
+timeCreated: 1457153972
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: gamin1_0
-    21300002: gamin1_1
-    21300004: gamin1_2
-    21300006: gamin1_3
+    21300000: TriggerSpriteSheet_0
+    21300002: TriggerSpriteSheet_1
+    21300004: TriggerSpriteSheet_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -48,87 +47,64 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: gamin1_0
+    - name: TriggerSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
-        height: 32
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -7, y: 15}
-        - {x: -13, y: 8}
-        - {x: -13, y: -10}
-        - {x: -9, y: -15}
-        - {x: 8, y: -15}
-        - {x: 12, y: -10}
-        - {x: 12, y: 10}
-        - {x: 5, y: 15}
-    - name: gamin1_1
+      - - {x: -14, y: 18}
+        - {x: -14, y: -1}
+        - {x: -11, y: -13}
+        - {x: -7, y: -18}
+        - {x: 9, y: -18}
+        - {x: 14, y: -17}
+        - {x: 14, y: 18}
+    - name: TriggerSpriteSheet_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
-        height: 32
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -10, y: 15}
-        - {x: -13, y: 13}
-        - {x: -13, y: -13}
-        - {x: -10, y: -15}
-        - {x: 12, y: -15}
-        - {x: 12, y: 15}
-    - name: gamin1_2
+      - - {x: -16, y: 18}
+        - {x: -16, y: -4}
+        - {x: -9, y: -18}
+        - {x: 16, y: -18}
+        - {x: 16, y: 18}
+    - name: TriggerSpriteSheet_2
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 32
-        height: 32
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -9, y: 15}
-        - {x: -11, y: 12}
-        - {x: -13, y: 6}
-        - {x: -13, y: 0}
-        - {x: -6, y: -15}
-        - {x: 7, y: -15}
-        - {x: 11, y: -6}
-        - {x: 11, y: 13}
-        - {x: 5, y: 15}
-    - name: gamin1_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -5, y: 15}
-        - {x: -12, y: 11}
-        - {x: -12, y: -13}
-        - {x: -5, y: -15}
-        - {x: 7, y: -15}
-        - {x: 12, y: 0}
-        - {x: 12, y: 9}
-        - {x: 6, y: 15}
+      - - {x: -14, y: 18}
+        - {x: -14, y: -1}
+        - {x: -11, y: -13}
+        - {x: -7, y: -18}
+        - {x: 9, y: -18}
+        - {x: 14, y: -17}
+        - {x: 14, y: 18}
     outline: []
   spritePackingTag: 
   userData: 
