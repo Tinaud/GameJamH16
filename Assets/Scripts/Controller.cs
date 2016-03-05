@@ -26,9 +26,9 @@ public class Controller : MonoBehaviour
 
 	private void OnTriggerEnter2D (Collider2D patate)
 	{
-		if (patate.tag = "Wall") {
+		if (patate.tag == "Wall") {
 
-		} else if (patate.tag = "Zone") {
+		} else if (patate.tag == "Zone") {
 			
 		}
 	}
