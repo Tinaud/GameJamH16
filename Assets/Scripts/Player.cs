@@ -7,6 +7,17 @@ public class Player : MonoBehaviour {
 	Controller oldBrother;
 	ControllerYoung youngBrother;
 
+	private bool isInExamRoom = false;
+
+	public bool IsInExamRoom {
+		get {
+			return isInExamRoom;
+		}
+		set {
+			isInExamRoom = value;
+		}
+	}
+
 	public int damagePower = 2;
 	private float health = 100;
 

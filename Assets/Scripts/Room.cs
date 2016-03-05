@@ -29,6 +29,4 @@ public class Room : MonoBehaviour {
         sizeY = patate;
     }
 
-    public 
-
 }
