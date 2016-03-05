@@ -12,7 +12,8 @@ public class Menu : MonoBehaviour {
 	public Button hard;
 	public GameObject menu;
 	public GameObject HUD;
-    public AudioSource music;
+	public AudioSource music;
+	public AudioSource ringing;
 
 	bool playable;
 
@@ -58,6 +59,7 @@ public class Menu : MonoBehaviour {
 	public void playtime(){
 		menu.SetActive(false);
 		HUD.SetActive (true);
+		ringing.Play ();
         music.Play();
 	}
 }
