@@ -99,18 +99,17 @@ public class ControllerYoung : MonoBehaviour
 
 	private void OnTriggerEnter2D (Collider2D patate)
 	{
+		Player player = GetComponentInParent<Player>();
 		if (patate.tag == "Wall") {
 
 		} else if (patate.tag == "Zone") {
 
 		} else if (patate.tag == "Note") {
 			Debug.Log ("Note");
-			Player player = GameObject.Find("Brothers").GetComponent<Player>();
 			player.Note++; 
 			Destroy (patate.gameObject);
 		} else if (patate.tag == "Apple") {
 			Debug.Log ("Pomme");
-			Player player = GameObject.Find("Brothers").GetComponent<Player>();
 			player.Health += 10; 
 			Destroy (patate.gameObject);
 		}
