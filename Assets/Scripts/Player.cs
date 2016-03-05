@@ -77,7 +77,7 @@ public class Player : MonoBehaviour {
 			health++;
 
 		if (Input.GetKey (KeyCode.N))
-			Note++;
+			note++;
 	}
 
     

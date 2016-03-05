@@ -21,7 +21,7 @@ public class ControllerYoung : MonoBehaviour
 		boxCollider = GetComponent <BoxCollider2D> ();
 		rb2D = GetComponent <Rigidbody2D> ();
 
-        oldBrother = GameObject.Find("Brothers").GetComponentInChildren<Controller>().gameObject; //TEMP!!
+		oldBrother = GetComponentInParent<Player>().GetComponentInChildren<Controller>().gameObject; //TEMP!!
         moveSpeed = 4f;
         temp = 0;
         lr = GetComponent<LineRenderer>();
