@@ -12,6 +12,7 @@ public class Menu : MonoBehaviour {
 	public Button hard;
 	public GameObject menu;
 	public GameObject HUD;
+    public AudioSource music;
 
 	bool playable;
 
@@ -24,6 +25,7 @@ public class Menu : MonoBehaviour {
 		playable = false;
 		menu.SetActive(true);
 		HUD.SetActive (false);
+        music.Pause();
 	}
 
 	// Update is called once per frame
@@ -56,5 +58,6 @@ public class Menu : MonoBehaviour {
 	public void playtime(){
 		menu.SetActive(false);
 		HUD.SetActive (true);
+        music.Play();
 	}
 }
