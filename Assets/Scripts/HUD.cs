@@ -23,8 +23,7 @@ public class HUD : MonoBehaviour {
 	// Use this for initialization
     void Start() {
         noteT.text = "" + notesTotal;
-		sister = GameObject.Find ("OldSister");
-		player = sister.GetComponent<Player> ();
+		player = GameObject.Find ("Brothers").GetComponent<Player> ();
 		time = GetComponent<Timer> ();
 	}
 	
