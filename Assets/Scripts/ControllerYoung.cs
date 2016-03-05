@@ -90,7 +90,7 @@ public class ControllerYoung : MonoBehaviour
 
 		} else if (patate.tag == "Zone") {
 
-		} else if (patate.tag == "Answer") {
+		} else if (patate.tag == "Note") {
 
 		}
 	}

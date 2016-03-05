@@ -38,15 +38,15 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	private int answer;		// Nombre de reponses collectees
-	public int Answer {
+	private int note;		// Nombre de reponses collectees
+	public int Note {
 		get {
-			return answer;
+			return note;
 		}
 	}
 
 	void Start() {
-		answer = GameManager.instance.AnswerCollected;
+		note = GameManager.instance.NoteCollected;
 	}
 
     public void characterHurt(int damage)
@@ -77,7 +77,7 @@ public class Player : MonoBehaviour {
 			health++;
 
 		if (Input.GetKey (KeyCode.N))
-			answer++;
+			Note++;
 	}
 
     

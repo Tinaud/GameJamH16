@@ -33,7 +33,7 @@ public class HUD : MonoBehaviour {
 		hour = time.Hours;
 		min = time.Minutes;
 		health = player.Health;
-		notes = player.Answer;
+		notes = player.Note;
         healthSlider.value = health;
         note.text = "" + notes;
         if (hour < 10)
