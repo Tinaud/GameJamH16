@@ -11,14 +11,7 @@ public class Professor : MonoBehaviour
     private BoxCollider2D boxCollider;
     private Rigidbody2D rb2D;
     Player player;
-    private int playerDmg {
-        get {
-            return playerDmg;
-        }
-        set {
-            playerDmg = value;
-        }
-    }
+    private int damage;
 
     void Start()
     {
@@ -27,7 +20,7 @@ public class Professor : MonoBehaviour
         rb2D = GetComponent<Rigidbody2D>();
         oldBrother = GameObject.Find("Brothers").GetComponentInChildren<Controller>().gameObject;
         moveSpeed = 3f;
-        playerDmg = 100;
+        damage = 100;
     }
 
     void Update()
@@ -64,6 +57,6 @@ public class Professor : MonoBehaviour
 
     public void hitPlayer()
     {
-        player.Health -= playerDmg;
+        player.Health -= damage;
     }
 }

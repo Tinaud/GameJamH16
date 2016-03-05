@@ -3,10 +3,13 @@ using System.Collections;
 
 public class ControllerYoung : MonoBehaviour
 {
+    public Sprite[] brother;
     private Color32 lineColor;
     private float distance,
                   lineWidth,
-                  moveSpeed;
+                  moveSpeed,
+                  movementH,
+                  movementV;
     private GameObject oldBrother;
     private int temp;
     private LineRenderer lr;
@@ -14,12 +17,14 @@ public class ControllerYoung : MonoBehaviour
 	private Animator animator;
 	private BoxCollider2D boxCollider;
 	private Rigidbody2D rb2D;
+    private SpriteRenderer sr;
 
     void Start()
     {
 		animator = GetComponent<Animator>();
 		boxCollider = GetComponent <BoxCollider2D> ();
 		rb2D = GetComponent <Rigidbody2D> ();
+        sr = GetComponent<SpriteRenderer>();
 
         oldBrother = GameObject.Find("Brothers").GetComponentInChildren<Controller>().gameObject; //TEMP!!
         moveSpeed = 4f;
@@ -36,6 +41,8 @@ public class ControllerYoung : MonoBehaviour
         distance = getDistance();
         if (distance < 4)
         {
+            movementH = Input.GetAxis("HorizontalYoung");
+            movementV = Input.GetAxis("VerticalYoung");
             transform.Translate(Vector2.right * moveSpeed * Input.GetAxis("HorizontalYoung") * Time.deltaTime);
             transform.Translate(Vector3.down * moveSpeed * Input.GetAxis("VerticalYoung") * Time.deltaTime);
         }
@@ -43,6 +50,19 @@ public class ControllerYoung : MonoBehaviour
         {
             Debug.Log("CRY");
         }
+
+        if (Mathf.Abs(movementV) < 0.75f)
+        {
+            if (movementH < 0)
+                sr.sprite = brother[2];
+            else if (movementH > 0)
+                sr.sprite = brother[3];
+        }
+        else
+            if (movementV > 0)
+                sr.sprite = brother[0];
+            else
+                sr.sprite = brother[1];
 
         lr.SetPosition(0, this.transform.position);
         lr.SetPosition(1, oldBrother.transform.position);
