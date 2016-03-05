@@ -86,5 +86,7 @@ public class Player : MonoBehaviour {
 			note++;
 	}
 
-    
+	public void TakeDamage(int damage) {
+		health -= damage;
+	}
 }
