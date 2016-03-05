@@ -16,12 +16,9 @@ public class ControllerYoung : MonoBehaviour
         oldBrother = GameObject.Find("Brothers").GetComponentInChildren<Controller>().gameObject; //TEMP!!
         moveSpeed = 4f;
         temp = 0;
-        lr = gameObject.AddComponent<LineRenderer>();
-        lr.material = new Material(Shader.Find("Particles/Additive"));
-        //lr.SetColors(Color.white, Color.yellow);
-        lineColor.a = 255;
+        lr = GetComponent<LineRenderer>();
+        lineColor.a = 150;
         lineColor.b = 0;
-        //lr = GetComponent<LineRenderer>();
         lineWidth = 0.2f;
         StartCoroutine(testLine());
     }
@@ -29,8 +26,7 @@ public class ControllerYoung : MonoBehaviour
     void Update()
     {
         distance = getDistance();
-
-        if (distance < 3)
+        if (distance < 4)
         {
             transform.Translate(Vector2.right * moveSpeed * Input.GetAxis("HorizontalYoung") * Time.deltaTime);
             transform.Translate(Vector3.down * moveSpeed * Input.GetAxis("VerticalYoung") * Time.deltaTime);
@@ -58,22 +54,21 @@ public class ControllerYoung : MonoBehaviour
             else
                 lineWidth -= 0.02f;
             temp++;
-            if (distance > 0 && distance < 2.5f)
+            if (distance > 0 && distance < 2)
             {
-                lineColor.g = (byte)(distance * 100);
-                lineColor.r = (byte)(250 - (distance * 100));
+                lineColor.r = (byte)(250 - (distance * 125));
+                lineColor.g = (byte)(distance * 125);
             }
                 
-            else if (distance > 2.5f && distance < 5)
+            else if (distance > 2 && distance < 4)
             {
-                lineColor.r = (byte)((distance - 2.5f) * 100);
-                lineColor.g = (byte)(250 - ((distance - 2.5f) * 100));
+                lineColor.r = (byte)((distance - 2) * 125);
+                lineColor.g = (byte)(250 - ((distance - 2) * 125));
             }
                 
             else
                 lineColor.r = 255;
 
-            Color fuckingVraieCouleur = (Color)lineColor;
             lr.SetWidth(lineWidth, lineWidth);
 
             lr.SetColors(lineColor, lineColor);
