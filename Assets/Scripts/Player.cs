@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public int damagePower = 2;
-	private float health = 100;
+	private float health = 80;
 
 	public float Health {
 		get {
@@ -39,9 +39,15 @@ public class Player : MonoBehaviour {
 	}
 
 	private int note;		// Nombre de reponses collectees
+
+
+
 	public int Note {
 		get {
 			return note;
+		}
+		set {
+			note = value;
 		}
 	}
 
@@ -77,7 +83,7 @@ public class Player : MonoBehaviour {
 			health++;
 
 		if (Input.GetKey (KeyCode.N))
-			Note++;
+			note++;
 	}
 
     
