@@ -6,7 +6,21 @@ public class Timer : MonoBehaviour
 
     public static float timer = 480;
     public static bool timeStarted = false;
-    int hours, minutes;
+	int hours, minutes;
+
+	public int Minutes {
+		get {
+			return minutes;
+		}
+	}
+
+	public int Hours {
+		get {
+			return hours;
+		}
+	}
+
+
 
     void Start()
     {
