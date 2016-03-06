@@ -9,6 +9,7 @@ public class Examen : MonoBehaviour {
 	private List<string> notes_2;
 	private List<string> answers = new List<string> ();
 	private List<string> questions = new List<string> ();
+	private int playerNotes = 6;
 	private int good = 0;
 	private int ques = 12, Y = 400, x=0;
 	public GameObject canvas;
@@ -19,6 +20,7 @@ public class Examen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//playerNotes = Player.instance.note;
 		//ques = GameManager.instance.NotesMax;
 		switch (ques) {
 		case (12): 	notes.Add ("Everywhere");
@@ -67,7 +69,7 @@ public class Examen : MonoBehaviour {
 		}
 		notes_2 = new List<string> (notes);
 		total.text = ques + "";
-		for (int i = 0; i < ques; i++) {
+		for (int i = 0; i < playerNotes; i++) {
 			InstObject = (GameObject)Instantiate(Resources.Load("Answers"),new Vector3(0,0,0), Quaternion.identity);
 			InstObject.transform.parent = canvas.transform;
 			InstObject.transform.localScale = new Vector3 (1, 1, 1);
