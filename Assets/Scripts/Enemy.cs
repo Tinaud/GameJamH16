@@ -72,6 +72,7 @@ public class Enemy : MonoBehaviour {
             pointage = GameObject.Find("Brothers").GetComponent<Player>();
             pointage.PointageEnemis(50);
             anim.SetInteger("Dir", 5);
+            Destroy(GetComponent<BoxCollider2D>());
             StartCoroutine(EnemyDie());
         }
         else if (health > 0 && this.name != "Pablo")
