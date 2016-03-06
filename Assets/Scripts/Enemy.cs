@@ -67,8 +67,7 @@ public class Enemy : MonoBehaviour {
 				GameObject patate = Instantiate (papel);
 				patate.transform.position = transform.position;
 			}
-            alive = false;
-            this.gameObject.SetActive(false);
+			Destroy (this.gameObject);
         }
 		distance = getDistance();
 
@@ -147,5 +146,9 @@ public class Enemy : MonoBehaviour {
 		Debug.Log ("I c u");
 		Player player = GameObject.Find ("Brothers").GetComponent<Player> ();
 		player.TakeDamage(damagePower);
+	}
+
+	public void gethit() {
+		health = health - 50;
 	}
 }

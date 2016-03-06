@@ -54,6 +54,7 @@ public class ControllerYoung : MonoBehaviour
         }
         else
         {
+			cry ();
             Debug.Log("CRY");
         }
 
@@ -134,5 +135,12 @@ public class ControllerYoung : MonoBehaviour
 			patate.GetComponent<Room> ().ControllersInside--;
 		}
 	}
-		
+
+	void cry () {
+		AudioSource audio = GetComponent<AudioSource> ();
+		if (!audio.isPlaying) {
+			audio.Play ();
+		}
+	}
+
 }
