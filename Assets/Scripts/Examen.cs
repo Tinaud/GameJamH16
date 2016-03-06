@@ -11,17 +11,22 @@ public class Examen : MonoBehaviour {
 	private List<string> questions = new List<string> ();
 	private int playerNotes = 6;
 	private int good = 0;
-	private int ques = 12, Y = 400, x=0;
+	private int ques = 12, Y = 320, x=0;
 	public GameObject canvas;
 	GameObject InstObject;
 	bool question = false;
 	public Text goods;
 	public Text total;
+	GameObject world;
+
+	void Awake() {
+		world = GameObject.Find ("World");
+	}
 
 	// Use this for initialization
 	void Start () {
-		playerNotes = Player.instance.Note;
-		ques = GameManager.instance.NotesMax;
+		setupData ();
+
 		switch (ques) {
 		case (12): 	notes.Add ("Everywhere");
 					questions.Add ("Following the explosion, where is little Juliet?"); 
@@ -73,7 +78,7 @@ public class Examen : MonoBehaviour {
 			InstObject = (GameObject)Instantiate(Resources.Load("Answers"),new Vector3(0,0,0), Quaternion.identity);
 			InstObject.transform.parent = canvas.transform;
 			InstObject.transform.localScale = new Vector3 (1, 1, 1);
-			InstObject.transform.localPosition = new Vector3 (560, (Y-60*i), 0);
+			InstObject.transform.localPosition = new Vector3 (560, (Y-55*i), 0);
 			int rnd = Random.Range (0, notes.Count);
 			InstObject.GetComponentInChildren<Text> ().text = notes[rnd];
 			InstObject.tag = notes[rnd];
@@ -108,5 +113,14 @@ public class Examen : MonoBehaviour {
 			good++;
 		x++;
 		question = false;
+	}
+
+	void setupData() {
+		playerNotes = Player.instance.Note;
+		Debug.Log (playerNotes);
+		ques = GameManager.instance.NotesMax;
+		Debug.Log (ques);
+
+		Destroy (world);
 	}
 }

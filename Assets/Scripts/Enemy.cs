@@ -17,8 +17,7 @@ public class Enemy : MonoBehaviour {
 			damagePower = value;
 		}
 	}
-
-    private Player pointage;
+		
     private int health = 100;
     private int rand;
     private bool alive = true, dead = false, followPath = false;
@@ -69,8 +68,7 @@ public class Enemy : MonoBehaviour {
                 GameObject patate = Instantiate(papel);
                 patate.transform.position = transform.position;
             }
-            pointage = GameObject.Find("Brothers").GetComponent<Player>();
-            pointage.PointageEnemis(50);
+			Player.instance.PointageEnemis(50);
             anim.SetInteger("Dir", 5);
             Destroy(GetComponent<BoxCollider2D>());
             StartCoroutine(EnemyDie());
@@ -140,11 +138,10 @@ public class Enemy : MonoBehaviour {
 	}
 
 	private void Attack() {
-		Debug.Log ("I c u");
+		//Debug.Log ("I c u");
 		GameObject.Find ("attack").GetComponent<AudioSource> ().Play ();
-		Player player = GameObject.Find ("Brothers").GetComponent<Player> ();
-		Debug.Log ("DP :" + damagePower);
-		player.TakeDamage(damagePower);
+		//Debug.Log ("DP :" + damagePower);
+		Player.instance.TakeDamage(damagePower);
 	}
 
 	public void gethit() {

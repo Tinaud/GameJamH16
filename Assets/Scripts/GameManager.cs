@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour {
 	private MapEditor mapScript;
 	public GameObject HUD;
 	private GameObject menuCamera;
+	string infoEvent;
 
 	private int enemiesMax;
 	public int EnemiesMax {
@@ -78,13 +79,13 @@ public class GameManager : MonoBehaviour {
         once10 = false;
         once12 = false;
 		levelImage = GameObject.Find ("LevelImage");
-		levelImage.GetComponent<AudioSource> ().Play ();
+		HUD.GetComponent<AudioSource> ().Play ();
 		levelText = GameObject.Find ("LevelText").GetComponent<Text> ();
 
 		levelText.text = "Exam " + level;
 		levelImage.SetActive (true);
 
-		Invoke("HideLevelImage",levelImage.GetComponent<AudioSource>().clip.length );
+		Invoke("HideLevelImage",HUD.GetComponent<AudioSource>().clip.length );
 
 		Debug.Log ("Level 1 Start !");
 	}
@@ -103,15 +104,20 @@ public class GameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		if ((timer.Hours == 8 && timer.Minutes == 55) || (timer.Hours == 11 && timer.Minutes == 55) )
+			StartCoroutine (playRing ());
+		
         if (timer.Hours == 10 && !once10)
         {
             eventManager.applyEventEffect(0);
+			infoEvent = "Playtime, everybody out !"; 
             once10 = true;
         }
-            
+			
         if (timer.Hours == 12 && !once12 || Input.GetKeyDown(KeyCode.A))
         {
             eventManager.applyEventEffect(1);
+			infoEvent = "FoodParty !! Hold a potatoe and Potate them !!!!!";
             once12 = true;
         }
             
@@ -161,11 +167,10 @@ public class GameManager : MonoBehaviour {
 
 	void LoadExamScreen() {
 		enabled = false;
-		gameObject.SetActive(false);
 		GetComponent<AudioSource> ().Pause ();
 		Clear ();
 
-		SceneManager.LoadScene ("Exeman");
+		SceneManager.LoadScene ("Examen");
 	}
 
 	void Clear() {
@@ -195,7 +200,19 @@ public class GameManager : MonoBehaviour {
 		Destroy (menuCamera);
 	}
 
+	IEnumerator playRing() {
+		GetComponent<AudioSource> ().volume = 0.3f;
+		HUD.GetComponent<AudioSource> ().Play ();
 
+		HUD.GetComponent<HUD> ().roomIndic.text = infoEvent;
+		HUD.GetComponent<HUD> ().roomIndic.gameObject.SetActive (true);
+
+		//Debug.Log (HUD.GetComponent<AudioSource> ().isPlaying);
+		//Debug.Log (GetComponent<AudioSource> ().isPlaying);
+		yield return new WaitForSeconds (HUD.GetComponent<AudioSource> ().clip.length);
+		HUD.GetComponent<HUD> ().roomIndic.gameObject.SetActive (false);
+		GetComponent<AudioSource> ().volume=1.0f;
+	}
 		
 	/*	IEnumerator eventLoop() {
 		while (timer.enabled) {
