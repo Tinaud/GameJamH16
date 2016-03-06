@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class MapEditor : MonoBehaviour {
-	int noteToPlace;
 
+	public GameObject noteObj;
+	int noteToPlace;
     public int NoteToPlace {
         get {
             return noteToPlace;
@@ -26,7 +27,7 @@ public class MapEditor : MonoBehaviour {
 		randomPos.y = Random.Range ((patateRoom.transform.position.y - patateRoom.gameObject.GetComponent<BoxCollider2D> ().size.y / 2), 
 			(patateRoom.transform.position.y + patateRoom.gameObject.GetComponent<BoxCollider2D> ().size.y / 2));
 
-		GameObject note = Instantiate (Resources.Load ("Note", typeof(GameObject)), randomPos, Quaternion.identity) as GameObject;
+		GameObject note = Instantiate (noteObj, randomPos, Quaternion.identity) as GameObject;
 		note.name = "Note_" + id;
 		note.transform.parent = patateRoom.transform;
 		Debug.Log (note.name + " in " + patateRoom.transform.name);

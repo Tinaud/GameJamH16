@@ -59,7 +59,7 @@ public class Enemy : MonoBehaviour {
             anim.SetInteger("Dir", 5);
             StartCoroutine(EnemyDie());
         }
-        else if (health > 0)
+        else if(health > 0 && this.name != "Pablo")
         {
             anim.SetInteger("Dir", potato);
             distance = Mathf.Sqrt(Mathf.Abs(oldBrother.transform.position.x - this.transform.position.x) + Mathf.Abs(oldBrother.transform.position.y - this.transform.position.y));
