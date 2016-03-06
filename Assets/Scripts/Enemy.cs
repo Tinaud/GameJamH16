@@ -15,7 +15,8 @@ public class Enemy : MonoBehaviour {
 	private GameObject oldBrother;
 	private Vector2 direction;
     private Vector2 ancientDirection;
-    private List<Vector2> smallGraph = new List<Vector2>();
+    private List<Vector2> graph12 = new List<Vector2>();
+    private List<Vector2> graph10 = new List<Vector2>();
     private SpriteRenderer sr;
 	bool playerInRange;
 	float timer;
@@ -31,7 +32,7 @@ public class Enemy : MonoBehaviour {
         anim.SetLayerWeight(0, 1f);
         oldBrother = GameObject.Find("Brothers").GetComponentInChildren<Controller>().gameObject;
         sr = GetComponent<SpriteRenderer>();
-		moveSpeed = 5f;
+		moveSpeed = 6f;
         buildGraph();
 	}
 
@@ -59,19 +60,24 @@ public class Enemy : MonoBehaviour {
             anim.SetInteger("Dir", 5);
             StartCoroutine(EnemyDie());
         }
-        else if(health > 0 && this.name != "Pablo")
+        else if (health > 0 && this.name != "Pablo")
         {
             anim.SetInteger("Dir", potato);
             distance = Mathf.Sqrt(Mathf.Abs(oldBrother.transform.position.x - this.transform.position.x) + Mathf.Abs(oldBrother.transform.position.y - this.transform.position.y));
 
-            if (this.tag == "prof" && !followPath)
-                StartCoroutine(pathFinder());
+            if (this.tag == "Prof")
+            {
+                if (!followPath)
+                    StartCoroutine(pathFinder());
+            }
+            else
+            {
+                if (distance > 3)
+                    direction = wander();
 
-            else if (distance > 3)
-                direction = wander();
-
-            if (distance < 3 && distance > 1)
-                direction = normalize(oldBrother.transform.position.x - this.transform.position.x, oldBrother.transform.position.y - this.transform.position.y);
+                if (distance < 3 && distance > 1)
+                    direction = normalize(oldBrother.transform.position.x - this.transform.position.x, oldBrother.transform.position.y - this.transform.position.y);
+            }
 
             transform.Translate(direction * moveSpeed * Time.deltaTime);
 
@@ -93,6 +99,7 @@ public class Enemy : MonoBehaviour {
                 potato = 0;
 
             ancientDirection = direction;
+
         }      
     }
 
@@ -147,14 +154,23 @@ public class Enemy : MonoBehaviour {
 
     void buildGraph()
     {
-        smallGraph.Add(new Vector2(-36, 80)); 
-        smallGraph.Add(new Vector2(-36, -28));
-        smallGraph.Add(new Vector2(41, 80)); 
-        smallGraph.Add(new Vector2(41, -32));
-        smallGraph.Add(new Vector2(2, 18));
-        smallGraph.Add(new Vector2(2, -3));
-        smallGraph.Add(new Vector2(-12, -3));
-        smallGraph.Add(new Vector2(-28, -17));
+        graph10.Add(new Vector2(-36, 80));
+        graph10.Add(new Vector2(-36, 58));
+        graph10.Add(new Vector2(-15, 58));
+        graph10.Add(new Vector2(21, 58));
+        graph10.Add(new Vector2(41, 80));
+        graph10.Add(new Vector2(41, 58));
+
+        graph12.Add(new Vector2(-36, 80));
+        graph12.Add(new Vector2(-36, 20));
+        graph12.Add(new Vector2(-36, -28));
+        graph12.Add(new Vector2(41, 80));
+        graph12.Add(new Vector2(41, 20));
+        graph12.Add(new Vector2(41, -32));
+        graph12.Add(new Vector2(2, 18));
+        graph12.Add(new Vector2(2, -3));
+        graph12.Add(new Vector2(-12, -3));
+        graph12.Add(new Vector2(-28, -17));
     }
 
     IEnumerator EnemyDie()
@@ -165,10 +181,19 @@ public class Enemy : MonoBehaviour {
 
     IEnumerator pathFinder()
     {
+        List<Vector2> smallGraph = new List<Vector2>();
+
+        if (GameManager.instance.timer.Hours == 12)
+            foreach (Vector2 element in graph12)
+                smallGraph.Add(element);
+        else if (GameManager.instance.timer.Hours == 10)
+            foreach (Vector2 element in graph10)
+                smallGraph.Add(element);
+
         followPath = true;
         int j = 0;
 
-        while(j < 5)
+        while(j < smallGraph.Count)
         {
             float closestDist = 1000;
             int closestID = 0, i = 0;
@@ -195,5 +220,6 @@ public class Enemy : MonoBehaviour {
             smallGraph.RemoveAt(closestID);
         }
         followPath = false;
+        this.tag = "Enemy";
     }
 }
