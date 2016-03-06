@@ -138,7 +138,7 @@ public class Enemy : MonoBehaviour {
 		timer += Time.deltaTime/5;
 		if (patateX.gameObject.tag == "Player" && timer >= timeBetweenAttacks) {
 			Attack();
-			patate.gameObject.GetComponent<AudioSource>().Play ();
+			patateX.gameObject.GetComponent<AudioSource>().Play ();
 			timer = 0;
 		} 
 	}
