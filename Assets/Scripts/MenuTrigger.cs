@@ -31,6 +31,8 @@ public class MenuTrigger : MonoBehaviour {
 				menu.GetComponent<Menu> ().hardbutton ();
 			if (name == "play")
 				menu.GetComponent<Menu> ().playtime ();
+			if (name == "exit")
+				menu.GetComponent<Menu> ().Exit ();
 		}
 			
 	}

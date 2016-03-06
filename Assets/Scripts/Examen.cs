@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Examen : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Examen : MonoBehaviour
 	public Text Res;
 	public Text score;
 	GameObject world;
+	bool game = false;
 
 
 	void Awake() {
@@ -112,7 +114,10 @@ public class Examen : MonoBehaviour
         goods.text = good + " /";
 		if (!question && x < ques) {
 			askquestion (x);
-		}			
+		}	
+
+		if(game)
+			SceneManager.LoadScene ("Menu");
     }
 
     void askquestion(int i)
@@ -162,6 +167,7 @@ public class Examen : MonoBehaviour
             cote = 'E';
 		Res.text = cote + "";
 		score.text = "Score: " + Player.instance.PointTotal ();
+		StartCoroutine (waitBeforeRestart ());
 	}
 
 	void setupData() {
@@ -171,6 +177,11 @@ public class Examen : MonoBehaviour
 		Debug.Log (ques);
 
 		Destroy (world);
+	}
+
+	IEnumerator waitBeforeRestart() {
+		yield return new WaitForSeconds (8f);
+		game = true;
 	}
         
 }
