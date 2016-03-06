@@ -20,8 +20,8 @@ public class Examen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//playerNotes = Player.instance.note;
-		//ques = GameManager.instance.NotesMax;
+		playerNotes = Player.instance.Note;
+		ques = GameManager.instance.NotesMax;
 		switch (ques) {
 		case (12): 	notes.Add ("Everywhere");
 					questions.Add ("Following the explosion, where is little Juliet?"); 
