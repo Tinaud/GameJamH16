@@ -100,6 +100,8 @@ public class GameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        if (timer.Hours == 12 || Input.GetKeyDown(KeyCode.A))
+            eventManager.applyEventEffect(1);
 		if (timer.Hours == 16)
 			timer.StopTimer ();
 

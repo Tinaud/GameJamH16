@@ -28,7 +28,7 @@ public class Controller : MonoBehaviour
 		rb2D = GetComponent <Rigidbody2D> ();
         sr = GetComponent<SpriteRenderer>();
         hitted = false;
-        moveSpeed = 5f;
+        moveSpeed = 6f;
 	}
 
     void Update()
