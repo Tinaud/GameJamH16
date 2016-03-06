@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Enemy : MonoBehaviour {
+    public static bool potatoFight = false;
 
     public Sprite poof;
 	public GameObject papel;
@@ -179,8 +180,8 @@ public class Enemy : MonoBehaviour {
         graph12.Add(new Vector2(41, 20));
         graph12.Add(new Vector2(41, -32));
         graph12.Add(new Vector2(2, 18));
-        graph12.Add(new Vector2(2, -3));
-        graph12.Add(new Vector2(-12, -3));
+        graph12.Add(new Vector2(2, -1));
+        graph12.Add(new Vector2(-12, -1));
         graph12.Add(new Vector2(-28, -17));
     }
 
@@ -232,5 +233,10 @@ public class Enemy : MonoBehaviour {
         }
         followPath = false;
         this.tag = "Enemy";
+        if (GameManager.instance.timer.Hours >= 12 && !potatoFight)
+        {
+            potatoFight = true;
+            Instantiate(Resources.Load("FoodFight"), new Vector3(-30, -11, transform.position.z), Quaternion.identity);
+        }  
     }
 }

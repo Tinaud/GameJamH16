@@ -29,12 +29,12 @@ public class Events : MonoBehaviour {
 			Debug.Log ("Playtime, everybody out !");
 			for (int i = 0; i < 3; i++ )
             {
-                GameObject obj = (GameObject)Instantiate(Resources.Load("EnemyPurpTie"), new Vector3(-38.8f + i, 90.8f + i, -0.03f), Quaternion.identity);
+                GameObject obj = (GameObject)Instantiate(Resources.Load("EnemyPurpTie"), new Vector3(-38.8f + i, 142f + i, -0.03f), Quaternion.identity);
                 obj.tag = "Prof";
             }
             for (int i = 0; i < 3; i++)
             {
-                GameObject obj = (GameObject)Instantiate(Resources.Load("EnemyPurpTie"), new Vector3(41.8f + i, 90.8f + i, -0.03f), Quaternion.identity);
+                GameObject obj = (GameObject)Instantiate(Resources.Load("EnemyPurpTie"), new Vector3(41.8f + i, 142f + i, -0.03f), Quaternion.identity);
                 obj.tag = "Prof";
             }
 			break;
@@ -42,12 +42,12 @@ public class Events : MonoBehaviour {
 			Debug.Log ("FoodParty !! Hold a potatoe and Potate them !!!!!");
             for (int i = 0; i < 4; i++ )
             {
-                GameObject obj = (GameObject)Instantiate(Resources.Load("EnemyPurpTie"), new Vector3(-38.8f + i, 90.8f + i, -0.03f), Quaternion.identity);
+                GameObject obj = (GameObject)Instantiate(Resources.Load("EnemyPurpTie"), new Vector3(-38.8f + i, 142f + i, -0.03f), Quaternion.identity);
                 obj.tag = "Prof";
             }
             for (int i = 0; i < 4; i++)
             {
-                GameObject obj = (GameObject)Instantiate(Resources.Load("EnemyPurpTie"), new Vector3(41.8f + i, 90.8f + i, -0.03f), Quaternion.identity);
+                GameObject obj = (GameObject)Instantiate(Resources.Load("EnemyPurpTie"), new Vector3(41.8f + i, 142f + i, -0.03f), Quaternion.identity);
                 obj.tag = "Prof";
             }
                 
