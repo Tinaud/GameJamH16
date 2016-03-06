@@ -11,7 +11,7 @@ public class Examen : MonoBehaviour
     private List<string> questions = new List<string>();
     private int playerNotes = 1;
     private int good = 0;
-    private int ques = 12, Y = 400, x = 0;
+    private int ques = 12, Y = 320, x = 0;
     public GameObject canvas;
     GameObject InstObject;
     bool question = false;
@@ -19,14 +19,24 @@ public class Examen : MonoBehaviour
     public Text total;
 	public Text cote;
 	public Text score;
+	GameObject world;
 
+
+	void Awake() {
+		world = GameObject.Find ("World");
+	}
     // Use this for initialization
     void Start()
     {
+
+		setupData ();
 		cote.text = "";
 		score.text = "";
+<<<<<<< HEAD
         //playerNotes = Player.instance.Note;
         //ques = GameManager.instance.NotesMax;
+=======
+>>>>>>> c861e99bf509b65fca6b0117c7282b8c54a5ba7a
         switch (ques)
         {
             case (12):

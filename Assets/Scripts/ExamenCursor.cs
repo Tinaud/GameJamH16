@@ -17,6 +17,7 @@ public class ExamenCursor : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+		Debug.Log ("control");
 		movementH = Input.GetAxis("HorizontalYoung");
 		movementV = Input.GetAxis("VerticalYoung");
 		transform.Translate(Vector2.right * moveSpeed * Input.GetAxis("HorizontalYoung") * Time.deltaTime);
