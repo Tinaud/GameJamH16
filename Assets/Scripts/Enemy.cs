@@ -3,13 +3,13 @@ using System.Collections;
 
 public class Enemy : MonoBehaviour {
 
-
+    public Sprite poof;
 	public GameObject papel;
     public Sprite[] enemy1, enemy2, enemy3, choosenEnemy;
     private int damagePower = 2;
     private int health = 100;
     private int rand;
-    private bool alive = true;
+    private bool alive = true, dead = false;
 	private float distance,
 				  moveSpeed;
 	private GameObject oldBrother;
@@ -56,60 +56,60 @@ public class Enemy : MonoBehaviour {
     }
     
 	void Update () {
-
-        anim.SetInteger("Dir", potato);
-
-        if (health <= 0)
-		{
-			int rnd = Random.Range (1, 10);
-			Debug.Log (rnd);
-			if (rnd == 9) {
-				GameObject patate = Instantiate (papel);
-				patate.transform.position = transform.position;
-			}
-			Destroy (this.gameObject);
-        }
-		distance = getDistance();
-
-        if (distance > 3)
-            potato = 0;
-
-        if (distance < 3 && distance > 1)
-		{
-			direction = normalize(oldBrother.transform.position.x - this.transform.position.x, oldBrother.transform.position.y - this.transform.position.y);
-			transform.Translate(direction * moveSpeed * Time.deltaTime);
-
-            if (Mathf.Abs(direction.y) < 0.75f)
+        Debug.Log(health);
+        
+        if (health <= 0 && !dead)
+        {
+            dead = true;
+            int rnd = Random.Range(1, 10);
+            if (rnd == 9)
             {
-                if (direction.x < 0)
-                {
-                    potato = 4;
-                }
-                else if (direction.x > 0)
-                {
-                    potato = 3;
-                }
+                GameObject patate = Instantiate(papel);
+                patate.transform.position = transform.position;
             }
-            else
+            anim.SetInteger("Dir", 5);
+            StartCoroutine(EnemyDie());
+        }
+        else if(health > 0)
+        {
+            Debug.Log("patate");
+            anim.SetInteger("Dir", potato);
+            distance = getDistance();
+
+            if (distance > 3)
+                potato = 0;
+
+            if (distance < 3 && distance > 1)
             {
-                if (direction.y > 0)
+                direction = normalize(oldBrother.transform.position.x - this.transform.position.x, oldBrother.transform.position.y - this.transform.position.y);
+                transform.Translate(direction * moveSpeed * Time.deltaTime);
+
+                if (Mathf.Abs(direction.y) < 0.75f)
                 {
-                    potato = 1;
+                    if (direction.x < 0)
+                    {
+                        potato = 4;
+                    }
+                    else if (direction.x > 0)
+                    {
+                        potato = 3;
+                    }
                 }
                 else
                 {
-                    potato = 2;
+                    if (direction.y > 0)
+                    {
+                        potato = 1;
+                    }
+                    else
+                    {
+                        potato = 2;
+                    }
                 }
+                if (direction.x == 0 && direction.y == 0)
+                    potato = 0;
             }
-            if (direction.x == 0 && direction.y == 0)
-                potato = 0;
-            /*
-            if (direction.y < 0)
-                sr.sprite = choosenEnemy[0];
-            else
-                sr.sprite = choosenEnemy[1];*/
-        }
-        
+        }      
     }
 
 	Vector2 normalize(float x, float y)
@@ -138,12 +138,14 @@ public class Enemy : MonoBehaviour {
 		timer += Time.deltaTime/5;
 		if (patateX.gameObject.tag == "Player" && timer >= timeBetweenAttacks) {
 			Attack();
+			patate.gameObject.GetComponent<AudioSource>().Play ();
 			timer = 0;
 		} 
 	}
 
 	private void Attack() {
 		Debug.Log ("I c u");
+		GameObject.Find ("attack").GetComponent<AudioSource> ().Play ();
 		Player player = GameObject.Find ("Brothers").GetComponent<Player> ();
 		player.TakeDamage(damagePower);
 	}
@@ -151,4 +153,11 @@ public class Enemy : MonoBehaviour {
 	public void gethit() {
 		health = health - 50;
 	}
+
+    IEnumerator EnemyDie()
+    {
+        Debug.Log("blebleble");
+        yield return new WaitForSeconds(1f);
+        Destroy(this.gameObject);
+    }
 }

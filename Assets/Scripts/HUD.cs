@@ -3,8 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class HUD : MonoBehaviour {
-
-    public float healthmax;
+	
     public int min;
     public int hour;
     public Text note;
@@ -13,15 +12,15 @@ public class HUD : MonoBehaviour {
     public Text hourT;
     public Slider healthSlider;
 	Player player;
-	GameManager gameManager;
+	public GameObject gameManager;
 	Timer time;
 
 
 	// Use this for initialization
     void Start() {
-		gameManager = GetComponent<GameManager> ();
+		noteT.text = GameManager.instance.NotesMax.ToString();
 		player = GetComponentInParent<ControllerYoung> ().GetComponentInParent<Player>();
-		time = GetComponent<Timer> ();
+		time = gameManager.GetComponent<Timer> ();
 	}
 	
 	// Update is called once per frame
@@ -29,31 +28,15 @@ public class HUD : MonoBehaviour {
 		hour = time.Hours;
 		min = time.Minutes;
 		healthSlider.value = player.Health;
-		note.text = "" + player.Note;
-        if (hour < 10)
-            hourT.text = "0" + hour;
-        else
-            hourT.text = "" + hour;
-        if (min < 10)
-            minT.text = "0" + min;
-        else
-            minT.text = "" + min;
+		note.text = player.Note.ToString();
+		if (hour < 10)
+			hourT.text = "0" + hour;
+		else
+			hourT.text = "" + hour;
+		if (min < 10)
+			minT.text = "0" + min;
+		else
+			minT.text = "" + min;
 	}
-
-	public void setEasy()
-	{
-		noteT.text = "" + 6;
-	}
-
-	public void setMedium()
-	{
-		noteT.text = "" + 9;
-	}
-
-	public void setHard()
-	{
-		noteT.text = "" + 12;
-	}
-
 
 }
