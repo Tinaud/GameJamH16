@@ -54,7 +54,8 @@ public class ControllerYoung : MonoBehaviour
         }
         else
         {
-			cry ();
+            anim.SetInteger("Dir", 5);
+            cry ();
             Debug.Log("CRY");
         }
 
@@ -139,7 +140,7 @@ public class ControllerYoung : MonoBehaviour
 	}
 
 	void cry () {
-		AudioSource audio = GetComponent<AudioSource> ();
+        AudioSource audio = GetComponent<AudioSource> ();
 		if (!audio.isPlaying) {
 			audio.Play ();
 		}
