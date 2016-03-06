@@ -19,7 +19,7 @@ public class Punch : MonoBehaviour
 
     IEnumerator PunchLifeTime()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         Destroy(this.gameObject);
     }
 }
