@@ -22,18 +22,30 @@ public class ExamenCursor : MonoBehaviour {
 		transform.Translate(Vector2.right * moveSpeed * Input.GetAxis("HorizontalYoung") * Time.deltaTime);
 		transform.Translate(Vector3.down * moveSpeed * Input.GetAxis("VerticalYoung") * Time.deltaTime);
 		if (Input.GetButtonDown ("Accept")&& name != "naud") {
-			if (name == "Horse")
-				examen.GetComponent<Examen> ().verification (0);
-			if (name == "1942")
-				examen.GetComponent<Examen> ().verification (1);				
-			if (name == "24")
-				examen.GetComponent<Examen> ().verification (2);				
+			if (name == "Beaver")
+				examen.GetComponent<Examen> ().verification (name);
+			if (name == "21-12-2012")
+				examen.GetComponent<Examen> ().verification (name);				
+			if (name == "Everywhere")
+				examen.GetComponent<Examen> ().verification (name);				
 			if (name == "Oui")
-				examen.GetComponent<Examen> ().verification (3);				
-			if (name == "When")
-				examen.GetComponent<Examen> ().verification (4);				
+				examen.GetComponent<Examen> ().verification (name);				
+			if (name == "Purple")
+				examen.GetComponent<Examen> ().verification (name);				
 			if (name == "Canada")
-				examen.GetComponent<Examen> ().verification (5);				
+				examen.GetComponent<Examen> ().verification (name);			
+			if (name == "Grilled Cheese")
+				examen.GetComponent<Examen> ().verification (name);			
+			if (name == "Trump")
+				examen.GetComponent<Examen> ().verification (name);			
+			if (name == "Recess")
+				examen.GetComponent<Examen> ().verification (name);		
+			if (name == "(a)jar")
+				examen.GetComponent<Examen> ().verification (name);		
+			if (name == "socks")
+				examen.GetComponent<Examen> ().verification (name);		
+			if (name == "Procrastination")
+				examen.GetComponent<Examen> ().verification (name);									
 		}
 
 	}
