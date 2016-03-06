@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour {
             anim.SetInteger("Dir", 5);
             StartCoroutine(EnemyDie());
         }
-        else if(health > 0)
+        else if(health > 0 && this.name != "Pablo")
         {
             //Debug.Log("patate");
             anim.SetInteger("Dir", potato);
