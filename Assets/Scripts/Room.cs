@@ -2,10 +2,7 @@
 using System.Collections;
 
 public class Room : MonoBehaviour {
-
-	private SpriteRenderer sr;
 	private Color srColor;
-	private BoxCollider2D boxCollider;
 
 	private int controllersInside = 0;
 
@@ -40,19 +37,18 @@ public class Room : MonoBehaviour {
     }
 
     void Start() {
-		sr = GetComponent<SpriteRenderer> ();
-		boxCollider = GetComponent<BoxCollider2D> ();
-		srColor = sr.color;
+		srColor = GetComponent<SpriteRenderer> ().color;
+		srColor.a = .8f;
+		GetComponent<SpriteRenderer> ().color = srColor;
 	}
 
 	void Update() {
 		if (controllersInside > 0) {
 			srColor.a = 0;
-		} else if (controllersInside == 0) {
-			srColor.a = 255;
+		} else {
+			srColor.a = .8f;
 		}
-		sr.color = srColor;
-
+		GetComponent<SpriteRenderer> ().color = srColor;
 	}
 
 

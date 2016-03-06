@@ -3,12 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class MapEditor : MonoBehaviour {
-
-	private SpriteRenderer sr;
-	public Sprite mapSprite;
-	GameObject zones;
-	GameObject walls;
-
 	int noteToPlace;
 
     public int NoteToPlace {
@@ -39,15 +33,10 @@ public class MapEditor : MonoBehaviour {
 	}
 
 	public void InitializeMap() {
-		sr = GetComponent<SpriteRenderer> ();
-		sr.sprite = mapSprite;
-		zones = Instantiate (Resources.Load ("Zones", typeof(GameObject))) as GameObject;
-		zones.transform.parent = transform;
-		walls = Instantiate (Resources.Load ("Colliders", typeof(GameObject))) as GameObject;
-		walls.transform.parent = transform;
+		//gameObject.SetActive (true);
 
 		noteToPlace = GameManager.instance.NotesMax;
-		roomList = new List<Room>(zones.GetComponentsInChildren<Room> ());
+		roomList = new List<Room>(gameObject.GetComponentsInChildren<Room> ());
 		for (int i = 0; i < noteToPlace; i++) {
 			placeNote (getRandomRoom (), i+1);
 		}
