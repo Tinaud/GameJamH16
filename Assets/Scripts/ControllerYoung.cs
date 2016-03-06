@@ -32,7 +32,7 @@ public class ControllerYoung : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
 
 		oldBrother = Player.instance.GetComponentInChildren<Controller>().gameObject; //TEMP!!
-        moveSpeed = 4f;
+        moveSpeed = 5f;
         temp = 0;
         lr = GetComponent<LineRenderer>();
         lineColor.a = 0;

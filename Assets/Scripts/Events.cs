@@ -27,14 +27,27 @@ public class Events : MonoBehaviour {
 		switch (eventNumber) {
 		case 0:
 			Debug.Log ("Playtime, everybody out !");
-			/*foreach (Enemy enemy in enemies)
-				enemy.goTo (0);*/
+			for (int i = 0; i < 3; i++ )
+            {
+                GameObject obj = (GameObject)Instantiate(Resources.Load("EnemyPurpTie"), new Vector3(-38.8f + i, 142f + i, -0.03f), Quaternion.identity);
+                obj.tag = "Prof";
+            }
+            for (int i = 0; i < 3; i++)
+            {
+                GameObject obj = (GameObject)Instantiate(Resources.Load("EnemyPurpTie"), new Vector3(41.8f + i, 142f + i, -0.03f), Quaternion.identity);
+                obj.tag = "Prof";
+            }
 			break;
 		case 1:
 			Debug.Log ("FoodParty !! Hold a potatoe and Potate them !!!!!");
-            for (int i = 0; i < 3; i++ )
+            for (int i = 0; i < 4; i++ )
             {
-                GameObject obj = (GameObject)Instantiate(Resources.Load("EnemyPurpTie"), new Vector3(-38.8f + i, 84.8f + i, -0.03f), Quaternion.identity);
+                GameObject obj = (GameObject)Instantiate(Resources.Load("EnemyPurpTie"), new Vector3(-38.8f + i, 142f + i, -0.03f), Quaternion.identity);
+                obj.tag = "Prof";
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                GameObject obj = (GameObject)Instantiate(Resources.Load("EnemyPurpTie"), new Vector3(41.8f + i, 142f + i, -0.03f), Quaternion.identity);
                 obj.tag = "Prof";
             }
                 

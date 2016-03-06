@@ -15,9 +15,9 @@ public class GameManager : MonoBehaviour {
 	private int level = 1;
 	private GameObject levelImage;
 	private Text levelText;
+    private bool once10, once12;
 
-
-	Timer timer;
+	public Timer timer;
 	private MapEditor mapScript;
 	public GameObject HUD;
 	private GameObject menuCamera;
@@ -74,6 +74,8 @@ public class GameManager : MonoBehaviour {
 	}
 		
 	void Start() {
+        once10 = false;
+        once12 = false;
 		levelImage = GameObject.Find ("LevelImage");
 		levelImage.GetComponent<AudioSource> ().Play ();
 		levelText = GameObject.Find ("LevelText").GetComponent<Text> ();
@@ -100,8 +102,18 @@ public class GameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        if (timer.Hours == 12 || Input.GetKeyDown(KeyCode.A))
+        if (timer.Hours == 10 && !once10)
+        {
+            eventManager.applyEventEffect(0);
+            once10 = true;
+        }
+            
+        if (timer.Hours == 12 && !once12 || Input.GetKeyDown(KeyCode.A))
+        {
             eventManager.applyEventEffect(1);
+            once12 = true;
+        }
+            
 		if (timer.Hours == 16)
 			timer.StopTimer ();
 

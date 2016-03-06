@@ -36,7 +36,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
 		if (timeStarted) {
-	        timer = timer + Time.deltaTime;
+	        timer = timer + Time.deltaTime * 4;
 	        hours = (int)timer / 60;
 	        minutes = (int) timer % 60;
 	       // Debug.Log(hours + ":" + minutes);
