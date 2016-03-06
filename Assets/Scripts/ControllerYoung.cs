@@ -119,14 +119,13 @@ public class ControllerYoung : MonoBehaviour
 		} else if (patate.tag == "Note") {
 			Debug.Log ("Note");
 			player.Note++; 
-			GameObject.Find ("Note sound").GetComponent<AudioSource> ().Play();
-			Destroy (patate.gameObject);
+			patate.gameObject.GetComponent<AudioSource> ().Play();
+			Destroy (patate.gameObject, patate.gameObject.GetComponent<AudioSource> ().clip.length);
 		} else if (patate.tag == "Apple") {
 			Debug.Log ("Pomme");
-			GameObject.Find("Apple sound").GetComponent<AudioSource> ().Play();
 			player.Health += 10; 
-			GameObject.Find ("Apple sound").GetComponent<AudioSource> ().Play();
-			Destroy (patate.gameObject);
+			patate.gameObject.GetComponent<AudioSource> ().Play();
+			Destroy (patate.gameObject, patate.gameObject.GetComponent<AudioSource> ().clip.length);
 		}
 	}
 
@@ -144,5 +143,5 @@ public class ControllerYoung : MonoBehaviour
 			audio.Play ();
 		}
 	}
-
+		
 }

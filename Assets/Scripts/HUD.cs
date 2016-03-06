@@ -28,6 +28,10 @@ public class HUD : MonoBehaviour {
 		hour = time.Hours;
 		min = time.Minutes;
 		healthSlider.value = player.Health;
+
+		if (healthSlider.value < 30)
+			StartCoroutine (faint ());
+		
 		note.text = player.Note.ToString();
 		if (hour < 10)
 			hourT.text = "0" + hour;
@@ -37,6 +41,16 @@ public class HUD : MonoBehaviour {
 			minT.text = "0" + min;
 		else
 			minT.text = "" + min;
+	}
+
+	IEnumerator faint() {
+		while (player.Health > 0 && player.Health < 30) {
+			
+			healthSlider.gameObject.SetActive (false);
+			yield return new WaitForSeconds (3f);
+			healthSlider.gameObject.SetActive (true);
+			yield return new WaitForSeconds (5f);
+		}
 	}
 
 }
