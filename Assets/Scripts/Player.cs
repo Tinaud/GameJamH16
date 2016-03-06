@@ -119,7 +119,7 @@ public class Player : MonoBehaviour {
 
     public double PointTotal ()
     {
-        pointage += note * 25;
+        pointage += note * 50;
         return pointage;
     }
 }
