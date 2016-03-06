@@ -17,7 +17,7 @@ public class Examen : MonoBehaviour
     bool question = false;
     public Text goods;
     public Text total;
-	public Text cote;
+	public Text Res;
 	public Text score;
 	GameObject world;
 
@@ -30,13 +30,10 @@ public class Examen : MonoBehaviour
     {
 
 		setupData ();
-		cote.text = "";
+		Res.text = "";
 		score.text = "";
-<<<<<<< HEAD
-        //playerNotes = Player.instance.Note;
-        //ques = GameManager.instance.NotesMax;
-=======
->>>>>>> c861e99bf509b65fca6b0117c7282b8c54a5ba7a
+        playerNotes = Player.instance.Note;
+        ques = GameManager.instance.NotesMax;
         switch (ques)
         {
             case (12):
@@ -115,11 +112,7 @@ public class Examen : MonoBehaviour
         goods.text = good + " /";
 		if (!question && x < ques) {
 			askquestion (x);
-		} else if (x >= ques) {
-			cote.text = Cote () + "";
-			//score.text = "Score: " + Player.instance.PointTotal ();
-		}
-			
+		}			
     }
 
     void askquestion(int i)
@@ -142,13 +135,16 @@ public class Examen : MonoBehaviour
         if (answers[x] == name)
             good++;
         x++;
-        question = false;
+		question = false;
+		if (x >= ques) {
+			Cote ();
+		}
     }
 
-    public char Cote()
+    public void Cote()
     {
         char cote;
-        float resultat = (playerNotes / ques) * 100;
+        float resultat = (good / ques) * 100;
 		cote = 'E';
         if (resultat > 90)
             cote = 'A';
@@ -164,16 +160,17 @@ public class Examen : MonoBehaviour
 
 		if (resultat < 60)
             cote = 'E';
-		return cote;
+		Res.text = cote + "";
+		score.text = "Score: " + Player.instance.PointTotal ();
 	}
 
-	/*void setupData() {
+	void setupData() {
 		playerNotes = Player.instance.Note;
 		Debug.Log (playerNotes);
 		ques = GameManager.instance.NotesMax;
 		Debug.Log (ques);
 
 		Destroy (world);
-	}*/
+	}
         
 }
