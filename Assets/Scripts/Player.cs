@@ -46,7 +46,7 @@ public class Player : MonoBehaviour {
 	}
 
 	void Start() {
-		note = GameManager.instance.NoteCollected;
+		note = 0;
 	}
 
     public void characterHurt(int damage)

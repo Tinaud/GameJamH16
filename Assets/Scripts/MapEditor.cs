@@ -43,9 +43,10 @@ public class MapEditor : MonoBehaviour {
 		sr.sprite = mapSprite;
 		zones = Instantiate (Resources.Load ("Zones", typeof(GameObject))) as GameObject;
 		zones.transform.parent = transform;
-		walls = Instantiate (Resources.Load ("Walls", typeof(GameObject))) as GameObject;
+		walls = Instantiate (Resources.Load ("Colliders", typeof(GameObject))) as GameObject;
 		walls.transform.parent = transform;
 
+		noteToPlace = GameManager.instance.NotesMax;
 		roomList = new List<Room>(zones.GetComponentsInChildren<Room> ());
 		for (int i = 0; i < noteToPlace; i++) {
 			placeNote (getRandomRoom (), i+1);
@@ -60,20 +61,5 @@ public class MapEditor : MonoBehaviour {
 
 		return randomRoom;
 	}
-
-    public void setEasy()
-    {
-		noteToPlace = 6;
-    }
-
-    public void setMedium()
-    {
-		noteToPlace = 9;
-    }
-
-    public void setHard()
-    {
-		noteToPlace = 12;
-    }
 }
 

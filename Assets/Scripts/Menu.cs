@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour {
 
@@ -11,22 +12,31 @@ public class Menu : MonoBehaviour {
 	public Button med;
 	public Button hard;
 	public GameObject menu;
-	public GameObject HUD;
-	public AudioSource music;
 	public AudioSource ringing;
+
+	private int difficulty;
+
+	public int Difficulty {
+		get {
+			return difficulty;
+		}
+	}
 
 	bool playable;
 
 	// Use this for initialization
 	void Start () {
+		difficulty = 0;
+
 		easy.image.overrideSprite = ferm;
 		med.image.overrideSprite = ferm;
 		hard.image.overrideSprite = ferm;
+
 		play.SetActive(false);
 		playable = false;
 		menu.SetActive(true);
-		HUD.SetActive (false);
-        music.Pause();
+
+		DontDestroyOnLoad(gameObject);
 	}
 
 	// Update is called once per frame
@@ -39,28 +49,35 @@ public class Menu : MonoBehaviour {
 		easy.image.overrideSprite = ouv;
 		med.image.overrideSprite = ferm;
 		hard.image.overrideSprite = ferm;
-		playable = true;		
+		Debug.Log ("Easy");
+		playable = true;
+		difficulty = 1;
 	}
 
 	public void medbutton() {
 		easy.image.overrideSprite = ferm;
 		med.image.overrideSprite = ouv;
 		hard.image.overrideSprite = ferm;
-		playable = true;		
+		Debug.Log ("Medium");
+		playable = true;
+		difficulty = 2;
 	}
 
 	public void hardbutton() {
 		easy.image.overrideSprite = ferm;
 		med.image.overrideSprite = ferm;
 		hard.image.overrideSprite = ouv;
-		playable = true;		
+		Debug.Log ("Hard");
+		playable = true;	
+		difficulty = 3;
 	}
 
 	public void playtime(){
+		enabled = false;
 		menu.SetActive(false);
-		HUD.SetActive (true);
 		ringing.Play ();
-        music.Play();
 		menu.GetComponent<AudioSource> ().Pause ();
+
+		SceneManager.LoadScene ("Game");
 	}
 }
