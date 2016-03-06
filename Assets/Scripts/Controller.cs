@@ -4,7 +4,6 @@ using System.Collections;
 public class Controller : MonoBehaviour 
 {
     public Sprite[] sister;
-    public Sprite poof;
     private bool hitted;
     private float moveSpeed,
                   movementH,
@@ -111,11 +110,9 @@ public class Controller : MonoBehaviour
 		}
 	}
 
-
     public void attack(GameObject enemy)
     {
         Enemy hittedGuy = GetComponent<Enemy>();
-        enemy.GetComponent<SpriteRenderer>().sprite = poof;
         StartCoroutine(EnemyDie(enemy));
     }
 
