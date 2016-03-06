@@ -66,6 +66,7 @@ public class Controller : MonoBehaviour
             instanciatedObject = (GameObject)Instantiate(Resources.Load("PunchZone"), PunchPos, Quaternion.identity);
             instanciatedObject.transform.parent = transform.parent;
             hitted = true;
+			GameObject.Find ("attack").GetComponent<AudioSource> ().Play ();
             Debug.Log("BAM");
         }
 
@@ -100,11 +101,4 @@ public class Controller : MonoBehaviour
 			patate.GetComponent<Room> ().ControllersInside--;
 		}
 	}
-
-    public void attack(GameObject enemy)
-    {
-        Enemy hittedGuy = GetComponent<Enemy>();
-        Destroy(enemy);
-    }
-
 }

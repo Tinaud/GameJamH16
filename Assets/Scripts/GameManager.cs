@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour {
 		mapScript = GameObject.Find("Map").GetComponent<MapEditor>();
 
 		// Par défaut pour le moment, flafla
-		player = GetComponentInParent<ControllerYoung> ().GetComponentInParent<Player>();
+		player = GetComponentInChildren<ControllerYoung> ().GetComponentInParent<Player>();
 	}
 
 	public void InitGame() {

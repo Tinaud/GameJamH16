@@ -20,7 +20,7 @@ public class HUD : MonoBehaviour {
 	// Use this for initialization
     void Start() {
 		gameManager = GetComponent<GameManager> ();
-		player = GetComponentInParent<ControllerYoung> ().GetComponentInParent<Player>();
+		player = GetComponentInChildren<ControllerYoung> ().GetComponentInParent<Player>();
 		time = GetComponent<Timer> ();
 	}
 	
