@@ -22,6 +22,16 @@ public class GameManager : MonoBehaviour {
 	public GameObject HUD;
 	private GameObject menuCamera;
 
+	private int enemiesMax;
+	public int EnemiesMax {
+		get {
+			return enemiesMax;
+		}
+		set {
+			enemiesMax = value;
+		}
+	}
+
 	private int notesMax;
 	public int NotesMax {
 		get {
@@ -29,6 +39,16 @@ public class GameManager : MonoBehaviour {
 		}
 		set {
 			notesMax = value;
+		}
+	}
+
+	private int enemiesMaxDamages;
+	public int EnemiesMaxDamages {
+		get {
+			return enemiesMaxDamages;
+		}
+		set {
+			enemiesMaxDamages = value;
 		}
 	}
 
@@ -62,6 +82,7 @@ public class GameManager : MonoBehaviour {
 		
 	void Start() {
 		levelImage = GameObject.Find ("LevelImage");
+		levelImage.GetComponent<AudioSource> ().Play ();
 		levelText = GameObject.Find ("LevelText").GetComponent<Text> ();
 
 		levelText.text = "Exam " + level;
@@ -75,10 +96,10 @@ public class GameManager : MonoBehaviour {
 	void HideLevelImage()
 	{
 		levelImage.SetActive(false);
-		GetComponent<AudioSource> ().Play ();
 		timer.StartTimer ();
 		HUD.SetActive (true);
 		mapScript.InitializeMap ();
+		GetComponent<AudioSource> ().Play ();
 		//StartCoroutine(eventLoop());
 	}
 
@@ -91,7 +112,7 @@ public class GameManager : MonoBehaviour {
 		if (!player.Alive || (!timer.enabled && !player.IsInExamRoom))
 			GameOver ();
 
-		if (player.Note == 6)
+		if (player.Note == NotesMax)
 			GameWin ();
 
        /* if(timer.Hours == 14 && timer.Minutes == 0)

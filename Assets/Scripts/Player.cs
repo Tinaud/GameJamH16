@@ -65,8 +65,12 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update () {
+		if (health > 100)
+			health = 100; 
+		
         if (health <= 0)
         {
+			health = 0;
             alive = false;
         }
 
@@ -78,6 +82,8 @@ public class Player : MonoBehaviour {
 
 		if (Input.GetKey (KeyCode.N))
 			note++;
+
+			
 	}
 
 	public void TakeDamage(int damage) {

@@ -1,11 +1,11 @@
 fileFormatVersion: 2
 guid: 86a7890382b7d434c9562d235461d003
-timeCreated: 1457223785
+timeCreated: 1457246366
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - mapSprite: {fileID: 21300000, guid: 4a3016fe419677f4b8a5bc8b01b492d2, type: 3}
+  - noteObj: {fileID: 118934, guid: 9288b24935a47244f9aa5586dc14bfb0, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

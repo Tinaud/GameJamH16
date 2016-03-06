@@ -12,7 +12,6 @@ public class Menu : MonoBehaviour {
 	public Button med;
 	public Button hard;
 	public GameObject menu;
-	public AudioSource ringing;
 
 	private int difficulty;
 
@@ -75,7 +74,6 @@ public class Menu : MonoBehaviour {
 	public void playtime(){
 		enabled = false;
 		menu.SetActive(false);
-		ringing.Play ();
 		menu.GetComponent<AudioSource> ().Pause ();
 
 		SceneManager.LoadScene ("Game");

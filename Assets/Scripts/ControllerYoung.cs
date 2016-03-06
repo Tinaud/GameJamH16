@@ -126,14 +126,13 @@ public class ControllerYoung : MonoBehaviour
 		} else if (patate.tag == "Note") {
 			Debug.Log ("Note");
 			player.Note++; 
-			GameObject.Find ("Note sound").GetComponent<AudioSource> ().Play();
-			Destroy (patate.gameObject);
+			patate.gameObject.GetComponent<AudioSource> ().Play();
+			Destroy (patate.gameObject, patate.gameObject.GetComponent<AudioSource> ().clip.length);
 		} else if (patate.tag == "Apple") {
 			Debug.Log ("Pomme");
-			GameObject.Find("Apple sound").GetComponent<AudioSource> ().Play();
 			player.Health += 10; 
-			GameObject.Find ("Apple sound").GetComponent<AudioSource> ().Play();
-			Destroy (patate.gameObject);
+			patate.gameObject.GetComponent<AudioSource> ().Play();
+			Destroy (patate.gameObject, patate.gameObject.GetComponent<AudioSource> ().clip.length);
 		}
 	}
 
@@ -154,10 +153,9 @@ public class ControllerYoung : MonoBehaviour
 
     IEnumerator helpMeSister()
     {
-        
         GameObject instanciatedObject = (GameObject) Instantiate(Resources.Load("HelpMeSis"), new Vector3(this.transform.position.x, this.transform.position.y + 3, this.transform.position.z), Quaternion.identity);
         yield return new WaitWhile(() => isCrying);
         Destroy(instanciatedObject);
     }
-
+		
 }
