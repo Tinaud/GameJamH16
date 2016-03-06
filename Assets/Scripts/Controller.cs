@@ -110,7 +110,6 @@ public class Controller : MonoBehaviour
 		}
 	}
 
-
     public void attack(GameObject enemy)
     {
         Enemy hittedGuy = GetComponent<Enemy>();

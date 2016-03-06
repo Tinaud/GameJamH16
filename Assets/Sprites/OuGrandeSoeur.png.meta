@@ -1,12 +1,11 @@
 fileFormatVersion: 2
-guid: 8075db6e95d848840aebf9a8f26e2d37
-timeCreated: 1457153972
+guid: f3298311d73fa4241ab1ec711ec2f358
+timeCreated: 1457234496
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: TriggerSpriteSheet_0
-    21300002: TriggerSpriteSheet_1
-    21300004: TriggerSpriteSheet_2
+    21300000: OuGrandeSoeur_0
+    21300002: OuGrandeSoeur_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -32,7 +31,7 @@ TextureImporter:
   textureFormat: -3
   maxTextureSize: 2048
   textureSettings:
-    filterMode: 0
+    filterMode: -1
     aniso: 16
     mipBias: -1
     wrapMode: 1
@@ -47,64 +46,50 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 25
+  spritePixelsToUnits: 15
   alphaIsTransparency: 1
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: TriggerSpriteSheet_0
+    - name: OuGrandeSoeur_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
-        height: 36
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -14, y: 18}
-        - {x: -14, y: -1}
-        - {x: -11, y: -13}
-        - {x: -7, y: -18}
-        - {x: 9, y: -18}
-        - {x: 14, y: -17}
-        - {x: 14, y: 18}
-    - name: TriggerSpriteSheet_1
+      - - {x: -4, y: 11}
+        - {x: -10, y: 6}
+        - {x: -11, y: 0}
+        - {x: -11, y: -4}
+        - {x: -4, y: -10}
+        - {x: 4, y: -10}
+        - {x: 11, y: -5}
+        - {x: 11, y: 1}
+        - {x: 8, y: 11}
+    - name: OuGrandeSoeur_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
-        height: 36
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -16, y: 18}
-        - {x: -16, y: -4}
-        - {x: -9, y: -18}
-        - {x: 16, y: -18}
-        - {x: 16, y: 18}
-    - name: TriggerSpriteSheet_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -14, y: 18}
-        - {x: -14, y: -1}
-        - {x: -11, y: -13}
-        - {x: -7, y: -18}
-        - {x: 9, y: -18}
-        - {x: 14, y: -17}
-        - {x: 14, y: 18}
+      - - {x: 12, y: 16}
+        - {x: -14, y: 16}
+        - {x: -14, y: -15}
+        - {x: -13, y: -16}
+        - {x: 12, y: -16}
+        - {x: 16, y: -6}
+        - {x: 16, y: 11}
     outline: []
   spritePackingTag: 
   userData: 
