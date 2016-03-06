@@ -11,7 +11,7 @@ public class MenuTrigger : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		moveSpeed = 8f;
+		moveSpeed = 100f;
 		name = "naud";
 	}
 	
