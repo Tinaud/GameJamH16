@@ -11,7 +11,7 @@ public class ExamenCursor : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		moveSpeed = 8f;
+		moveSpeed = 10f;
 		name = "naud";
 	}
 
