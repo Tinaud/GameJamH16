@@ -4,7 +4,6 @@ using System.Collections;
 public class Controller : MonoBehaviour 
 {
     public Sprite[] sister;
-    public Sprite poof;
     private bool hitted;
     private float moveSpeed,
                   movementH,
@@ -109,19 +108,4 @@ public class Controller : MonoBehaviour
 			patate.GetComponent<Room> ().ControllersInside--;
 		}
 	}
-
-    public void attack(GameObject enemy)
-    {
-        Enemy hittedGuy = GetComponent<Enemy>();
-        enemy.GetComponent<SpriteRenderer>().sprite = poof;
-        StartCoroutine(EnemyDie(enemy));
-    }
-
-    IEnumerator EnemyDie(GameObject enemy)
-    {
-        Debug.Log("blebleble");
-        
-        yield return new WaitForSeconds(1f);
-        Destroy(enemy);
-    }
 }
