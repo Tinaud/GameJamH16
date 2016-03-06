@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour {
 	private GameObject levelImage;
 	private Text levelText;
 
+
 	Timer timer;
 	private MapEditor mapScript;
 	public GameObject HUD;
@@ -31,7 +32,9 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	public GameObject[] bullies;
 	private List<Enemy> enemies;
+	private List<Vector2> spawnPoints;
 	private Player player;
 
 	// Use this for initialization
@@ -43,7 +46,11 @@ public class GameManager : MonoBehaviour {
 
 		DontDestroyOnLoad(gameObject);
 
+		initSpawnList ();
 		enemies = new List<Enemy>();
+		initEnemies ();
+
+
 
 		timer = GetComponent<Timer> ();
 		eventManager = GetComponent<Events> ();
@@ -145,6 +152,48 @@ public class GameManager : MonoBehaviour {
 		}
 
 		Destroy (menuCamera);
+	}
+
+	void initSpawnList() {
+		spawnPoints = new List<Vector2> ();
+
+		// classe 1
+		spawnPoints.Add (new Vector2 (-55, 144)); spawnPoints.Add (new Vector2 (-54, 136)); spawnPoints.Add (new Vector2 (-48, 140));
+		spawnPoints.Add (new Vector2 (-59, 145)); spawnPoints.Add (new Vector2 (-67, 145)); spawnPoints.Add (new Vector2 (-86, 145));
+
+		// classe 2
+		spawnPoints.Add (new Vector2 (-55, 112)); spawnPoints.Add (new Vector2 (-54, 104)); spawnPoints.Add (new Vector2 (-48, 108));
+		spawnPoints.Add (new Vector2 (-59, 113)); spawnPoints.Add (new Vector2 (-67, 113)); spawnPoints.Add (new Vector2 (-86, 113));
+
+		// classe 3
+		spawnPoints.Add (new Vector2 (-55, 80)); spawnPoints.Add (new Vector2 (-54, 82)); spawnPoints.Add (new Vector2 (-48, 76));
+		spawnPoints.Add (new Vector2 (-59, 81)); spawnPoints.Add (new Vector2 (-67, 81)); spawnPoints.Add (new Vector2 (-86, 81));
+
+		// classe 4
+		spawnPoints.Add (new Vector2 (92, 146)); spawnPoints.Add (new Vector2 (80, 143)); spawnPoints.Add (new Vector2 (72, 144));
+		spawnPoints.Add (new Vector2 (61, 139)); spawnPoints.Add (new Vector2 (53, 145)); spawnPoints.Add (new Vector2 (58, 129));
+
+		// classe 5
+		spawnPoints.Add (new Vector2 (92, 114)); spawnPoints.Add (new Vector2 (80, 111)); spawnPoints.Add (new Vector2 (72, 112));
+		spawnPoints.Add (new Vector2 (61, 107)); spawnPoints.Add (new Vector2 (53, 133)); spawnPoints.Add (new Vector2 (58, 99));
+
+		// classe 6
+		spawnPoints.Add (new Vector2 (92, 82)); spawnPoints.Add (new Vector2 (80, 79)); spawnPoints.Add (new Vector2 (72, 80));
+		spawnPoints.Add (new Vector2 (61, 75)); spawnPoints.Add (new Vector2 (53, 101)); spawnPoints.Add (new Vector2 (58, 67));
+	}
+
+	void initEnemies() {
+		for (int i = 0; i < 12; i++) {
+			int patateSP = Random.Range (0, spawnPoints.Count);
+			int rand = Random.Range (0, 5);
+
+			Vector2 randomSP = spawnPoints [patateSP];
+			spawnPoints.RemoveAt (patateSP);
+
+			GameObject bully = (GameObject) Instantiate (bullies [rand], randomSP, Quaternion.identity);
+			enemies.Add(bully.GetComponent<Enemy>());
+			Debug.Log (bully.name);
+		}
 	}
 		
 	/*	IEnumerator eventLoop() {

@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: fdfa7a91ccc190741b459f5983a96219
-timeCreated: 1457121873
+timeCreated: 1457237445
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - poof: {instanceID: 0}
+  - papel: {fileID: 100628, guid: 638aa105bd6ca6e49bae31b3bae71448, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

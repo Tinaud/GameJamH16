@@ -5,7 +5,6 @@ public class Enemy : MonoBehaviour {
 
     public Sprite poof;
 	public GameObject papel;
-    public Sprite[] enemy1, enemy2, enemy3, choosenEnemy;
     private int damagePower = 2;
     private int health = 100;
     private int rand;
@@ -29,20 +28,6 @@ public class Enemy : MonoBehaviour {
         oldBrother = GameObject.Find("Brothers").GetComponentInChildren<Controller>().gameObject;
         sr = GetComponent<SpriteRenderer>();
 		moveSpeed = 3f;
-        rand = Random.Range(1, 4);
-
-        switch(rand)
-        {
-            case 1:
-                choosenEnemy = enemy1;
-                break;
-            case 2:
-                choosenEnemy = enemy2;
-                break;
-            default:
-                choosenEnemy = enemy3;
-                break;
-        }
 	}
 
     public void characterHurt(int damage)
@@ -56,7 +41,7 @@ public class Enemy : MonoBehaviour {
     }
     
 	void Update () {
-        Debug.Log(health);
+        //Debug.Log(health);
         
         if (health <= 0 && !dead)
         {
@@ -72,7 +57,7 @@ public class Enemy : MonoBehaviour {
         }
         else if(health > 0)
         {
-            Debug.Log("patate");
+            //Debug.Log("patate");
             anim.SetInteger("Dir", potato);
             distance = getDistance();
 
