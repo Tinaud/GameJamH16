@@ -24,7 +24,7 @@ public class Controller : MonoBehaviour
 		anim = GetComponent<Animator>();
         anim.SetLayerWeight(0, 1f);
 		boxCollider = GetComponent <BoxCollider2D> ();
-        youngBrother = GameObject.Find("Brothers").GetComponentInChildren<ControllerYoung>().gameObject;
+        youngBrother = Player.instance.GetComponentInChildren<ControllerYoung>().gameObject;
 		rb2D = GetComponent <Rigidbody2D> ();
         sr = GetComponent<SpriteRenderer>();
         hitted = false;
@@ -91,12 +91,15 @@ public class Controller : MonoBehaviour
 	private void OnTriggerEnter2D (Collider2D patate)
 	{
 		if (patate.tag == "Zone") {
-			Debug.Log ("Entering " + patate.name);
+			if (Player.instance.CurrentRoom == null) {
+				Player.instance.CurrentRoom = patate.GetComponent<Room> ();
+				Player.instance.showRoomName ();
+			}
+			Debug.Log ("Entering " + Player.instance.CurrentRoom.nameOfRoom());
 			patate.GetComponent<Room> ().ControllersInside++;
 		} else if (patate.tag == "Apple") {
 			Debug.Log ("Pomme");
-			Player player = GameObject.Find("Brothers").GetComponent<Player>();
-			player.Health += 10; 
+			Player.instance.Health += 10; 
 			Destroy (patate.gameObject);
 		}
 	}
@@ -105,7 +108,10 @@ public class Controller : MonoBehaviour
 	private void OnTriggerExit2D (Collider2D patate)
 	{
 		if (patate.tag == "Zone") {
-			Debug.Log ("Exiting " + patate.name);
+			if (Player.instance.CurrentRoom != null) {
+				Debug.Log ("Exiting " + Player.instance.CurrentRoom.nameOfRoom ());
+				Player.instance.CurrentRoom = null;
+			}
 			patate.GetComponent<Room> ().ControllersInside--;
 		}
 	}

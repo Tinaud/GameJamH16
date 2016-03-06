@@ -12,6 +12,7 @@ public class Menu : MonoBehaviour {
 	public Button med;
 	public Button hard;
 	public GameObject menu;
+	public GameObject world;
 
 	private int difficulty;
 
@@ -77,5 +78,13 @@ public class Menu : MonoBehaviour {
 		menu.GetComponent<AudioSource> ().Pause ();
 
 		SceneManager.LoadScene ("Game");
+	}
+
+	public void playtime2(){
+		enabled = false;
+		menu.SetActive(false);
+		menu.GetComponent<AudioSource> ().Pause ();
+
+		world = (GameObject)Instantiate (world, Vector2.zero, Quaternion.identity);
 	}
 }
