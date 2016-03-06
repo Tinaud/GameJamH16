@@ -10,7 +10,7 @@ public class Controller : MonoBehaviour
                   movementH,
                   movementV;
 
-	private Animator animator;
+	private Animator anim;
 	private BoxCollider2D boxCollider;
     private GameObject instanciatedObject,
                        youngBrother;
@@ -18,9 +18,12 @@ public class Controller : MonoBehaviour
     private SpriteRenderer sr;
     private Vector3 PunchPos;
 
+    private int patate;
+
 	void Start() 
     {
-		animator = GetComponent<Animator>();
+		anim = GetComponent<Animator>();
+        anim.SetLayerWeight(0, 1f);
 		boxCollider = GetComponent <BoxCollider2D> ();
         youngBrother = GameObject.Find("Brothers").GetComponentInChildren<ControllerYoung>().gameObject;
 		rb2D = GetComponent <Rigidbody2D> ();
@@ -35,31 +38,36 @@ public class Controller : MonoBehaviour
         movementV = Input.GetAxis("Vertical");
         transform.Translate(Vector2.right * moveSpeed * movementH * Time.deltaTime);
         transform.Translate(Vector3.down * moveSpeed * movementV * Time.deltaTime);
+        anim.SetInteger("Dir", patate);
 
         if (Mathf.Abs(movementV) < 0.75f)
         {
             if (movementH < 0)
             {
-                sr.sprite = sister[2];
+                patate = 4;
                 PunchPos = new Vector3(transform.position.x - 2.5f, transform.position.y, transform.position.z);
             }
             else if (movementH > 0)
             {
-                sr.sprite = sister[3];
+                patate = 3;
                 PunchPos = new Vector3(transform.position.x + 2.5f, transform.position.y, transform.position.z);
-            } 
+            }
         }
         else
+        {
             if (movementV > 0)
             {
-                sr.sprite = sister[0];
+                patate = 2;
                 PunchPos = new Vector3(transform.position.x, transform.position.y - 3, transform.position.z);
-            } 
+            }
             else
             {
-                sr.sprite = sister[1];
+                patate = 1;
                 PunchPos = new Vector3(transform.position.x, transform.position.y + 3, transform.position.z);
             }
+        }
+        if (movementH == 0 && movementV == 0)
+            patate = 0;
                 
 
         if (Input.GetAxis("attack1") != 0 && !hitted)

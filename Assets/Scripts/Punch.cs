@@ -13,8 +13,8 @@ public class Punch : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.name != "Girl" && other.name != "Boy")
-            cont.attack(other.gameObject);
+		if (other.name != "Girl" && other.name != "Boy")
+			other.gameObject.GetComponent<Enemy> ().gethit ();
     }
 
     IEnumerator PunchLifeTime()

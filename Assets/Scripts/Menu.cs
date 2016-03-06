@@ -61,5 +61,6 @@ public class Menu : MonoBehaviour {
 		HUD.SetActive (true);
 		ringing.Play ();
         music.Play();
+		menu.GetComponent<AudioSource> ().Pause ();
 	}
 }

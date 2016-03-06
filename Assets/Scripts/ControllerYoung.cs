@@ -14,19 +14,22 @@ public class ControllerYoung : MonoBehaviour
     private int temp;
     private LineRenderer lr;
 
-	private Animator animator;
+    private Animator anim;
 	private BoxCollider2D boxCollider;
 	private Rigidbody2D rb2D;
     private SpriteRenderer sr;
 
+    private int patate;
+
     void Start()
     {
-		animator = GetComponent<Animator>();
-		boxCollider = GetComponent <BoxCollider2D> ();
+		anim = GetComponent<Animator>();
+        anim.SetLayerWeight(0, 1f);
+        boxCollider = GetComponent <BoxCollider2D> ();
 		rb2D = GetComponent <Rigidbody2D> ();
         sr = GetComponent<SpriteRenderer>();
 
-		oldBrother = GetComponentInParent<Player>().GetComponentInChildren<Controller>().gameObject; //TEMP!!
+        oldBrother = GetComponentInParent<Player>().GetComponentInChildren<Controller>().gameObject; //TEMP!!
         moveSpeed = 4f;
         temp = 0;
         lr = GetComponent<LineRenderer>();
@@ -39,6 +42,9 @@ public class ControllerYoung : MonoBehaviour
     void Update()
     {
         distance = getDistance();
+        anim.SetInteger("Dir", patate);
+        
+
         if (distance < 4)
         {
             movementH = Input.GetAxis("HorizontalYoung");
@@ -48,24 +54,31 @@ public class ControllerYoung : MonoBehaviour
         }
         else
         {
+			cry ();
             Debug.Log("CRY");
         }
+
+        if (movementH == 0 && movementV == 0)
+            patate = 0;
 
         if (Mathf.Abs(movementV) < 0.75f)
         {
             if (movementH < 0)
-                sr.sprite = brother[2];
+                patate = 4;
             else if (movementH > 0)
-                sr.sprite = brother[3];
+                patate = 3;
         }
         else
+        {
             if (movementV > 0)
-                sr.sprite = brother[0];
+                patate = 1;
             else
-                sr.sprite = brother[1];
+                patate = 2;
+        }
+        
 
         lr.SetPosition(0, this.transform.position);
-        lr.SetPosition(1, oldBrother.transform.position);
+        lr.SetPosition(1, new Vector3(oldBrother.transform.position.x, oldBrother.transform.position.y, oldBrother.transform.position.z));
     }
 
     float getDistance()
@@ -122,5 +135,12 @@ public class ControllerYoung : MonoBehaviour
 			patate.GetComponent<Room> ().ControllersInside--;
 		}
 	}
-		
+
+	void cry () {
+		AudioSource audio = GetComponent<AudioSource> ();
+		if (!audio.isPlaying) {
+			audio.Play ();
+		}
+	}
+
 }
