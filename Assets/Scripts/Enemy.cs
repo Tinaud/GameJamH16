@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
+    private Player pointage;
     private int health = 100;
     private int rand;
     private bool alive = true, dead = false, followPath = false;
@@ -67,6 +68,8 @@ public class Enemy : MonoBehaviour {
                 GameObject patate = Instantiate(papel);
                 patate.transform.position = transform.position;
             }
+            pointage = GameObject.Find("Brothers").GetComponent<Player>();
+            pointage.PointageEnemis(50);
             anim.SetInteger("Dir", 5);
             StartCoroutine(EnemyDie());
         }

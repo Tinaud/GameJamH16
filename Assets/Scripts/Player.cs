@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 	Controller oldBrother;
 	ControllerYoung youngBrother;
 
+    private double pointage;
 	private bool isInExamRoom = false;
 	public bool IsInExamRoom {
 		get {
@@ -81,12 +82,21 @@ public class Player : MonoBehaviour {
 			health++;
 
 		if (Input.GetKey (KeyCode.N))
-			note++;
-
-			
+			note++;			
 	}
 
 	public void TakeDamage(int damage) {
 		health -= damage;
 	}
+
+    public void PointageEnemis (double P)
+    {
+        pointage += P;
+    }
+
+    public double PointTotal ()
+    {
+        pointage += note * 25;
+        return pointage;
+    }
 }
