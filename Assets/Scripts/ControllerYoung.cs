@@ -19,6 +19,8 @@ public class ControllerYoung : MonoBehaviour
 	private Rigidbody2D rb2D;
     private SpriteRenderer sr;
 
+    private bool isCrying = false;
+
     private int patate;
 
     void Start()
@@ -47,19 +49,23 @@ public class ControllerYoung : MonoBehaviour
 
         if (distance < 4)
         {
+            isCrying = false;
             movementH = Input.GetAxis("HorizontalYoung");
             movementV = Input.GetAxis("VerticalYoung");
             transform.Translate(Vector2.right * moveSpeed * Input.GetAxis("HorizontalYoung") * Time.deltaTime);
             transform.Translate(Vector3.down * moveSpeed * Input.GetAxis("VerticalYoung") * Time.deltaTime);
         }
-        else
+        else if (!isCrying)
         {
-            anim.SetInteger("Dir", 5);
             cry ();
             Debug.Log("CRY");
+            isCrying = true;
+            StartCoroutine(helpMeSister());
         }
 
         if (movementH == 0 && movementV == 0)
+            if (isCrying)
+                anim.SetInteger("Dir", 5);
             patate = 0;
 
         if (Mathf.Abs(movementV) < 0.75f)
@@ -145,5 +151,13 @@ public class ControllerYoung : MonoBehaviour
 			audio.Play ();
 		}
 	}
+
+    IEnumerator helpMeSister()
+    {
+        
+        GameObject instanciatedObject = (GameObject) Instantiate(Resources.Load("HelpMeSis"), new Vector3(this.transform.position.x, this.transform.position.y + 3, this.transform.position.z), Quaternion.identity);
+        yield return new WaitWhile(() => isCrying);
+        Destroy(instanciatedObject);
+    }
 
 }
