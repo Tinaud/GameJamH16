@@ -22,18 +22,22 @@ public class Events : MonoBehaviour {
 		return eventToSend;
 	}
 
-	public void applyEventEffect(int eventNumber, ref List<Enemy> enemies)
+	public void applyEventEffect(int eventNumber)
 	{
 		switch (eventNumber) {
 		case 0:
 			Debug.Log ("Playtime, everybody out !");
-			foreach (Enemy enemy in enemies)
-				enemy.goTo (0);
+			/*foreach (Enemy enemy in enemies)
+				enemy.goTo (0);*/
 			break;
 		case 1:
 			Debug.Log ("FoodParty !! Hold a potatoe and Potate them !!!!!");
-			foreach (Enemy enemy in enemies)
-				enemy.goTo (0);
+            for (int i = 0; i < 3; i++ )
+            {
+                GameObject obj = (GameObject)Instantiate(Resources.Load("EnemyPurpTie"), new Vector3(-38.8f + i, 84.8f + i, -0.03f), Quaternion.identity);
+                obj.tag = "Prof";
+            }
+                
 			break;
 		case 2:
 			if (gameManager.AnswerLostInToilets ())
