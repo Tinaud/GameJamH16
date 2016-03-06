@@ -155,17 +155,17 @@ public class GameManager : MonoBehaviour {
 		case 1:
 			notesMax = 6;
 			enemiesMaxDamages = 2;
-			enemiesMax = 12;
+			enemiesMax = 20;
 			break;
 		case 2:
 			notesMax = 9;
 			enemiesMaxDamages = 4;
-			enemiesMax = 18;
+			enemiesMax = 30;
 			break;
 		case 3:
 			notesMax = 12;
 			enemiesMaxDamages = 8;
-			enemiesMax = 24;
+			enemiesMax = 40;
 			break;
 		}
 

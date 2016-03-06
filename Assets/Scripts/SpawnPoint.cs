@@ -55,8 +55,8 @@ public class SpawnPoint
 		spawnPoints.Add(new Vector2(-4, 130)); spawnPoints.Add(new Vector2(22, 130)); spawnPoints.Add(new Vector2(26, 148));
 
 		//casiers
-		spawnPoints.Add(new Vector2(26, 106)); spawnPoints.Add(new Vector2(-10, 106)); spawnPoints.Add(new Vector2(-10, 119));
-		spawnPoints.Add(new Vector2(19, 119)); spawnPoints.Add(new Vector2(16, 94)); spawnPoints.Add(new Vector2(-7, 94));
+		/*spawnPoints.Add(new Vector2(26, 106)); spawnPoints.Add(new Vector2(-10, 106)); spawnPoints.Add(new Vector2(-10, 119));
+		spawnPoints.Add(new Vector2(19, 119)); spawnPoints.Add(new Vector2(16, 94)); spawnPoints.Add(new Vector2(-7, 94));*/
 
 		//coursInterieure
 		spawnPoints.Add(new Vector2(-7, 72)); spawnPoints.Add(new Vector2(11, 72)); spawnPoints.Add(new Vector2(17, 63));

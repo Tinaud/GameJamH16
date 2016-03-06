@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 	
+	public static Player instance = null;
+
 	Controller oldBrother;
 	ControllerYoung youngBrother;
 
@@ -14,6 +16,27 @@ public class Player : MonoBehaviour {
 		}
 		set {
 			isInExamRoom = value;
+		}
+	}
+
+	private bool isEnterInRoom = false;
+	public bool IsEnterInRoom {
+		get {
+			return isEnterInRoom;
+		}
+		set {
+			isEnterInRoom = value;
+		}
+	}
+
+	Room currentRoom;
+
+	public Room CurrentRoom {
+		get {
+			return currentRoom;
+		}
+		set {
+			currentRoom = value;
 		}
 	}
 
@@ -47,6 +70,7 @@ public class Player : MonoBehaviour {
 
 	void Start() {
 		note = 0;
+		currentRoom = null;
 	}
 
     public void characterHurt(int damage)
@@ -60,6 +84,11 @@ public class Player : MonoBehaviour {
     }
     
 	void Awake() {
+		if (instance == null)
+			instance = this;
+		else if (instance != this)
+			Destroy(gameObject);	
+		
 		youngBrother = GetComponentInChildren<ControllerYoung> ();
 		oldBrother = GetComponentInChildren<Controller> ();
 	}
@@ -88,5 +117,16 @@ public class Player : MonoBehaviour {
 
 	public void TakeDamage(int damage) {
 		health -= damage;
+	}
+
+	public void showRoomName() {
+		StartCoroutine (HUDindic ());
+	}
+
+	IEnumerator HUDindic() {
+		GameManager.instance.HUD.GetComponent<HUD> ().roomIndic.text = currentRoom.nameOfRoom ();
+		GameManager.instance.HUD.GetComponent<HUD> ().roomIndic.gameObject.SetActive (true);
+		yield return new WaitForSeconds (3f);
+		GameManager.instance.HUD.GetComponent<HUD> ().roomIndic.gameObject.SetActive (false);
 	}
 }

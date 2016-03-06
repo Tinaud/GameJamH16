@@ -31,7 +31,7 @@ public class ControllerYoung : MonoBehaviour
 		rb2D = GetComponent <Rigidbody2D> ();
         sr = GetComponent<SpriteRenderer>();
 
-        oldBrother = GetComponentInParent<Player>().GetComponentInChildren<Controller>().gameObject; //TEMP!!
+		oldBrother = Player.instance.GetComponentInChildren<Controller>().gameObject; //TEMP!!
         moveSpeed = 4f;
         temp = 0;
         lr = GetComponent<LineRenderer>();
@@ -121,7 +121,11 @@ public class ControllerYoung : MonoBehaviour
 	{
 		Player player = GetComponentInParent<Player>();
 		if (patate.tag == "Zone") {
-			Debug.Log ("Entering " + patate.name);
+			if (Player.instance.CurrentRoom == null) {
+				Player.instance.CurrentRoom = patate.GetComponent<Room> ();
+				Player.instance.showRoomName ();
+			}
+			Debug.Log ("Entering " + Player.instance.CurrentRoom.nameOfRoom());
 			patate.GetComponent<Room> ().ControllersInside++;
 		} else if (patate.tag == "Note") {
 			Debug.Log ("Note");
@@ -139,7 +143,10 @@ public class ControllerYoung : MonoBehaviour
 	private void OnTriggerExit2D (Collider2D patate)
 	{
 		if (patate.tag == "Zone") {
-			Debug.Log ("Exiting " + patate.name);
+			if (Player.instance.CurrentRoom != null) {
+				Debug.Log ("Exiting " + Player.instance.CurrentRoom.nameOfRoom ());
+				Player.instance.CurrentRoom = null;
+			}
 			patate.GetComponent<Room> ().ControllersInside--;
 		}
 	}
