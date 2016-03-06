@@ -50,8 +50,6 @@ public class GameManager : MonoBehaviour {
 		enemies = new List<Enemy>();
 		initEnemies ();
 
-
-
 		timer = GetComponent<Timer> ();
 		eventManager = GetComponent<Events> ();
 		mapScript = GetComponentInChildren<MapEditor> ();
@@ -77,6 +75,7 @@ public class GameManager : MonoBehaviour {
 	void HideLevelImage()
 	{
 		levelImage.SetActive(false);
+		GetComponent<AudioSource> ().Play ();
 		timer.StartTimer ();
 		HUD.SetActive (true);
 		mapScript.InitializeMap ();
@@ -119,7 +118,7 @@ public class GameManager : MonoBehaviour {
 
 		//Enable black background image gameObject.
 		levelImage.SetActive(true);
-
+		GetComponent<AudioSource> ().Stop ();
 		enabled = false;
 
 	}
@@ -130,7 +129,7 @@ public class GameManager : MonoBehaviour {
 
 		//Enable black background image gameObject.
 		levelImage.SetActive (true);
-
+		GetComponent<AudioSource> ().Stop ();
 		enabled = false;
 	}
 
