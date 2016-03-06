@@ -19,11 +19,14 @@ public class Enemy : MonoBehaviour {
 	float timer;
 	public float timeBetweenAttacks = .1f;
 
-	private Animator animator;
+	private Animator anim;
+    private int potato;
 
-	void Awake()
+    void Awake()
 	{
-		oldBrother = GameObject.Find("Brothers").GetComponentInChildren<Controller>().gameObject;
+        anim = GetComponent<Animator>();
+        anim.SetLayerWeight(0, 1f);
+        oldBrother = GameObject.Find("Brothers").GetComponentInChildren<Controller>().gameObject;
         sr = GetComponent<SpriteRenderer>();
 		moveSpeed = 3f;
         rand = Random.Range(1, 4);
@@ -47,12 +50,14 @@ public class Enemy : MonoBehaviour {
         health -= damage;
     }
 
-    public void setCharacterHealth(int patate)
+    public void setCharacterHealth(int patateD)
     {
-        health = patate;
+        health = patateD;
     }
     
 	void Update () {
+
+        anim.SetInteger("Dir", potato);
 
         if (health <= 0)
 		{
@@ -66,17 +71,47 @@ public class Enemy : MonoBehaviour {
             this.gameObject.SetActive(false);
         }
 		distance = getDistance();
-		if(distance < 3 && distance > 1)
+
+        if (distance > 3)
+            potato = 0;
+
+        if (distance < 3 && distance > 1)
 		{
 			direction = normalize(oldBrother.transform.position.x - this.transform.position.x, oldBrother.transform.position.y - this.transform.position.y);
 			transform.Translate(direction * moveSpeed * Time.deltaTime);
 
+            if (Mathf.Abs(direction.y) < 0.75f)
+            {
+                if (direction.x < 0)
+                {
+                    potato = 4;
+                }
+                else if (direction.x > 0)
+                {
+                    potato = 3;
+                }
+            }
+            else
+            {
+                if (direction.y > 0)
+                {
+                    potato = 1;
+                }
+                else
+                {
+                    potato = 2;
+                }
+            }
+            if (direction.x == 0 && direction.y == 0)
+                potato = 0;
+            /*
             if (direction.y < 0)
                 sr.sprite = choosenEnemy[0];
             else
-                sr.sprite = choosenEnemy[1];
-		}
-	}
+                sr.sprite = choosenEnemy[1];*/
+        }
+        
+    }
 
 	Vector2 normalize(float x, float y)
 	{
@@ -99,10 +134,10 @@ public class Enemy : MonoBehaviour {
 
 	}
 
-	private void OnCollisionStay2D (Collision2D patate)
+	private void OnCollisionStay2D (Collision2D patateX)
 	{
 		timer += Time.deltaTime/5;
-		if (patate.gameObject.tag == "Player" && timer >= timeBetweenAttacks) {
+		if (patateX.gameObject.tag == "Player" && timer >= timeBetweenAttacks) {
 			Attack();
 			timer = 0;
 		} 
