@@ -46,7 +46,6 @@ public class ControllerYoung : MonoBehaviour
         distance = getDistance();
         anim.SetInteger("Dir", patate);
         
-
         if (distance < 4)
         {
             isCrying = false;
@@ -54,9 +53,25 @@ public class ControllerYoung : MonoBehaviour
             movementV = Input.GetAxis("VerticalYoung");
             transform.Translate(Vector2.right * moveSpeed * Input.GetAxis("HorizontalYoung") * Time.deltaTime);
             transform.Translate(Vector3.down * moveSpeed * Input.GetAxis("VerticalYoung") * Time.deltaTime);
+            if (Mathf.Abs(movementV) < 0.75f)
+            {
+                if (movementH < 0)
+                    patate = 4;
+                else if (movementH > 0)
+                    patate = 3;
+            }
+            else
+            {
+                if (movementV > 0)
+                    patate = 1;
+                else
+                    patate = 2;
+            }
         }
         else if (!isCrying)
         {
+            movementH = 0;
+            movementV = 0;
             cry ();
             Debug.Log("CRY");
             isCrying = true;
@@ -64,24 +79,13 @@ public class ControllerYoung : MonoBehaviour
         }
 
         if (movementH == 0 && movementV == 0)
+        {
             if (isCrying)
-                anim.SetInteger("Dir", 5);
-            patate = 0;
-
-        if (Mathf.Abs(movementV) < 0.75f)
-        {
-            if (movementH < 0)
-                patate = 4;
-            else if (movementH > 0)
-                patate = 3;
-        }
-        else
-        {
-            if (movementV > 0)
-                patate = 1;
+                patate = 5;
             else
-                patate = 2;
+                patate = 0;
         }
+        
         
 
         lr.SetPosition(0, this.transform.position);
