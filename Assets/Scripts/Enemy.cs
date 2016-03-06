@@ -6,7 +6,17 @@ public class Enemy : MonoBehaviour {
 
     public Sprite poof;
 	public GameObject papel;
-    private int damagePower = 2;
+	private int damagePower = 2;
+
+	public int DamagePower {
+		get {
+			return damagePower;
+		}
+		set {
+			damagePower = value;
+		}
+	}
+
     private int health = 100;
     private int rand;
     private bool alive = true, dead = false, followPath = false;
@@ -51,8 +61,8 @@ public class Enemy : MonoBehaviour {
         if (health <= 0 && !dead)
         {
             dead = true;
-            int rnd = Random.Range(1, 10);
-            if (rnd == 9)
+            int rnd = Random.Range(1, 5);
+            if (rnd == 1)
             {
                 GameObject patate = Instantiate(papel);
                 patate.transform.position = transform.position;
@@ -128,6 +138,7 @@ public class Enemy : MonoBehaviour {
 		Debug.Log ("I c u");
 		GameObject.Find ("attack").GetComponent<AudioSource> ().Play ();
 		Player player = GameObject.Find ("Brothers").GetComponent<Player> ();
+		Debug.Log ("DP :" + damagePower);
 		player.TakeDamage(damagePower);
 	}
 

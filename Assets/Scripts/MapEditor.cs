@@ -4,52 +4,57 @@ using System.Collections.Generic;
 
 public class MapEditor : MonoBehaviour {
 
+	public GameObject[] bullies;
+	List<Enemy> enemies;
+
 	public GameObject noteObj;
-	int noteToPlace;
-    public int NoteToPlace {
-        get {
-            return noteToPlace;
-        }
-        set {
-            noteToPlace = value;
-        }
-    }
+		
+	void initNotes() {
+		SpawnPoint spawningTool = new SpawnPoint (false);
+		GameObject notesContent = new GameObject ("Notes");
+		notesContent.transform.parent = transform;
 
-	private List<Room> roomList;
+		for (int i = 0; i < GameManager.instance.NotesMax; i++) {
+			int patateSP = Random.Range (0, spawningTool.SpawnPoints.Count);
+			int rand = Random.Range (0, 5);
 
-	public void placeNote(Room patateRoom, int id) {
+			Vector2 randomSP = spawningTool.SpawnPoints[patateSP];
+			spawningTool.SpawnPoints.RemoveAt (patateSP);
 
-		Vector2 randomPos = new Vector2 ();
+			GameObject note = Instantiate (noteObj, randomSP, Quaternion.identity) as GameObject;
+			note.name = "Note_" + (i+1);
+			note.transform.parent = notesContent.transform;
+			Debug.Log (note.name + " at " + randomSP.ToString());
+		}
+	}
 
-		randomPos.x = Random.Range ((patateRoom.transform.position.x - patateRoom.gameObject.GetComponent<BoxCollider2D> ().size.x / 2), 
-			(patateRoom.transform.position.x + patateRoom.gameObject.GetComponent<BoxCollider2D> ().size.x / 2));
+	void initEnemies() {
+		enemies = new List<Enemy> ();
+		GameObject enemiesContent = new GameObject ("Enemies");
+		enemiesContent.transform.parent = transform;
 
-		randomPos.y = Random.Range ((patateRoom.transform.position.y - patateRoom.gameObject.GetComponent<BoxCollider2D> ().size.y / 2), 
-			(patateRoom.transform.position.y + patateRoom.gameObject.GetComponent<BoxCollider2D> ().size.y / 2));
+		SpawnPoint spawningTool = new SpawnPoint (true);
+		for (int i = 0; i < GameManager.instance.EnemiesMax; i++) {
+			int patateSP = Random.Range (0, spawningTool.SpawnPoints.Count);
+			int rand = Random.Range (0, 5);
 
-		GameObject note = Instantiate (noteObj, randomPos, Quaternion.identity) as GameObject;
-		note.name = "Note_" + id;
-		note.transform.parent = patateRoom.transform;
-		Debug.Log (note.name + " in " + patateRoom.transform.name);
+			Vector2 randomSP = spawningTool.SpawnPoints [patateSP];
+			spawningTool.SpawnPoints.RemoveAt (patateSP);
+
+			GameObject bully = (GameObject) Instantiate (bullies [rand], randomSP, Quaternion.identity);
+			bully.transform.parent = enemiesContent.transform;
+			bully.GetComponent<Enemy> ().DamagePower = GameManager.instance.EnemiesMaxDamages;
+			enemies.Add(bully.GetComponent<Enemy>());
+			Debug.Log (bully.name);
+		}
 	}
 
 	public void InitializeMap() {
 		//gameObject.SetActive (true);
 
-		noteToPlace = GameManager.instance.NotesMax;
-		roomList = new List<Room>(gameObject.GetComponentsInChildren<Room> ());
-		for (int i = 0; i < noteToPlace; i++) {
-			placeNote (getRandomRoom (), i+1);
-		}
+		initNotes();
+		initEnemies ();
 	}
 		
-	Room getRandomRoom() {
-		int patate = Random.Range (0, roomList.Count);
-
-		Room randomRoom = roomList [patate];
-		roomList.RemoveAt (patate);
-
-		return randomRoom;
-	}
 }
 
