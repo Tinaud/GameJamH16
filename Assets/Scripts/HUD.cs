@@ -15,6 +15,9 @@ public class HUD : MonoBehaviour {
 	public GameObject gameManager;
 	Timer time;
 
+	bool inDanger = false;
+	int once = 1;
+
 
 	// Use this for initialization
     void Start() {
@@ -25,12 +28,17 @@ public class HUD : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (inDanger && once == 1) {
+			StartCoroutine (faint ());
+			once--;
+		}
+
 		hour = time.Hours;
 		min = time.Minutes;
 		healthSlider.value = player.Health;
 
 		if (healthSlider.value < 30)
-			StartCoroutine (faint ());
+			inDanger = true;
 		
 		note.text = player.Note.ToString();
 		if (hour < 10)
@@ -47,9 +55,9 @@ public class HUD : MonoBehaviour {
 		while (player.Health > 0 && player.Health < 30) {
 			
 			healthSlider.gameObject.SetActive (false);
-			yield return new WaitForSeconds (3f);
+			yield return new WaitForSeconds (.7f);
 			healthSlider.gameObject.SetActive (true);
-			yield return new WaitForSeconds (5f);
+			yield return new WaitForSeconds (1f);
 		}
 	}
 
