@@ -138,12 +138,14 @@ public class Enemy : MonoBehaviour {
 		timer += Time.deltaTime/5;
 		if (patateX.gameObject.tag == "Player" && timer >= timeBetweenAttacks) {
 			Attack();
+			patate.gameObject.GetComponent<AudioSource>().Play ();
 			timer = 0;
 		} 
 	}
 
 	private void Attack() {
 		Debug.Log ("I c u");
+		GameObject.Find ("attack").GetComponent<AudioSource> ().Play ();
 		Player player = GameObject.Find ("Brothers").GetComponent<Player> ();
 		player.TakeDamage(damagePower);
 	}
