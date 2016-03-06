@@ -10,25 +10,6 @@ public class Player : MonoBehaviour {
 	ControllerYoung youngBrother;
 
     private double pointage;
-	private bool isInExamRoom = false;
-	public bool IsInExamRoom {
-		get {
-			return isInExamRoom;
-		}
-		set {
-			isInExamRoom = value;
-		}
-	}
-
-	private bool isEnterInRoom = false;
-	public bool IsEnterInRoom {
-		get {
-			return isEnterInRoom;
-		}
-		set {
-			isEnterInRoom = value;
-		}
-	}
 
 	Room currentRoom;
 
@@ -88,7 +69,9 @@ public class Player : MonoBehaviour {
 		if (instance == null)
 			instance = this;
 		else if (instance != this)
-			Destroy(gameObject);	
+			Destroy(gameObject);
+
+		DontDestroyOnLoad(gameObject);
 		
 		youngBrother = GetComponentInChildren<ControllerYoung> ();
 		oldBrother = GetComponentInChildren<Controller> ();

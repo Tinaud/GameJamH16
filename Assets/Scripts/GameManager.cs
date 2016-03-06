@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour {
@@ -117,11 +118,8 @@ public class GameManager : MonoBehaviour {
 		if (timer.Hours == 16)
 			timer.StopTimer ();
 
-		if (!player.Alive || (!timer.enabled && !player.IsInExamRoom))
-			GameOver ();
-
-		if (player.Note == NotesMax)
-			GameWin ();
+		if (!player.Alive || !timer.enabled || player.Note == NotesMax)
+			LoadExamScreen ();
 
        /* if(timer.Hours == 14 && timer.Minutes == 0)
         {
@@ -159,6 +157,19 @@ public class GameManager : MonoBehaviour {
 		levelImage.SetActive (true);
 		GetComponent<AudioSource> ().Stop ();
 		enabled = false;
+	}
+
+	void LoadExamScreen() {
+		enabled = false;
+		gameObject.SetActive(false);
+		GetComponent<AudioSource> ().Pause ();
+		Clear ();
+
+		SceneManager.LoadScene ("Exeman");
+	}
+
+	void Clear() {
+		Destroy (mapScript.gameObject);
 	}
 
 	void setupDifficulty() {
