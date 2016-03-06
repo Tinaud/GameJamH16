@@ -25,8 +25,8 @@ public class Examen : MonoBehaviour
     {
 		cote.text = "";
 		score.text = "";
-        playerNotes = Player.instance.Note;
-        ques = GameManager.instance.NotesMax;
+        //playerNotes = Player.instance.Note;
+        //ques = GameManager.instance.NotesMax;
         switch (ques)
         {
             case (12):
@@ -107,7 +107,7 @@ public class Examen : MonoBehaviour
 			askquestion (x);
 		} else if (x >= ques) {
 			cote.text = Cote () + "";
-			score.text = "Score: " + Player.instance.PointTotal ();
+			//score.text = "Score: " + Player.instance.PointTotal ();
 		}
 			
     }
@@ -157,13 +157,13 @@ public class Examen : MonoBehaviour
 		return cote;
 	}
 
-	void setupData() {
+	/*void setupData() {
 		playerNotes = Player.instance.Note;
 		Debug.Log (playerNotes);
 		ques = GameManager.instance.NotesMax;
 		Debug.Log (ques);
 
 		Destroy (world);
-	}
+	}*/
         
 }
