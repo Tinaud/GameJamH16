@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour {
 		levelText.text = "Exam " + level;
 		levelImage.SetActive (true);
 
-		Invoke("HideLevelImage", levelStartDelay);
+		Invoke("HideLevelImage",levelImage.GetComponent<AudioSource>().clip.length );
 
 		Debug.Log ("Level 1 Start !");
 	}
