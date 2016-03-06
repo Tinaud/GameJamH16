@@ -1,18 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Enemy : MonoBehaviour {
 
     public Sprite poof;
 	public GameObject papel;
-    private int damagePower = 2;
+	private int damagePower = 2;
+
+	public int DamagePower {
+		get {
+			return damagePower;
+		}
+		set {
+			damagePower = value;
+		}
+	}
+
     private int health = 100;
     private int rand;
-    private bool alive = true, dead = false;
+    private bool alive = true, dead = false, followPath = false;
 	private float distance,
 				  moveSpeed;
 	private GameObject oldBrother;
 	private Vector2 direction;
+    private Vector2 ancientDirection;
+    private List<Vector2> smallGraph = new List<Vector2>();
     private SpriteRenderer sr;
 	bool playerInRange;
 	float timer;
@@ -23,11 +36,13 @@ public class Enemy : MonoBehaviour {
 
     void Awake()
 	{
+        ancientDirection = new Vector2(0, 1);
         anim = GetComponent<Animator>();
         anim.SetLayerWeight(0, 1f);
         oldBrother = GameObject.Find("Brothers").GetComponentInChildren<Controller>().gameObject;
         sr = GetComponent<SpriteRenderer>();
-		moveSpeed = 3f;
+		moveSpeed = 5f;
+        buildGraph();
 	}
 
     public void characterHurt(int damage)
@@ -41,13 +56,12 @@ public class Enemy : MonoBehaviour {
     }
     
 	void Update () {
-        //Debug.Log(health);
         
         if (health <= 0 && !dead)
         {
             dead = true;
-            int rnd = Random.Range(1, 10);
-            if (rnd == 9)
+            int rnd = Random.Range(1, 5);
+            if (rnd == 1)
             {
                 GameObject patate = Instantiate(papel);
                 patate.transform.position = transform.position;
@@ -57,43 +71,38 @@ public class Enemy : MonoBehaviour {
         }
         else if(health > 0 && this.name != "Pablo")
         {
-            //Debug.Log("patate");
             anim.SetInteger("Dir", potato);
-            distance = getDistance();
+            distance = Mathf.Sqrt(Mathf.Abs(oldBrother.transform.position.x - this.transform.position.x) + Mathf.Abs(oldBrother.transform.position.y - this.transform.position.y));
 
-            if (distance > 3)
-                potato = 0;
+            if (this.tag == "prof" && !followPath)
+                StartCoroutine(pathFinder());
+
+            else if (distance > 3)
+                direction = wander();
 
             if (distance < 3 && distance > 1)
-            {
                 direction = normalize(oldBrother.transform.position.x - this.transform.position.x, oldBrother.transform.position.y - this.transform.position.y);
-                transform.Translate(direction * moveSpeed * Time.deltaTime);
 
-                if (Mathf.Abs(direction.y) < 0.75f)
-                {
-                    if (direction.x < 0)
-                    {
-                        potato = 4;
-                    }
-                    else if (direction.x > 0)
-                    {
-                        potato = 3;
-                    }
-                }
-                else
-                {
-                    if (direction.y > 0)
-                    {
-                        potato = 1;
-                    }
-                    else
-                    {
-                        potato = 2;
-                    }
-                }
-                if (direction.x == 0 && direction.y == 0)
-                    potato = 0;
+            transform.Translate(direction * moveSpeed * Time.deltaTime);
+
+            if (Mathf.Abs(direction.y) < 0.75f)
+            {
+                if (direction.x < 0)
+                    potato = 4;
+                else if (direction.x > 0)
+                    potato = 3;
             }
+            else
+            {
+                if (direction.y > 0)
+                    potato = 1;
+                else
+                    potato = 2;
+            }
+            if (direction.x == 0 && direction.y == 0)
+                potato = 0;
+
+            ancientDirection = direction;
         }      
     }
 
@@ -106,16 +115,6 @@ public class Enemy : MonoBehaviour {
 		temp.y = y / length;
 
 		return temp;
-	}
-
-	float getDistance()
-	{
-		return Mathf.Sqrt(Mathf.Abs(oldBrother.transform.position.x - this.transform.position.x) + Mathf.Abs(oldBrother.transform.position.y - this.transform.position.y));
-	}
-
-	// Pour Evenement les profs vont dans la cour
-	public void goTo(int zone) {
-
 	}
 
 	private void OnCollisionStay2D (Collision2D patateX)
@@ -132,6 +131,7 @@ public class Enemy : MonoBehaviour {
 		Debug.Log ("I c u");
 		GameObject.Find ("attack").GetComponent<AudioSource> ().Play ();
 		Player player = GameObject.Find ("Brothers").GetComponent<Player> ();
+		Debug.Log ("DP :" + damagePower);
 		player.TakeDamage(damagePower);
 	}
 
@@ -139,10 +139,72 @@ public class Enemy : MonoBehaviour {
 		health = health - 50;
 	}
 
+    Vector2 wander()
+    {
+        direction.x = ancientDirection.x + Random.Range(-0.2f, 0.2f);
+        direction.y = ancientDirection.y + Random.Range(-0.2f, 0.2f);
+
+        return normalize(direction.x, direction.y);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Walls" || other.gameObject.tag == "Enemy")
+        {
+            ancientDirection.x *= -1;
+            ancientDirection.y *= -1;
+        }
+    }
+
+    void buildGraph()
+    {
+        smallGraph.Add(new Vector2(-36, 80)); 
+        smallGraph.Add(new Vector2(-36, -28));
+        smallGraph.Add(new Vector2(41, 80)); 
+        smallGraph.Add(new Vector2(41, -32));
+        smallGraph.Add(new Vector2(2, 18));
+        smallGraph.Add(new Vector2(2, -3));
+        smallGraph.Add(new Vector2(-12, -3));
+        smallGraph.Add(new Vector2(-28, -17));
+    }
+
     IEnumerator EnemyDie()
     {
-        Debug.Log("blebleble");
         yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);
+    }
+
+    IEnumerator pathFinder()
+    {
+        followPath = true;
+        int j = 0;
+
+        while(j < 5)
+        {
+            float closestDist = 1000;
+            int closestID = 0, i = 0;
+
+            foreach (Vector2 coord in smallGraph)
+            {
+                float dist = Mathf.Sqrt(Mathf.Abs(coord.x - this.transform.position.x) + Mathf.Abs(coord.y - this.transform.position.y));
+                if (dist < closestDist)
+                {
+                    closestDist = dist;
+                    closestID = i;
+                }
+                i++;
+            }
+            j++;
+
+            float distTest = 20;
+            while(distTest > 2)
+            {
+                direction = normalize(smallGraph[closestID].x - this.transform.position.x, smallGraph[closestID].y - this.transform.position.y);
+                distTest = Mathf.Sqrt(Mathf.Abs(smallGraph[closestID].x - this.transform.position.x) + Mathf.Abs(smallGraph[closestID].y - this.transform.position.y));
+                yield return new WaitForSeconds(0.3f);
+            }   
+            smallGraph.RemoveAt(closestID);
+        }
+        followPath = false;
     }
 }
