@@ -45,7 +45,9 @@ public class ExamenCursor : MonoBehaviour {
 			if (name == "socks")
 				examen.GetComponent<Examen> ().verification (name);		
 			if (name == "Procrastination")
-				examen.GetComponent<Examen> ().verification (name);									
+				examen.GetComponent<Examen> ().verification (name);	
+			if (name == "I don't know")
+				examen.GetComponent<Examen> ().verification (name);	
 		}
 
 	}

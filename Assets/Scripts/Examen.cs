@@ -10,7 +10,7 @@ public class Examen : MonoBehaviour
     private List<string> notes_2;
     private List<string> answers = new List<string>();
     private List<string> questions = new List<string>();
-    private int playerNotes = 6;
+    private int playerNotes = 1;
     private int good = 0;
     private int ques = 12, Y = 400, x = 0;
     public GameObject canvas;
@@ -18,10 +18,14 @@ public class Examen : MonoBehaviour
     bool question = false;
     public Text goods;
     public Text total;
+	public Text cote;
+	public Text score;
 
     // Use this for initialization
     void Start()
     {
+		cote.text = "";
+		score.text = "";
         playerNotes = Player.instance.Note;
         ques = GameManager.instance.NotesMax;
         switch (ques)
@@ -70,14 +74,20 @@ public class Examen : MonoBehaviour
                 notes.Add("Beaver");
                 questions.Add("Little ball of fur.");
                 goto case 1;
-            case (1):
-                notes.Add("Procrastination");
-                questions.Add("A national sport.");
+			case (1):
+				notes.Add ("Procrastination");
+				questions.Add ("A national sport.");
                 break;
         }
         notes_2 = new List<string>(notes);
         total.text = ques + "";
-        for (int i = 0; i < playerNotes; i++)
+		InstObject = (GameObject)Instantiate(Resources.Load("Answers"), new Vector3(0, 0, 0), Quaternion.identity);
+		InstObject.transform.parent = canvas.transform;
+		InstObject.transform.localScale = new Vector3(1, 1, 1);
+		InstObject.transform.localPosition = new Vector3(560, Y, 0);
+		InstObject.GetComponentInChildren<Text>().text = "I don't know";
+		InstObject.tag = "I don't know";
+        for (int i = 1; i < playerNotes+1; i++)
         {
             InstObject = (GameObject)Instantiate(Resources.Load("Answers"), new Vector3(0, 0, 0), Quaternion.identity);
             InstObject.transform.parent = canvas.transform;
@@ -94,10 +104,13 @@ public class Examen : MonoBehaviour
     void Update()
     {
         goods.text = good + " /";
-        if (!question && x < ques)
-        {
-            askquestion(x);
-        }
+		if (!question && x < ques) {
+			askquestion (x);
+		} else if (x >= ques) {
+			cote.text = Cote () + "";
+			score.text = "Score: " + Player.instance.PointTotal ();
+		}
+			
     }
 
     void askquestion(int i)
@@ -127,20 +140,20 @@ public class Examen : MonoBehaviour
     {
         char cote;
         float resultat = (playerNotes / ques) * 100;
-
+		cote = 'E';
         if (resultat > 90)
             cote = 'A';
 
-        else if (resultat <= 90)
+        if (resultat <= 90)
             cote = 'B';
 
-        else if (resultat <= 80)
+        if (resultat <= 80)
             cote = 'C';
 
-        else if (resultat <= 70)
+        if (resultat <= 70)
             cote = 'D';
 
-        else
+		if (resultat < 60)
             cote = 'E';
 
         return cote;
