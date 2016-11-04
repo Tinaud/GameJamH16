@@ -193,7 +193,7 @@ public class GameManager : MonoBehaviour {
 		case 3:
 			notesMax = 12;
 			enemiesMaxDamages = 8;
-			enemiesMax = 40;
+			enemiesMax = 60;
 			break;
 		}
 

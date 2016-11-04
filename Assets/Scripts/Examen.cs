@@ -32,11 +32,6 @@ public class Examen : MonoBehaviour
 		setupData ();
 		cote.text = "";
 		score.text = "";
-<<<<<<< HEAD
-        //playerNotes = Player.instance.Note;
-        //ques = GameManager.instance.NotesMax;
-=======
->>>>>>> c861e99bf509b65fca6b0117c7282b8c54a5ba7a
         switch (ques)
         {
             case (12):
@@ -167,13 +162,13 @@ public class Examen : MonoBehaviour
 		return cote;
 	}
 
-	/*void setupData() {
+	void setupData() {
 		playerNotes = Player.instance.Note;
 		Debug.Log (playerNotes);
 		ques = GameManager.instance.NotesMax;
 		Debug.Log (ques);
 
 		Destroy (world);
-	}*/
+	}
         
 }
