@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Examen : MonoBehaviour
 {
@@ -17,9 +18,10 @@ public class Examen : MonoBehaviour
     bool question = false;
     public Text goods;
     public Text total;
-	public Text cote;
+	public Text Res;
 	public Text score;
 	GameObject world;
+	bool game = false;
 
 
 	void Awake() {
@@ -30,8 +32,13 @@ public class Examen : MonoBehaviour
     {
 
 		setupData ();
-		cote.text = "";
+		Res.text = "";
 		score.text = "";
+<<<<<<< HEAD
+=======
+        playerNotes = Player.instance.Note;
+        ques = GameManager.instance.NotesMax;
+>>>>>>> 8428b5c70d7aba5be73b4abba4f54a19198a8f19
         switch (ques)
         {
             case (12):
@@ -110,11 +117,10 @@ public class Examen : MonoBehaviour
         goods.text = good + " /";
 		if (!question && x < ques) {
 			askquestion (x);
-		} else if (x >= ques) {
-			cote.text = Cote () + "";
-			//score.text = "Score: " + Player.instance.PointTotal ();
-		}
-			
+		}	
+
+		if(game)
+			SceneManager.LoadScene ("Menu");
     }
 
     void askquestion(int i)
@@ -137,13 +143,16 @@ public class Examen : MonoBehaviour
         if (answers[x] == name)
             good++;
         x++;
-        question = false;
+		question = false;
+		if (x >= ques) {
+			Cote ();
+		}
     }
 
-    public char Cote()
+    public void Cote()
     {
         char cote;
-        float resultat = (playerNotes / ques) * 100;
+        float resultat = (good / ques) * 100;
 		cote = 'E';
         if (resultat > 90)
             cote = 'A';
@@ -159,7 +168,9 @@ public class Examen : MonoBehaviour
 
 		if (resultat < 60)
             cote = 'E';
-		return cote;
+		Res.text = cote + "";
+		score.text = "Score: " + Player.instance.PointTotal ();
+		StartCoroutine (waitBeforeRestart ());
 	}
 
 	void setupData() {
@@ -170,5 +181,13 @@ public class Examen : MonoBehaviour
 
 		Destroy (world);
 	}
+<<<<<<< HEAD
+=======
+
+	IEnumerator waitBeforeRestart() {
+		yield return new WaitForSeconds (8f);
+		game = true;
+	}
+>>>>>>> 8428b5c70d7aba5be73b4abba4f54a19198a8f19
         
 }

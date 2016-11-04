@@ -87,4 +87,8 @@ public class Menu : MonoBehaviour {
 
 		world = (GameObject)Instantiate (world, Vector2.zero, Quaternion.identity);
 	}
+
+	public void Exit() {
+		Application.Quit ();
+	}
 }

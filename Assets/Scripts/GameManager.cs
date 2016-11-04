@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if ((timer.Hours == 8 && timer.Minutes == 55) || (timer.Hours == 11 && timer.Minutes == 55) )
+		if ((timer.Hours == 9 && timer.Minutes == 55) || (timer.Hours == 11 && timer.Minutes == 55) )
 			StartCoroutine (playRing ());
 		
         if (timer.Hours == 10 && !once10)
